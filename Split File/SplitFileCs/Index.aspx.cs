@@ -43,13 +43,10 @@ namespace SplitFileCs
                             using (Stream entryStream = entry.Open())
                             {
                                 // Create destination document.
-                                using (PdfDocument destination = PdfDocument.Create())
+                                using (PdfDocument destination = new PdfDocument())
                                 {
                                     // Clone source document page to destination document.
-                                    using (PdfCloneContext context = destination.BeginClone(source))
-                                    {
-                                        destination.Pages.AddClone(source.Pages[index]);
-                                    }
+                                    destination.Pages.AddClone(source.Pages[index]);
                                     // Save destination document to ZIP entry stream.
                                     destination.Save(entryStream);
                                 }

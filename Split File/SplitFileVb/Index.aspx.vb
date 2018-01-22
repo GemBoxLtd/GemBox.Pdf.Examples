@@ -35,11 +35,9 @@ Public Class Index
                         ' Open ZIP entry stream.
                         Using entryStream As Stream = entry.Open()
                             ' Create destination document.
-                            Using destination As PdfDocument = PdfDocument.Create()
+                            Using destination As PdfDocument = New PdfDocument()
                                 ' Clone source document page to destination document.
-                                Using context As PdfCloneContext = destination.BeginClone(source)
-                                    destination.Pages.AddClone(source.Pages(index))
-                                End Using
+                                destination.Pages.AddClone(source.Pages(index))
                                 ' Save destination document to ZIP entry stream.
                                 destination.Save(entryStream)
                             End Using

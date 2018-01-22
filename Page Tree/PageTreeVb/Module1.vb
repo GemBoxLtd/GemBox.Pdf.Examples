@@ -8,7 +8,7 @@ Module Module1
         ' If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim document As PdfDocument = PdfDocument.Create()
+        Dim document As PdfDocument = New PdfDocument()
 
         ' Get a page tree root node.
         Dim rootNode As PdfPages = document.Pages
@@ -23,12 +23,12 @@ Module Module1
         ' Create an empty page.
         childNode.Kids.AddPage()
         ' Create an empty page And set a page media box value.
-        childNode.Kids.AddPage().SetMediaBox(0, 0, 400, 400)
+        childNode.Kids.AddPage().SetMediaBox(0, 0, 200, 400)
 
         ' Create a right page tree node.
         childNode = rootNode.Kids.AddPages()
         ' Set a media box value.
-        childNode.SetMediaBox(0, 0, 200, 200)
+        childNode.SetMediaBox(0, 0, 100, 200)
 
         ' Create an empty page.
         childNode.Kids.AddPage()

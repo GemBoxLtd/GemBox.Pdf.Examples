@@ -8,7 +8,7 @@ Module Module1
         ' If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim document As PdfDocument = PdfDocument.Create()
+        Dim document As PdfDocument = New PdfDocument()
 
         ' Add a first empty page.
         document.Pages.Add()

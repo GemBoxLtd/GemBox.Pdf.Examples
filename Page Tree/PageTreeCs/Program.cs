@@ -8,7 +8,7 @@ class Program
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        PdfDocument document = PdfDocument.Create();
+        PdfDocument document = new PdfDocument();
 
         // Get a page tree root node.
         PdfPages rootNode = document.Pages;
@@ -23,12 +23,12 @@ class Program
         // Create an empty page.
         childNode.Kids.AddPage();
         // Create an empty page and set a page media box value.
-        childNode.Kids.AddPage().SetMediaBox(0, 0, 400, 400);
+        childNode.Kids.AddPage().SetMediaBox(0, 0, 200, 400);
 
         // Create a right page tree node.
         childNode = rootNode.Kids.AddPages();
         // Set a media box value.
-        childNode.SetMediaBox(0, 0, 200, 200);
+        childNode.SetMediaBox(0, 0, 100, 200);
 
         // Create an empty page.
         childNode.Kids.AddPage();

@@ -24,7 +24,7 @@ Public Class Index
         End If
 
         ' Create a destination document.
-        Using destination As PdfDocument = PdfDocument.Create()
+        Using destination As PdfDocument = New PdfDocument()
 
             ' Open source ZIP file.
             Using archive As ZipArchive = New ZipArchive(zipFileUpload.FileContent, ZipArchiveMode.Read)
@@ -34,11 +34,9 @@ Public Class Index
                         ' Load a document from the opened stream.
                         Using source As PdfDocument = PdfDocument.Load(entryStream)
                             ' Clone all pages from source to destination document.
-                            Using context As PdfCloneContext = destination.BeginClone(source)
-                                For Each sourcePage As PdfPage In source.Pages
-                                    destination.Pages.AddClone(sourcePage)
-                                Next
-                            End Using
+                            For Each sourcePage As PdfPage In source.Pages
+                                destination.Pages.AddClone(sourcePage)
+                            Next
                         End Using
                     End Using
                 Next

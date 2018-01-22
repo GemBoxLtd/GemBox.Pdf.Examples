@@ -10,18 +10,15 @@ Module Module1
 
         Dim document As PdfDocument = PdfDocument.Load("Reading.pdf")
 
-        ' Get the document outline.
-        Dim documentOutlines As PdfOutlineCollection = document.Outlines
-
         ' Remove all bookmarks.
-        documentOutlines.Clear()
+        document.Outlines.Clear()
 
         ' Get the number of pages.
         Dim numberOfPages As Integer = document.Pages.Count
 
         For i As Integer = 0 To numberOfPages - 1 Step 10
             ' Add a new outline item (bookmark) at the end of the document outline collection.
-            Dim bookmark As PdfOutline = documentOutlines.AddLast(String.Format("PAGES {0}-{1}", i + 1, Math.Min(i + 10, numberOfPages)))
+            Dim bookmark As PdfOutline = document.Outlines.AddLast(String.Format("PAGES {0}-{1}", i + 1, Math.Min(i + 10, numberOfPages)))
 
             ' Set the explicit destination on the New outline item (bookmark).
             bookmark.SetDestination(document.Pages(i), PdfDestinationViewType.FitRectangle, 0, 0, 100, 100)

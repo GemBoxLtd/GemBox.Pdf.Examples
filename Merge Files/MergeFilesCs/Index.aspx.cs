@@ -27,7 +27,7 @@ namespace MergeFilesCs
             }
 
             // Create a destination document.
-            using (PdfDocument destination = PdfDocument.Create())
+            using (PdfDocument destination = new PdfDocument())
             {
                 // Open source ZIP file.
                 using (ZipArchive archive = new ZipArchive(zipFileUpload.FileContent, ZipArchiveMode.Read))
@@ -41,11 +41,8 @@ namespace MergeFilesCs
                             using (PdfDocument source = PdfDocument.Load(entryStream))
                             {
                                 // Clone all pages from source to destination document.
-                                using (PdfCloneContext context = destination.BeginClone(source))
-                                {
-                                    foreach (PdfPage sourcePage in source.Pages)
-                                        destination.Pages.AddClone(sourcePage);
-                                }
+                                foreach (PdfPage sourcePage in source.Pages)
+                                    destination.Pages.AddClone(sourcePage);
                             }
                         }
                     }

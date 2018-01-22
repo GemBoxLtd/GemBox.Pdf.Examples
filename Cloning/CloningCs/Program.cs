@@ -22,11 +22,8 @@ class Program
 
             // Clone the requested number of pages from the source document
             // and add them to the destination document.
-            using (PdfCloneContext context = document.BeginClone(source))
-            {
-                for (int i = 0; i < cloneCount; i++)
-                    document.Pages.AddClone(source.Pages[i]);
-            }
+            for (int i = 0; i < cloneCount; i++)
+                document.Pages.AddClone(source.Pages[i]);
         }
 
         document.SaveOptions.CloseOutput = true;

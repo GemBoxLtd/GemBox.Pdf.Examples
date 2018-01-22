@@ -8,7 +8,7 @@ class Program
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        PdfDocument document = PdfDocument.Create();
+        PdfDocument document = new PdfDocument();
 
         // Add a first empty page.
         document.Pages.Add();

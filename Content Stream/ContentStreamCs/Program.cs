@@ -12,7 +12,7 @@ class Program
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        PdfDocument document = PdfDocument.Create();
+        PdfDocument document = new PdfDocument();
 
         // Specify content stream's content as a sequence of content stream operands and operators.
         var content = new StringBuilder();

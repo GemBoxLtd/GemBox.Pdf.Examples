@@ -12,7 +12,7 @@ Module Module1
         ' If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim document As PdfDocument = PdfDocument.Create()
+        Dim document As PdfDocument = New PdfDocument()
 
         ' Specify content stream's content as a sequence of content stream operands and operators.
         Dim content = New StringBuilder()

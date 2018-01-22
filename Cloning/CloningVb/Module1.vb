@@ -21,11 +21,9 @@ Module Module1
 
             ' Clone the requested number of pages from the source document 
             ' and add them to the destination document.
-            Using context As PdfCloneContext = document.BeginClone(source)
-                For i As Integer = 0 To cloneCount - 1
-                    document.Pages.AddClone(source.Pages(i))
-                Next
-            End Using
+            For i As Integer = 0 To cloneCount - 1
+                document.Pages.AddClone(source.Pages(i))
+            Next
         End Using
         document.SaveOptions.CloseOutput = True
         document.Save("Cloning.pdf")
