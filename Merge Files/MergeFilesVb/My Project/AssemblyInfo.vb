@@ -9,6 +9,6 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyCopyright("Copyright © GemBox Ltd.")>
 <Assembly: AssemblyTrademark("")>
 <Assembly: ComVisible(False)>
-<Assembly: Guid("daf50424-0d58-4f92-9878-e1f9cd0ed2dc")>
+<Assembly: Guid("6576d3dd-aca4-4485-9faa-4a38b33e7f75")>
 <Assembly: AssemblyVersion("1.0.0.0")>
 <Assembly: AssemblyFileVersion("1.0.0.0")>
