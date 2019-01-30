@@ -1,5 +1,4 @@
-﻿using System;
-using GemBox.Pdf;
+﻿using GemBox.Pdf;
 
 class Program
 {
@@ -8,18 +7,18 @@ class Program
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        PdfDocument document = PdfDocument.Load("Reading.pdf");
+        using (var document = PdfDocument.Load("LoremIpsum.pdf"))
+        {
+            // Get document information.
+            var info = document.Info;
 
-        // Get document information.
-        PdfDocumentInformation info = document.Info;
+            // Modify document information.
+            info.Title = "Document Information Example";
+            info.Author = "GemBox.Pdf";
+            info.Subject = "Introduction to GemBox.Pdf";
+            info.Keywords = "GemBox, Pdf, Examples";
 
-        // Modify document information.
-        info.Title = "Document Information Example";
-        info.Author = "GemBox.Pdf";
-        info.Subject = "Introduction to GemBox.Pdf";
-        info.Keywords = "GemBox, Pdf, Examples";
-
-        document.SaveOptions.CloseOutput = true;
-        document.Save("Document Information.pdf");
+            document.Save("Document Information.pdf");
+        }
     }
 }

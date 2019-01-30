@@ -1,5 +1,4 @@
-﻿using System;
-using GemBox.Pdf;
+﻿using GemBox.Pdf;
 
 class Program
 {
@@ -8,15 +7,15 @@ class Program
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        PdfDocument document = new PdfDocument();
+        using (var document = new PdfDocument())
+        {
+            // Add a first empty page.
+            document.Pages.Add();
 
-        // Add a first empty page.
-        document.Pages.Add();
+            // Add a second empty page.
+            document.Pages.Add();
 
-        // Add a second empty page.
-        document.Pages.Add();
-        
-        document.SaveOptions.CloseOutput = true;
-        document.Save("Hello World.pdf");
+            document.Save("Hello World.pdf");
+        }
     }
 }

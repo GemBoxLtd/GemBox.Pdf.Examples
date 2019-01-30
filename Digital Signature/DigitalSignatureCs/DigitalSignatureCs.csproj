@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net40;netcoreapp2.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GemBox.Pdf" Version="*" />
+    <Reference Include="System.Security" Condition=" '$(TargetFramework)' == 'net40' " />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp2.0' " />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="GemBoxExampleExplorer.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="JohnDoe.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Multiple Digital Signature.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Reading.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
