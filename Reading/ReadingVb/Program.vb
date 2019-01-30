@@ -54,7 +54,7 @@ Module Program
                 Console.WriteLine($"Font weight: {font.Face.Weight}")
 
                 Dim red, green, blue As Double
-                If color.TryGetRgb(red, green, blue) Then sb.AppendLine($"Color: Red={red}, Green={green}, Blue={blue}")
+                If color.TryGetRgb(red, green, blue) Then Console.WriteLine($"Color: Red={red}, Green={green}, Blue={blue}")
 
                 Console.WriteLine($"Location: X={location.X:0.00}, Y={location.Y:0.00}")
                 Console.WriteLine()
