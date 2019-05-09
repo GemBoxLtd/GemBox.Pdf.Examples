@@ -3,7 +3,7 @@ Imports GemBox.Pdf.Security
 
 Module Program
 
-    Sub Main(args As String())
+    Sub Main()
 
         Example1()
 

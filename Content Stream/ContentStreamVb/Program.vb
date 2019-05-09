@@ -1,4 +1,4 @@
-﻿Imports System.Text
+Imports System.Text
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Filters
 Imports GemBox.Pdf.Objects

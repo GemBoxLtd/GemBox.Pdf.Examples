@@ -1,4 +1,4 @@
-﻿using GemBox.Pdf;
+using GemBox.Pdf;
 
 class Program
 {

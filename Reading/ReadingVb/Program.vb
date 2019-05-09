@@ -6,7 +6,7 @@ Imports GemBox.Pdf.Content
 
 Module Program
 
-    Sub Main(args As String())
+    Sub Main()
 
         Example1()
 

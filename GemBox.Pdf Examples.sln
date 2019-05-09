@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hello World", "Hello World", "{AA7174FA-7935-4017-A46B-7AA6AB2EFB11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldCs", "Hello World\HelloWorldCs\HelloWorldCs.csproj", "{D5E4BE03-DC8F-4508-B584-9D8F267254E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorldCs", "Hello World\HelloWorldCs\HelloWorldCs.csproj", "{D5E4BE03-DC8F-4508-B584-9D8F267254E6}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HelloWorldVb", "Hello World\HelloWorldVb\HelloWorldVb.vbproj", "{1B020C3F-6168-4143-9F9C-149A2A88402B}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "HelloWorldVb", "Hello World\HelloWorldVb\HelloWorldVb.vbproj", "{1B020C3F-6168-4143-9F9C-149A2A88402B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3E83AF41-94D8-400A-8AF3-1ED499CB590C}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,27 +23,27 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CloningVb", "Cloning\Clonin
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Outlines", "Outlines", "{6F24857E-0CA7-4916-8F7C-79D00840A3A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutlinesCs", "Outlines\OutlinesCs\OutlinesCs.csproj", "{E511A804-8B62-4E34-B204-9A159EA9FF17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutlinesCs", "Outlines\OutlinesCs\OutlinesCs.csproj", "{E511A804-8B62-4E34-B204-9A159EA9FF17}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OutlinesVb", "Outlines\OutlinesVb\OutlinesVb.vbproj", "{0E3F7212-01AF-43BE-8506-C48861B742E2}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "OutlinesVb", "Outlines\OutlinesVb\OutlinesVb.vbproj", "{0E3F7212-01AF-43BE-8506-C48861B742E2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document Information", "Document Information", "{2C13D1E1-7630-4C0C-815A-74B778A05572}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentInformationCs", "Document Information\DocumentInformationCs\DocumentInformationCs.csproj", "{468B5A37-54FC-4A03-AFD9-C4EAD3A31826}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentInformationCs", "Document Information\DocumentInformationCs\DocumentInformationCs.csproj", "{468B5A37-54FC-4A03-AFD9-C4EAD3A31826}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DocumentInformationVb", "Document Information\DocumentInformationVb\DocumentInformationVb.vbproj", "{7E887BDE-0A99-4E72-BE7E-7EE29A0EB4BE}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DocumentInformationVb", "Document Information\DocumentInformationVb\DocumentInformationVb.vbproj", "{7E887BDE-0A99-4E72-BE7E-7EE29A0EB4BE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Viewer Preferences", "Viewer Preferences", "{C49B2202-B8D8-4F4F-A578-4567538418D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerPreferencesCs", "Viewer Preferences\ViewerPreferencesCs\ViewerPreferencesCs.csproj", "{5717E9B7-BAD9-4FB9-BF24-058D576AE019}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewerPreferencesCs", "Viewer Preferences\ViewerPreferencesCs\ViewerPreferencesCs.csproj", "{5717E9B7-BAD9-4FB9-BF24-058D576AE019}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ViewerPreferencesVb", "Viewer Preferences\ViewerPreferencesVb\ViewerPreferencesVb.vbproj", "{0EABE2A0-D561-4CA0-9B93-19B131DF7119}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ViewerPreferencesVb", "Viewer Preferences\ViewerPreferencesVb\ViewerPreferencesVb.vbproj", "{0EABE2A0-D561-4CA0-9B93-19B131DF7119}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Page Tree", "Page Tree", "{35B647D5-1B4A-4246-A690-C461BCB0B456}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageTreeCs", "Page Tree\PageTreeCs\PageTreeCs.csproj", "{C54A58C9-C27D-45FD-9DAF-5542538AAACE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageTreeCs", "Page Tree\PageTreeCs\PageTreeCs.csproj", "{C54A58C9-C27D-45FD-9DAF-5542538AAACE}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PageTreeVb", "Page Tree\PageTreeVb\PageTreeVb.vbproj", "{DEF605F0-7038-4844-96FF-E4905EEE6F48}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "PageTreeVb", "Page Tree\PageTreeVb\PageTreeVb.vbproj", "{DEF605F0-7038-4844-96FF-E4905EEE6F48}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic Objects", "Basic Objects", "{A0D5D831-F8F4-4E4D-A37D-0BA62B14E473}"
 EndProject
@@ -61,9 +61,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Merge Files", "Merge Files"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Split File", "Split File", "{EC9CD2E1-0C80-46D0-9BE0-F00DF390194D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeFilesCs", "Merge Files\MergeFilesCs\MergeFilesCs.csproj", "{C43AFC07-8BAE-4530-B77A-7A917DF85B65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MergeFilesCs", "Merge Files\MergeFilesCs\MergeFilesCs.csproj", "{C43AFC07-8BAE-4530-B77A-7A917DF85B65}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MergeFilesVb", "Merge Files\MergeFilesVb\MergeFilesVb.vbproj", "{625ADBCA-EE66-4245-83A3-583A5AA62E6F}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "MergeFilesVb", "Merge Files\MergeFilesVb\MergeFilesVb.vbproj", "{625ADBCA-EE66-4245-83A3-583A5AA62E6F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Encryption", "Encryption", "{EE21A295-F071-4F3E-A50F-8562F6E3A7A4}"
 EndProject
@@ -92,6 +92,46 @@ EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ReadingVb", "Reading\ReadingVb\ReadingVb.vbproj", "{28FD7F39-A70A-474C-BADA-E105587824B2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadingCs", "Reading\ReadingCs\ReadingCs.csproj", "{3BB4E2CE-234E-4197-A45C-9854B007F8D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Export Images", "Export Images", "{4A31D404-43B9-4128-A2C4-3641EB3A42D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExportImagesCs", "Export Images\ExportImagesCs\ExportImagesCs.csproj", "{8A17595E-9540-41F1-BB0A-49BD6751DCD2}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ExportImagesVb", "Export Images\ExportImagesVb\ExportImagesVb.vbproj", "{D205EDE2-29D5-463D-8974-AC0E1C6DE6EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "COM", "COM", "{72E3D7F3-F7F4-4927-8908-05CD3013A4A6}"
+	ProjectSection(SolutionItems) = preProject
+		COM\COM.php = COM\COM.php
+		COM\COM.py = COM\COM.py
+		COM\COM.vbs = COM\COM.vbs
+		COM\MergeFile01.pdf = COM\MergeFile01.pdf
+		COM\MergeFile02.pdf = COM\MergeFile02.pdf
+		COM\MergeFile03.pdf = COM\MergeFile03.pdf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Export Form", "Export Form", "{ED42E31F-66DE-442E-BF04-8D32A72B78EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExportFormCs", "Export Form\ExportFormCs\ExportFormCs.csproj", "{499E391B-BD4C-4DD6-9321-626ED36D97AA}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ExportFormVb", "Export Form\ExportFormVb\ExportFormVb.vbproj", "{C8650485-53D8-45CA-B886-D15EBDCA00E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fill in Form", "Fill in Form", "{4517BD61-567C-4F2C-A6C4-636CB4567993}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FillinFormCs", "Fill in Form\FillinFormCs\FillinFormCs.csproj", "{4B9619AC-3D46-456B-BE3A-4A1BFA643228}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FillinFormVb", "Fill in Form\FillinFormVb\FillinFormVb.vbproj", "{DA834EC2-8AF8-4BFF-AA57-63D3C7E5EE0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Form Actions", "Form Actions", "{06BACD0B-95C2-49C5-A6F9-1EEA2E5FC8BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormActionsCs", "Form Actions\FormActionsCs\FormActionsCs.csproj", "{24E216F3-6976-4AB8-9F7B-D040698749C0}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FormActionsVb", "Form Actions\FormActionsVb\FormActionsVb.vbproj", "{328B64B7-0E16-4A4B-9A92-7A91E15AB81A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Read Form", "Read Form", "{8EC28F1A-C2D2-4BA4-A750-68E590311D44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadFormCs", "Read Form\ReadFormCs\ReadFormCs.csproj", "{9C9596E0-81FC-43CE-9300-7056131FC650}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ReadFormVb", "Read Form\ReadFormVb\ReadFormVb.vbproj", "{00486638-7E2C-4E1D-89BF-C7D78C1254B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -211,6 +251,46 @@ Global
 		{3BB4E2CE-234E-4197-A45C-9854B007F8D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BB4E2CE-234E-4197-A45C-9854B007F8D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BB4E2CE-234E-4197-A45C-9854B007F8D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A17595E-9540-41F1-BB0A-49BD6751DCD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A17595E-9540-41F1-BB0A-49BD6751DCD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A17595E-9540-41F1-BB0A-49BD6751DCD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A17595E-9540-41F1-BB0A-49BD6751DCD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D205EDE2-29D5-463D-8974-AC0E1C6DE6EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D205EDE2-29D5-463D-8974-AC0E1C6DE6EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D205EDE2-29D5-463D-8974-AC0E1C6DE6EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D205EDE2-29D5-463D-8974-AC0E1C6DE6EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{499E391B-BD4C-4DD6-9321-626ED36D97AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{499E391B-BD4C-4DD6-9321-626ED36D97AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{499E391B-BD4C-4DD6-9321-626ED36D97AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{499E391B-BD4C-4DD6-9321-626ED36D97AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8650485-53D8-45CA-B886-D15EBDCA00E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8650485-53D8-45CA-B886-D15EBDCA00E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8650485-53D8-45CA-B886-D15EBDCA00E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8650485-53D8-45CA-B886-D15EBDCA00E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B9619AC-3D46-456B-BE3A-4A1BFA643228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B9619AC-3D46-456B-BE3A-4A1BFA643228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B9619AC-3D46-456B-BE3A-4A1BFA643228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B9619AC-3D46-456B-BE3A-4A1BFA643228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA834EC2-8AF8-4BFF-AA57-63D3C7E5EE0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA834EC2-8AF8-4BFF-AA57-63D3C7E5EE0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA834EC2-8AF8-4BFF-AA57-63D3C7E5EE0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA834EC2-8AF8-4BFF-AA57-63D3C7E5EE0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24E216F3-6976-4AB8-9F7B-D040698749C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E216F3-6976-4AB8-9F7B-D040698749C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E216F3-6976-4AB8-9F7B-D040698749C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E216F3-6976-4AB8-9F7B-D040698749C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{328B64B7-0E16-4A4B-9A92-7A91E15AB81A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{328B64B7-0E16-4A4B-9A92-7A91E15AB81A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{328B64B7-0E16-4A4B-9A92-7A91E15AB81A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{328B64B7-0E16-4A4B-9A92-7A91E15AB81A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C9596E0-81FC-43CE-9300-7056131FC650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9596E0-81FC-43CE-9300-7056131FC650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9596E0-81FC-43CE-9300-7056131FC650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9596E0-81FC-43CE-9300-7056131FC650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00486638-7E2C-4E1D-89BF-C7D78C1254B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00486638-7E2C-4E1D-89BF-C7D78C1254B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00486638-7E2C-4E1D-89BF-C7D78C1254B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00486638-7E2C-4E1D-89BF-C7D78C1254B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -244,6 +324,16 @@ Global
 		{5ABF1179-299D-4127-A8AB-69AB13A79A26} = {4D8697E5-571F-4260-9A70-B594BC5B99C3}
 		{28FD7F39-A70A-474C-BADA-E105587824B2} = {252C9F51-D143-44CA-8934-606E09EEAEE7}
 		{3BB4E2CE-234E-4197-A45C-9854B007F8D9} = {252C9F51-D143-44CA-8934-606E09EEAEE7}
+		{8A17595E-9540-41F1-BB0A-49BD6751DCD2} = {4A31D404-43B9-4128-A2C4-3641EB3A42D8}
+		{D205EDE2-29D5-463D-8974-AC0E1C6DE6EC} = {4A31D404-43B9-4128-A2C4-3641EB3A42D8}
+		{499E391B-BD4C-4DD6-9321-626ED36D97AA} = {ED42E31F-66DE-442E-BF04-8D32A72B78EB}
+		{C8650485-53D8-45CA-B886-D15EBDCA00E1} = {ED42E31F-66DE-442E-BF04-8D32A72B78EB}
+		{4B9619AC-3D46-456B-BE3A-4A1BFA643228} = {4517BD61-567C-4F2C-A6C4-636CB4567993}
+		{DA834EC2-8AF8-4BFF-AA57-63D3C7E5EE0A} = {4517BD61-567C-4F2C-A6C4-636CB4567993}
+		{24E216F3-6976-4AB8-9F7B-D040698749C0} = {06BACD0B-95C2-49C5-A6F9-1EEA2E5FC8BD}
+		{328B64B7-0E16-4A4B-9A92-7A91E15AB81A} = {06BACD0B-95C2-49C5-A6F9-1EEA2E5FC8BD}
+		{9C9596E0-81FC-43CE-9300-7056131FC650} = {8EC28F1A-C2D2-4BA4-A750-68E590311D44}
+		{00486638-7E2C-4E1D-89BF-C7D78C1254B7} = {8EC28F1A-C2D2-4BA4-A750-68E590311D44}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2D42621-37B2-4A88-B3C1-C8631AB2BC2C}
