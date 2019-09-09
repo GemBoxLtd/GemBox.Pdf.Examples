@@ -5,7 +5,7 @@ Imports GemBox.Pdf.Forms
 
 Module Program
 
-    Sub Main(args As String())
+    Sub Main()
 
 #If NET40 Then
         Example1()

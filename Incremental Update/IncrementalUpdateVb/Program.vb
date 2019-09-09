@@ -2,7 +2,7 @@ Imports GemBox.Pdf
 
 Module Program
 
-    Sub Main(args As String())
+    Sub Main()
 
         ' If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")

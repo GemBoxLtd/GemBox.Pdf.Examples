@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using GemBox.Pdf;
 using GemBox.Pdf.Objects;
@@ -6,7 +6,7 @@ using GemBox.Pdf.Text;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
