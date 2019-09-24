@@ -3,3 +3,4 @@
 
 # Linguist overrides
 */*/My?Project/*.vb linguist-generated
+Print/*/*.vb linguist-generated
