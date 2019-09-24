@@ -2,5 +2,5 @@
 * text=auto
 
 # Linguist overrides
-*/*/My?Project/*.vb linguist-generated
-Print/*/*.vb linguist-generated
+*/*/My?Project/*.vb linguist-generated=true
+Print/*/*.vb linguist-generated=true
