@@ -1,6 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-# Linguist overrides
-*/*/My?Project/*.vb linguist-generated=true
-Print/*/*.vb linguist-generated=true
+Print/*/*.vb linguist-generated
+Export?To?Image?Source/*/*.vb linguist-generated
+Export?To?Xps?Document/*/*.vb linguist-generated
