@@ -1,6 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-Print/*/*.vb linguist-generated=true
-Export?To?Image?Source/*/*.vb linguist-generated=true
-Export?To?Xps?Document/*/*.vb linguist-generated=true
+*/*/*.vb linguist-generated=true
