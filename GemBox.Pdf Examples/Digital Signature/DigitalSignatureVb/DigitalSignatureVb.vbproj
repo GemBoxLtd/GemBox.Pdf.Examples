@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net40;netcoreapp2.0</TargetFrameworks>
+    <TargetFrameworks>net48;netcoreapp2.2</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="GemBox.Pdf" Version="*" />
-    <Reference Include="System.Security" Condition=" '$(TargetFramework)' == 'net40' " />
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp2.0' " />
+    <Reference Include="System.Security" Condition=" '$(TargetFramework)' == 'net48' " />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp2.2' " />
   </ItemGroup>
 
   <ItemGroup>

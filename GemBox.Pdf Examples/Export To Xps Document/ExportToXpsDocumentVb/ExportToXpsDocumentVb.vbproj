@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ExportToXpsDocumentVb</RootNamespace>
     <AssemblyName>ExportToXpsDocumentVb</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <TargetFrameworkProfile />
   </PropertyGroup>
