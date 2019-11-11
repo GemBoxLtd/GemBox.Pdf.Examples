@@ -1,8 +1,10 @@
 # GemBox.Pdf
 
-<img src="https://www.gemboxsoftware.com/images/NugetGba.png" alt="GemBox.Pdf logo" style="float:left;margin:1rem;" />
+<img src="https://www.gemboxsoftware.com/images/NugetGba.png" alt="GemBox.Pdf logo" align="left" />
 
 GemBox.Pdf is a .NET component which enables developers to read, write, convert and print PDF files from .NET applications in a simple and efficient way.
+
+<br/>
 
 With GemBox.Pdf you get a standalone .NET component that doesn't dependent on Adobe Acrobat; that's fast and reliable; that's easy to install, use and deploy.
 
