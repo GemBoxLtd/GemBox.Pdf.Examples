@@ -22,7 +22,7 @@ This repository contains the source code of GemBox.Pdf example projects for demo
 
 ## Examples
 
-* Hello World [[C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Hello%20World)][[C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/Hello%20World)]
+* Hello World [[C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Hello%20World)][[VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/Hello%20World)]
 * Common Uses [[C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Common%20Uses)][[VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/Common%20Uses)]
 * Basic Features [[C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Basic%20Features)][[VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/Basic%20Features)]
 * Advanced Features [[C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Advanced%20Features)][[VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/Advanced%20Features)]
