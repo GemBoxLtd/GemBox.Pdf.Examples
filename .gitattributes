@@ -5,5 +5,5 @@
 *.css linguist-detectable=false
 *.js linguist-detectable=false
 
-*/Common?Uses/*/*.vb linguist-detectable=false
-*/Basic?Features/*/*.vb linguist-detectable=false
+*/*/*/*.vb linguist-detectable=false
+*/*/*/*.vb linguist-detectable=false
