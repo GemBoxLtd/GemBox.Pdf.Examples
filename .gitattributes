@@ -4,4 +4,4 @@
 *.html linguist-detectable=false
 *.css linguist-detectable=false
 *.js linguist-detectable=false
-*.vb linguist-detectable=false
+*/*/*/*/*.vb linguist-detectable=false
