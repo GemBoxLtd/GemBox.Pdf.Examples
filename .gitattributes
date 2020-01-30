@@ -4,4 +4,4 @@
 *.html linguist-detectable=false
 *.css linguist-detectable=false
 *.js linguist-detectable=false
-VB.NET/Common Uses/*/*.vb linguist-detectable=false
+VB.NET/Common?Uses/*.vb linguist-detectable=false
