@@ -51,8 +51,8 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GemBox.Pdf, Version=13.0.35.1074, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\GemBox.Pdf.13.0.0.1074\lib\net35\GemBox.Pdf.dll</HintPath>
+    <Reference Include="GemBox.Pdf, Version=13.0.35.1100, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GemBox.Pdf.13.0.1100\lib\net35\GemBox.Pdf.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
