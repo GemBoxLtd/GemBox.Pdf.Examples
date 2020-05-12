@@ -1,29 +1,24 @@
-using System;
 using System.Linq;
-using System.Security.Cryptography.Pkcs;
-using System.Security.Cryptography.X509Certificates;
 using GemBox.Pdf;
 using GemBox.Pdf.Forms;
+using GemBox.Pdf.Security;
 
 class Program
 {
     static void Main()
     {
-#if NET40
-        Example1();
+        SimpleSignature();
 
-        Example2();
+        VisibleSignature();
 
-        Example3();
-#endif
+        MultipleSignature();
 
-        Example4();
+        ExternalSignature();
 
-        Example5();
+        RemoveSignature();
     }
 
-#if NET40
-    static void Example1()
+    static void SimpleSignature()
     {
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -33,15 +28,26 @@ class Program
             // Add an invisible signature field to the PDF document.
             var signatureField = document.Form.Fields.AddSignature();
 
-            // Initiate signing of a PDF file with the specified digital ID file and the password.
-            signatureField.Sign("GemBoxExampleExplorer.pfx", "GemBoxPassword");
+            // Get a digital ID from PKCS#12/PFX file.
+            var digitalId = new PdfDigitalId("GemBoxRSA1024.pfx", "GemBoxPassword");
+
+            // Create a PDF signer that will create the digital signature.
+            var signer = new PdfSigner(digitalId);
+
+            // Adobe Acrobat Reader currently doesn't download certificate chain
+            // so we will also embed certificate of intermediate Certificate Authority in the signature.
+            // (see https://community.adobe.com/t5/acrobat/signature-validation-using-aia-extension-not-enabled-by-default/td-p/10729647)
+            signer.ValidationInfo = new PdfSignatureValidationInfo(new PdfCertificate[] { new PdfCertificate("GemBoxRSA.crt") }, null, null);
+
+            // Initiate signing of a PDF file with the specified signer.
+            signatureField.Sign(signer);
 
             // Finish signing of a PDF file.
             document.Save("Digital Signature.pdf");
         }
     }
 
-    static void Example2()
+    static void VisibleSignature()
     {
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -61,15 +67,26 @@ class Program
             // Do not show 'Date' label nor value.
             signatureAppearance.DateFormat = string.Empty;
 
-            // Initiate signing of a PDF file with the specified digital ID file and the password.
-            signatureField.Sign("GemBoxExampleExplorer.pfx", "GemBoxPassword");
+            // Get a digital ID from PKCS#12/PFX file.
+            var digitalId = new PdfDigitalId("GemBoxRSA1024.pfx", "GemBoxPassword");
+
+            // Create a PDF signer that will create the digital signature.
+            var signer = new PdfSigner(digitalId);
+
+            // Adobe Acrobat Reader currently doesn't download certificate chain
+            // so we will also embed certificate of intermediate Certificate Authority in the signature.
+            // (see https://community.adobe.com/t5/acrobat/signature-validation-using-aia-extension-not-enabled-by-default/td-p/10729647)
+            signer.ValidationInfo = new PdfSignatureValidationInfo(new PdfCertificate[] { new PdfCertificate("GemBoxRSA.crt") }, null, null);
+
+            // Initiate signing of a PDF file with the specified signer.
+            signatureField.Sign(signer);
 
             // Finish signing of a PDF file.
             document.Save("Visible Digital Signature.pdf");
         }
     }
 
-    static void Example3()
+    static void MultipleSignature()
     {
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -79,8 +96,19 @@ class Program
             // Add a first signature field to the first page of the PDF document.
             var signatureField1 = document.Form.Fields.AddSignature(document.Pages[0], 100, 500, 200, 50);
 
-            // Initiate first signing of a PDF file with the specified digital ID file and the password.
-            signatureField1.Sign("JohnDoe.pfx", "JohnDoePassword");
+            // Get a first digital ID from PKCS#12/PFX file.
+            var digitalId1 = new PdfDigitalId("GemBoxRSA1024.pfx", "GemBoxPassword");
+
+            // Create a PDF signer that will create the first signature.
+            var signer1 = new PdfSigner(digitalId1);
+
+            // Adobe Acrobat Reader currently doesn't download certificate chain
+            // so we will also embed certificate of intermediate Certificate Authority in the signature.
+            // (see https://community.adobe.com/t5/acrobat/signature-validation-using-aia-extension-not-enabled-by-default/td-p/10729647)
+            signer1.ValidationInfo = new PdfSignatureValidationInfo(new PdfCertificate[] { new PdfCertificate("GemBoxRSA.crt") }, null, null);
+
+            // Initiate first signing of a PDF file with the specified signer.
+            signatureField1.Sign(signer1);
 
             // Finish first signing of a PDF file.
             document.Save("Multiple Digital Signature.pdf");
@@ -88,58 +116,55 @@ class Program
             // Add a second signature field to the first page of the PDF document.
             var signatureField2 = document.Form.Fields.AddSignature(document.Pages[0], 300, 500, 250, 50);
 
-            // Initiate second signing of a PDF file with the specified digital ID file and the password.
-            signatureField2.Sign("GemBoxExampleExplorer.pfx", "GemBoxPassword");
+            // Get a second digital ID from PKCS#12/PFX file.
+            var digitalId2 = new PdfDigitalId("GemBoxECDsa521.pfx", "GemBoxPassword");
 
-            // Finish second signing of a same PDF file.
+            // Create a PDF signer that will create the second signature.
+            var signer2 = new PdfSigner(digitalId2);
+
+            // Adobe Acrobat Reader currently doesn't download certificate chain
+            // so we will also embed certificate of intermediate Certificate Authority in the signature.
+            // (see https://community.adobe.com/t5/acrobat/signature-validation-using-aia-extension-not-enabled-by-default/td-p/10729647)
+            signer2.ValidationInfo = new PdfSignatureValidationInfo(new PdfCertificate[] { new PdfCertificate("GemBoxECDsa.crt") }, null, null);
+
+            // Initiate second signing of a PDF file with the specified signer.
+            signatureField2.Sign(signer2);
+
+            // Finish second signing of the same PDF file.
             document.Save();
         }
     }
-#endif
 
-    static void Example4()
+    static void ExternalSignature()
     {
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = PdfDocument.Load("Reading.pdf"))
         {
-            // Add an invisible signature field to the PDF document.
-            var signatureField = document.Form.Fields.AddSignature();
+            // Add a visible signature field to the first page of the PDF document.
+            var signatureField = document.Form.Fields.AddSignature(document.Pages[0], 300, 500, 250, 50);
 
-            // Initiate signing of a PDF file with the specified signer delegate.
-            signatureField.Sign(pdfFileStream =>
-            {
-                    // Create a signed CMS object using the content that should be signed,
-                    // but not included in the signed CMS object (detached: true).
-                    var content = new byte[pdfFileStream.Length];
-                pdfFileStream.Read(content, 0, content.Length);
-                var signedCms = new SignedCms(new ContentInfo(content), detached: true);
+            // Get a digital ID from XML (private key) and certificate files.
+            var digitalId = new RSAXmlDigitalId("GemBoxRSA1024PrivateKey.xml", "GemBoxRSA1024.crt");
 
-                X509Certificate2 certificate = null;
-                try
-                {
-                        // Compute the signature using the specified digital ID file and the password.
-                        certificate = new X509Certificate2("GemBoxExampleExplorer.pfx", "GemBoxPassword");
-                    signedCms.ComputeSignature(new CmsSigner(certificate));
-                }
-                finally
-                {
-                        // Starting with the .NET Framework 4.6, this type implements the IDisposable interface.
-                        (certificate as IDisposable)?.Dispose();
-                }
+            // Create a PDF signer that will create the digital signature.
+            var signer = new PdfSigner(digitalId);
 
-                    // Return the signature encoded into a CMS/PKCS #7 message.
-                    return signedCms.Encode();
+            // Adobe Acrobat Reader currently doesn't download certificate chain
+            // so we will also embed certificate of intermediate Certificate Authority in the signature.
+            // (see https://community.adobe.com/t5/acrobat/signature-validation-using-aia-extension-not-enabled-by-default/td-p/10729647)
+            signer.ValidationInfo = new PdfSignatureValidationInfo(new PdfCertificate[] { new PdfCertificate("GemBoxRSA.crt") }, null, null);
 
-            }, PdfSignatureFormat.PKCS7, 2199);
+            // Initiate signing of a PDF file with the specified signer.
+            signatureField.Sign(signer);
 
             // Finish signing of a PDF file.
             document.Save("External Digital Signature.pdf");
         }
     }
 
-    static void Example5()
+    static void RemoveSignature()
     {
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");

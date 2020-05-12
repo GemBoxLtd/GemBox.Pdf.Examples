@@ -2,20 +2,34 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net48;netcoreapp2.2</TargetFrameworks>
+    <TargetFrameworks>net48;netcoreapp3.1</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GemBox.Pdf" Version="*" />
+    <PackageReference Include="GemBox.Pdf" Version="13.0.1111-hotfix" />
     <Reference Include="System.Security" Condition=" '$(TargetFramework)' == 'net48' " />
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp2.2' " />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp3.1' " />
+    <PackageReference Include="BouncyCastle" Version="*" Condition=" '$(TargetFramework)' == 'net48' " />
+    <PackageReference Include="Portable.BouncyCastle" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp3.1' " />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="GemBoxExampleExplorer.pfx">
+    <None Update="GemBoxECDsa.crt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="JohnDoe.pfx">
+    <None Update="GemBoxECDsa521.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="GemBoxRSA.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="GemBoxRSA1024.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="GemBoxRSA1024.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="GemBoxRSA1024PrivateKey.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Multiple Digital Signature.pdf">
