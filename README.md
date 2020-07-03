@@ -32,6 +32,7 @@ This repository contains the source code of GemBox.Pdf example projects for demo
 | WPF | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/WPF), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/WPF) |
 | Security | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Security), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/Security) |
 | ASP.NET Core | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/ASP.NET%20Core) |
+| Azure | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Azure), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Azure) |
 | Linux / macOS | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Linux_macOS) |
 | COM | [PYTHON](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.py), [PHP](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.php), [VBSCRIPT](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.vbs) |
 
