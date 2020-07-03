@@ -83,6 +83,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalSignaturePKCS11", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalSignatureValidation", "Security\Digital Signature Validation\DigitalSignatureValidation.csproj", "{F96A43FE-9289-4FBC-AAA3-D2204EDD5D00}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Azure", "Azure", "{169694F6-E7D4-4C4B-B5ED-1D7D372C07C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureFunction", "Azure\AzureFunction.csproj", "{B990CB4F-444E-4658-8CE0-BDAD5B9CD606}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -209,6 +213,10 @@ Global
 		{F96A43FE-9289-4FBC-AAA3-D2204EDD5D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F96A43FE-9289-4FBC-AAA3-D2204EDD5D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F96A43FE-9289-4FBC-AAA3-D2204EDD5D00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B990CB4F-444E-4658-8CE0-BDAD5B9CD606}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B990CB4F-444E-4658-8CE0-BDAD5B9CD606}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B990CB4F-444E-4658-8CE0-BDAD5B9CD606}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B990CB4F-444E-4658-8CE0-BDAD5B9CD606}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -245,6 +253,7 @@ Global
 		{4811C49D-00AE-4AEC-A52B-CE15B960789E} = {9301271F-5ADB-4D58-9221-72A98A928B89}
 		{85E8F833-FE3C-430D-91AB-D662E581E017} = {9301271F-5ADB-4D58-9221-72A98A928B89}
 		{F96A43FE-9289-4FBC-AAA3-D2204EDD5D00} = {9301271F-5ADB-4D58-9221-72A98A928B89}
+		{B990CB4F-444E-4658-8CE0-BDAD5B9CD606} = {169694F6-E7D4-4C4B-B5ED-1D7D372C07C3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89CC6B70-A1B6-4016-8C49-E65919DC4022}
