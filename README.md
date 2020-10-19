@@ -19,22 +19,23 @@ This repository contains the source code of GemBox.Pdf example projects for demo
 * [Split PDF file in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-split-pdf/202)
 * [Export images from PDF files in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-export-images-from-pdf/206)
 * [PDF digital signatures in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-digital-signature/1102)
+* [PDF Encryption in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-encryption/1101)
 
 ## Examples
 
 | | |
 | --- | --- |
-| Hello World | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Hello%20World), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/Hello%20World) |
-| Common Uses | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Common%20Uses), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/Common%20Uses) |
-| Basic Features | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Basic%20Features), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/Basic%20Features) |
-| Advanced Features | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Advanced%20Features), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/Advanced%20Features) |
-| Interactive Forms | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Interactive%20Forms), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/Interactive%20Forms) |
-| WPF | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/WPF), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/WPF) |
-| Security | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Security), [VB.NET](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/VB.NET/Security) |
-| ASP.NET Core | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/ASP.NET%20Core) |
+| Hello World | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Hello%20World), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Hello%20World) |
+| Common Uses | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Common%20Uses), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Common%20Uses) |
+| Basic Features | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Basic%20Features), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Basic%20Features) |
+| Advanced Features | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Advanced%20Features), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Advanced%20Features) |
+| Interactive Forms | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Interactive%20Forms), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Interactive%20Forms) |
+| WPF | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/WPF), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/WPF) |
+| Security | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Security), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Security) |
+| ASP.NET Core | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/ASP.NET%20Core) |
 | Azure | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Azure), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Azure) |
-| Linux / macOS | [C#](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/tree/master/C%23/Linux_macOS) |
-| COM | [PYTHON](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.py), [PHP](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.php), [VBSCRIPT](https://github.com/gemboxsoftware-dev-team/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.vbs) |
+| Linux / macOS | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Linux_macOS) |
+| COM | [PYTHON](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.py), [PHP](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.php), [VBSCRIPT](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.vbs) |
 
 ## System Requirement
 
@@ -44,17 +45,17 @@ This repository contains the source code of GemBox.Pdf example projects for demo
 
 ## Installation
 
-You can download GemBox.Pdf from [BugFixes](https://www.gemboxsoftware.com/pdf/downloads/BugFixes.htm) 🛠️
+You can download GemBox.Pdf from [BugFixes](https://www.gemboxsoftware.com/pdf/downloads/bugfixes.html) 🛠️
 
 Or from [NuGet](https://www.nuget.org/packages/GemBox.Pdf/) 📦
 
 ## Resources
 
 * [Overview](https://www.gemboxsoftware.com/pdf)
-* [Documentation](https://www.gemboxsoftware.com/pdf/help/html/Introduction.htm)
+* [Documentation](https://www.gemboxsoftware.com/pdf/docs/introduction.html)
 * [Support](https://www.gemboxsoftware.com/pdf/support)
 * [Blog](https://www.gemboxsoftware.com/gembox-pdf)
 
 ## License
 
-You can download GemBox.Pdf's license agreement from [EULA.rtf](https://www.gemboxsoftware.com/pdf/EULA.rtf) 📝
+You can download GemBox.Pdf's license agreement from [EULA.rtf](https://www.gemboxsoftware.com/EULA.rtf) 📝
