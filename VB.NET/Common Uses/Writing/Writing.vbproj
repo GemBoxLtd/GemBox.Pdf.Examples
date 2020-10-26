@@ -1,14 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net48;netcoreapp2.2</TargetFrameworks>
   </PropertyGroup>
 
-  <!--
   <ItemGroup>
-    <PackageReference Include="GemBox.Pdf" Version="*" />
-  </ItemGroup>-->
+    <!--<PackageReference Include="GemBox.Pdf" Version="*" />-->
+    <PackageReference Include="HarfBuzzSharp" Version="*" />
+
+    <!-- If running on Linux. -->
+    <!--<PackageReference Include="HarfBuzzSharp.NativeAssets.Linux" Version="*" />-->
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="GemBox.Pdf" Condition=" '$(TargetFramework)' == 'net48' ">
@@ -17,15 +20,6 @@
     <Reference Include="GemBox.Pdf" Condition=" '$(TargetFramework)' == 'netcoreapp2.2' ">
       <HintPath>..\..\..\..\..\NET\Output\bin\GemBox.Pdf\Release\netstandard2.0\GemBox.Pdf.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Reading.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="TextContent.pdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

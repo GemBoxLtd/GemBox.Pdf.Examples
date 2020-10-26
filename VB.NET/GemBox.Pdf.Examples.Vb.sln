@@ -79,6 +79,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Azure", "Azure", "{B9B8888A
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "AzureFunction", "Azure\AzureFunction.vbproj", "{476E2F9F-4F2A-4C35-8229-9FE9B73B2149}"
 EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Writing", "Common Uses\Writing\Writing.vbproj", "{3750444D-D0DF-4A88-A2C8-7F517BFCC7A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,6 +203,10 @@ Global
 		{476E2F9F-4F2A-4C35-8229-9FE9B73B2149}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{476E2F9F-4F2A-4C35-8229-9FE9B73B2149}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{476E2F9F-4F2A-4C35-8229-9FE9B73B2149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3750444D-D0DF-4A88-A2C8-7F517BFCC7A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3750444D-D0DF-4A88-A2C8-7F517BFCC7A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3750444D-D0DF-4A88-A2C8-7F517BFCC7A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3750444D-D0DF-4A88-A2C8-7F517BFCC7A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -236,6 +242,7 @@ Global
 		{CB1517F6-052A-4417-8F18-48C247CC70CD} = {73DC14F1-F478-4F6C-8E89-0372ADF469E7}
 		{819E2A3D-7118-4810-8C18-72BB9F46DA65} = {73DC14F1-F478-4F6C-8E89-0372ADF469E7}
 		{476E2F9F-4F2A-4C35-8229-9FE9B73B2149} = {B9B8888A-90DD-4BFD-9193-5A829B186B67}
+		{3750444D-D0DF-4A88-A2C8-7F517BFCC7A7} = {89944B14-65AA-486C-8C7E-D43FAB0F7ACE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {33FF006A-4B43-4646-8575-EA8A59A8B43D}

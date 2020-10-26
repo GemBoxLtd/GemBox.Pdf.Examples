@@ -1,4 +1,5 @@
 using GemBox.Pdf;
+using GemBox.Pdf.Content;
 
 class Program
 {
@@ -9,11 +10,16 @@ class Program
 
         using (var document = new PdfDocument())
         {
-            // Add a first empty page.
-            document.Pages.Add();
+            // Add a page.
+            var page = document.Pages.Add();
 
-            // Add a second empty page.
-            document.Pages.Add();
+            // Write a text.
+            using (var formattedText = new PdfFormattedText())
+            {
+                formattedText.Append("Hello World!");
+
+                page.Content.DrawText(formattedText, new PdfPoint(100, 700));
+            }
 
             document.Save("Hello World.pdf");
         }
