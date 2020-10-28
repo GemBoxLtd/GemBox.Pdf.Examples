@@ -1,4 +1,5 @@
 using GemBox.Pdf;
+using GemBox.Pdf.Content;
 
 class Program
 {
@@ -10,8 +11,16 @@ class Program
         // Load a PDF document from a file.
         using (var document = PdfDocument.Load("Hello World.pdf"))
         {
-            // Add a new empty page.
-            document.Pages.Add();
+            // Add a page.
+            var page = document.Pages.Add();
+
+            // Write a text.
+            using (var formattedText = new PdfFormattedText())
+            {
+                formattedText.Append("Hello World again!");
+
+                page.Content.DrawText(formattedText, new PdfPoint(100, 700));
+            }
 
             // Save all the changes made to the current PDF document using an incremental update.
             document.Save();

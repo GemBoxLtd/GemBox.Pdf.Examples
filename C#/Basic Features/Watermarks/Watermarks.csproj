@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net48;netcoreapp2.2</TargetFrameworks>
   </PropertyGroup>
-
+  
   <!--<ItemGroup>
     <PackageReference Include="GemBox.Pdf" Version="*" />
   </ItemGroup>-->
@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Hello World.pdf">
+    <None Update="LoremIpsum.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
