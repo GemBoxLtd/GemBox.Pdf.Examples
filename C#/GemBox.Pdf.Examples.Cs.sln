@@ -93,6 +93,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeaderAndFooter", "Basic Fe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Watermarks", "Basic Features\Watermarks\Watermarks.csproj", "{273694C5-D0F5-4A0D-8817-FA43726FA00D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrivateFonts", "Advanced Features\Private Fonts\PrivateFonts.csproj", "{674DBC97-3A30-49DD-92AC-21820725E7E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -235,6 +237,10 @@ Global
 		{273694C5-D0F5-4A0D-8817-FA43726FA00D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{273694C5-D0F5-4A0D-8817-FA43726FA00D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{273694C5-D0F5-4A0D-8817-FA43726FA00D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674DBC97-3A30-49DD-92AC-21820725E7E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674DBC97-3A30-49DD-92AC-21820725E7E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674DBC97-3A30-49DD-92AC-21820725E7E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674DBC97-3A30-49DD-92AC-21820725E7E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -275,6 +281,7 @@ Global
 		{C59EA092-B1A9-428D-A9B4-67E3C7A1215C} = {316EDE20-49B0-4646-8E82-C0EE9A003783}
 		{A5EE38F0-5B24-4F36-8E96-64A363EB3B75} = {4D9FBC3C-EE12-457F-A49D-83A02BD6E5DC}
 		{273694C5-D0F5-4A0D-8817-FA43726FA00D} = {4D9FBC3C-EE12-457F-A49D-83A02BD6E5DC}
+		{674DBC97-3A30-49DD-92AC-21820725E7E3} = {A0163421-F1BA-49BB-9866-E42C031272D7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89CC6B70-A1B6-4016-8C49-E65919DC4022}

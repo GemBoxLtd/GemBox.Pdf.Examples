@@ -1,5 +1,6 @@
 using System.Linq;
 using GemBox.Pdf;
+using GemBox.Pdf.Content;
 using GemBox.Pdf.Forms;
 using GemBox.Pdf.Security;
 
@@ -60,12 +61,16 @@ class Program
             // Retrieve signature appearance settings to customize it.
             var signatureAppearance = signatureField.Appearance;
 
+            // Set font family.
+            signatureAppearance.FontFamily = new PdfFontFamily("Times New Roman");
             // Show 'Reason' label and value.
-            signatureAppearance.Reason = "Legal agreement";
+            signatureAppearance.Reason = "Legal agreement between the seller and the buyer about the purchase";
             // Show 'Location' label and value.
             signatureAppearance.Location = "New York, USA";
             // Do not show 'Date' label nor value.
             signatureAppearance.DateFormat = string.Empty;
+            // Shrink text if it overflows signature field's annotation rectangle.
+            signatureAppearance.ShrinkTextOnOverflow = true;
 
             // Get a digital ID from PKCS#12/PFX file.
             var digitalId = new PdfDigitalId("GemBoxRSA1024.pfx", "GemBoxPassword");

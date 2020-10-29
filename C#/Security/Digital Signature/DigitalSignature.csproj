@@ -6,11 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GemBox.Pdf" Version="*" />
+    <!--<PackageReference Include="GemBox.Pdf" Version="*" />-->
     <Reference Include="System.Security" Condition=" '$(TargetFramework)' == 'net48' " />
     <PackageReference Include="System.Security.Cryptography.Pkcs" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp3.1' " />
     <PackageReference Include="BouncyCastle" Version="*" Condition=" '$(TargetFramework)' == 'net48' " />
     <PackageReference Include="Portable.BouncyCastle" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp3.1' " />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="GemBox.Pdf" Condition=" '$(TargetFramework)' == 'net48' ">
+      <HintPath>..\..\..\..\..\NET\Output\bin\GemBox.Pdf\Release\net35\GemBox.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="GemBox.Pdf" Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+      <HintPath>..\..\..\..\..\NET\Output\bin\GemBox.Pdf\Release\netcoreapp3.0\GemBox.Pdf.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

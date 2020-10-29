@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -16,6 +16,17 @@
     <Reference Include="GemBox.Pdf" Condition=" '$(TargetFramework)' == 'netcoreapp2.2' ">
       <HintPath>..\..\..\..\..\NET\Output\bin\GemBox.Pdf\Release\netstandard2.0\GemBox.Pdf.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\Almonte Snow.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Condition=" '$(TargetFramework)' == 'net48' " Include="Resources\almonte woodgrain.ttf" />
+    <EmbeddedResource Condition=" '$(TargetFramework)' == 'netcoreapp2.2' " Include="Resources\almonte woodgrain.ttf" />
   </ItemGroup>
 
 </Project>

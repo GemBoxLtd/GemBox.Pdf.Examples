@@ -51,7 +51,7 @@ Module Program
             privateData(PdfName.Create("Version")) = PdfString.Create(ComponentInfo.Version)
 
             ' Specify date of the last modification of "GemBox.Pdf" private data (required by PDF specification).
-            data(PdfName.Create("LastModified")) = PdfString.Create("D:" & DateTimeOffset.Now.ToString("yyyyMMddHHmmssK", CultureInfo.InvariantCulture).Replace(":"c, "'"c) & "'", PdfEncoding.ASCII, PdfStringForm.Literal)
+            data(PdfName.Create("LastModified")) = PdfString.Create(DateTimeOffset.Now)
 
             document.Save("Basic Objects.pdf")
         End Using

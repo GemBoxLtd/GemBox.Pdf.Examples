@@ -1,5 +1,6 @@
 using System.Text;
 using GemBox.Pdf;
+using GemBox.Pdf.Content;
 using GemBox.Pdf.Filters;
 using GemBox.Pdf.Objects;
 using GemBox.Pdf.Text;
@@ -7,6 +8,13 @@ using GemBox.Pdf.Text;
 class Program
 {
     static void Main()
+    {
+        ContentStream();
+
+        ContentStreamSimple();
+    }
+
+    static void ContentStream()
     {
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -59,6 +67,29 @@ class Program
             pageDictionary[PdfName.Create("Resources")] = resources;
 
             document.Save("Content Stream.pdf");
+        }
+    }
+
+    static void ContentStreamSimple()
+    {
+        // If using Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
+        using (var document = new PdfDocument())
+        {
+            // Create new empty A4 page.
+            var page = document.Pages.Add();
+
+            using (var formattedText = new PdfFormattedText())
+            {
+                formattedText.Font = new PdfFont("Helvetica", 12);
+
+                formattedText.Append("GemBox.Pdf");
+
+                page.Content.DrawText(formattedText, new PdfPoint(70, 760));
+            }
+
+            document.Save("Content Stream Simple.pdf");
         }
     }
 }

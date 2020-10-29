@@ -1,5 +1,6 @@
 Imports System.Text
 Imports GemBox.Pdf
+Imports GemBox.Pdf.Content
 Imports GemBox.Pdf.Filters
 Imports GemBox.Pdf.Objects
 Imports GemBox.Pdf.Text
@@ -7,6 +8,13 @@ Imports GemBox.Pdf.Text
 Module Program
 
     Sub Main()
+
+        ContentStream()
+
+        ContentStreamSimple()
+    End Sub
+
+    Sub ContentStream()
 
         ' If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
@@ -59,6 +67,29 @@ Module Program
             pageDictionary(PdfName.Create("Resources")) = resources
 
             document.Save("Content Stream.pdf")
+        End Using
+    End Sub
+
+    Sub ContentStreamSimple()
+
+        ' If using Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
+        Using document = New PdfDocument()
+
+            ' Create new empty A4 page.
+            Dim page = document.Pages.Add()
+
+            Using formattedText = New PdfFormattedText()
+
+                formattedText.Font = New PdfFont("Helvetica", 12)
+
+                formattedText.Append("GemBox.Pdf")
+
+                page.Content.DrawText(formattedText, New PdfPoint(70, 760))
+            End Using
+
+            document.Save("Content Stream Simple.pdf")
         End Using
     End Sub
 End Module
