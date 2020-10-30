@@ -5,17 +5,8 @@
     <TargetFrameworks>net48;netcoreapp2.2</TargetFrameworks>
   </PropertyGroup>
 
-  <!--<ItemGroup>
-    <PackageReference Include="GemBox.Pdf" Version="*" />
-  </ItemGroup>-->
-
   <ItemGroup>
-    <Reference Include="GemBox.Pdf" Condition=" '$(TargetFramework)' == 'net48' ">
-      <HintPath>..\..\..\..\..\NET\Output\bin\GemBox.Pdf\Release\net35\GemBox.Pdf.dll</HintPath>
-    </Reference>
-    <Reference Include="GemBox.Pdf" Condition=" '$(TargetFramework)' == 'netcoreapp2.2' ">
-      <HintPath>..\..\..\..\..\NET\Output\bin\GemBox.Pdf\Release\netstandard2.0\GemBox.Pdf.dll</HintPath>
-    </Reference>
+    <PackageReference Include="GemBox.Pdf" Version="*" />
   </ItemGroup>
 
   <ItemGroup>
