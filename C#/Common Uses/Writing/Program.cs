@@ -53,7 +53,7 @@ class Program
 
                 // Set the location of the bottom-left corner of the text.
                 // We want top-left corner of the text to be at location (100, 100)
-                // from top-left corner of the page.
+                // from the top-left corner of the page.
                 // NOTE: In PDF, location (0, 0) is at the bottom-left corner of the page
                 // and the positive y axis extends vertically upward.
                 double x = 100, y = page.CropBox.Top - 100 - formattedText.Height;

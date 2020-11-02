@@ -25,7 +25,7 @@ Module Program
                 For Each page In document.Pages
 
                     ' Make sure the watermark is correctly transformed even if
-                    ' page has custom crop box origin, is rotated, or has custom units.
+                    ' the page has a custom crop box origin, is rotated, or has custom units.
                     Dim transform = page.Transform
                     transform.Invert()
 
@@ -38,22 +38,22 @@ Module Program
                     Dim angle = Math.Atan2(pageSize.Height, pageSize.Width) * 180 / Math.PI
                     transform.Rotate(angle, formattedText.Width / 2, formattedText.Height / 2)
 
-                    ' Calculate bounds of the rotated watermark.
+                    ' Calculate the bounds of the rotated watermark.
                     Dim watermarkBounds = New PdfQuad(New PdfPoint(0, 0),
                         New PdfPoint(formattedText.Width, 0),
                         New PdfPoint(formattedText.Width, formattedText.Height),
                         New PdfPoint(0, formattedText.Height))
                     transform.Transform(watermarkBounds)
 
-                    ' Calculate scaling factor so that rotated watermark fits to the page.
+                    ' Calculate the scaling factor so that rotated watermark fits the page.
                     Dim cropBox = page.CropBox
                     Dim scale = Math.Min(cropBox.Width / (watermarkBounds.Right - watermarkBounds.Left),
                         cropBox.Height / (watermarkBounds.Top - watermarkBounds.Bottom))
 
-                    ' Scale the watermark so that it fits to the page.
+                    ' Scale the watermark so that it fits the page.
                     transform.Scale(scale, scale, formattedText.Width / 2, formattedText.Height / 2)
 
-                    ' Draw centered, rotated, and scaled watermark.
+                    ' Draw the centered, rotated, and scaled watermark.
                     page.Content.DrawText(formattedText, transform)
                 Next
             End Using

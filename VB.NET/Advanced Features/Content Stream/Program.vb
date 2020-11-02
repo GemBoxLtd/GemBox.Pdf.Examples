@@ -21,7 +21,7 @@ Module Program
 
         Using document = New PdfDocument()
 
-            ' Specify content stream's content as a sequence of content stream operands and operators.
+            ' Specify the content stream's content as a sequence of content stream operands and operators.
             Dim content = New StringBuilder()
             ' Begin a text object.
             content.AppendLine("BT")
@@ -35,7 +35,7 @@ Module Program
             ' End the text object.
             content.AppendLine("ET")
 
-            ' Create content stream and write content to it.
+            ' Create a content stream and write content to it.
             Dim contentStream = PdfStream.Create()
             contentStream.Filters.AddFilter(PdfFilterType.FlateDecode)
 
@@ -45,23 +45,23 @@ Module Program
                 stream.Write(contentBytes, 0, contentBytes.Length)
             End Using
 
-            ' Create font dictionary for Standard Type 1 'Helvetica' font.
+            ' Create a font dictionary for Standard Type 1 'Helvetica' font.
             Dim font = PdfDictionary.Create()
             font(PdfName.Create("Type")) = PdfName.Create("Font")
             font(PdfName.Create("Subtype")) = PdfName.Create("Type1")
             font(PdfName.Create("BaseFont")) = PdfName.Create("Helvetica")
 
-            ' Add font dictionary to resources.
+            ' Add a font dictionary to resources.
             Dim fontResources = PdfDictionary.Create()
             fontResources(PdfName.Create("F1")) = PdfIndirectObject.Create(font)
 
             Dim resources = PdfDictionary.Create()
             resources(PdfName.Create("Font")) = fontResources
 
-            ' Create new empty A4 page.
+            ' Create a new empty A4 page.
             Dim page = document.Pages.Add()
 
-            ' Set contents and resources of a page.
+            ' Set the contents and resources of a page.
             Dim pageDictionary = page.GetDictionary()
             pageDictionary(PdfName.Create("Contents")) = PdfIndirectObject.Create(contentStream)
             pageDictionary(PdfName.Create("Resources")) = resources
@@ -77,7 +77,7 @@ Module Program
 
         Using document = New PdfDocument()
 
-            ' Create new empty A4 page.
+            ' Create a new empty A4 page.
             Dim page = document.Pages.Add()
 
             Using formattedText = New PdfFormattedText()

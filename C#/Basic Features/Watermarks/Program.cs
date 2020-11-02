@@ -25,7 +25,7 @@ class Program
                 foreach (var page in document.Pages)
                 {
                     // Make sure the watermark is correctly transformed even if
-                    // page has custom crop box origin, is rotated, or has custom units.
+                    // the page has a custom crop box origin, is rotated, or has custom units.
                     var transform = page.Transform;
                     transform.Invert();
 
@@ -38,22 +38,22 @@ class Program
                     var angle = Math.Atan2(pageSize.Height, pageSize.Width) * 180 / Math.PI;
                     transform.Rotate(angle, formattedText.Width / 2, formattedText.Height / 2);
 
-                    // Calculate bounds of the rotated watermark.
+                    // Calculate the bounds of the rotated watermark.
                     var watermarkBounds = new PdfQuad(new PdfPoint(0, 0),
                         new PdfPoint(formattedText.Width, 0),
                         new PdfPoint(formattedText.Width, formattedText.Height),
                         new PdfPoint(0, formattedText.Height));
                     transform.Transform(ref watermarkBounds);
 
-                    // Calculate scaling factor so that rotated watermark fits to the page.
+                    // Calculate the scaling factor so that rotated watermark fits the page.
                     var cropBox = page.CropBox;
                     var scale = Math.Min(cropBox.Width / (watermarkBounds.Right - watermarkBounds.Left),
                         cropBox.Height / (watermarkBounds.Top - watermarkBounds.Bottom));
 
-                    // Scale the watermark so that it fits to the page.
+                    // Scale the watermark so that it fits the page.
                     transform.Scale(scale, scale, formattedText.Width / 2, formattedText.Height / 2);
 
-                    // Draw centered, rotated, and scaled watermark.
+                    // Draw the centered, rotated, and scaled watermark.
                     page.Content.DrawText(formattedText, transform);
                 }
             }

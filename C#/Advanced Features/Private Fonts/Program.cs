@@ -18,19 +18,19 @@ class Program
                 formattedText.FontSize = 48;
                 formattedText.LineHeight = 72;
 
-                // Use font family 'Almonte Snow' whose font file is located in the 'Resources' directory.
+                // Use the font family 'Almonte Snow' whose font file is located in the 'Resources' directory.
                 formattedText.FontFamily = new PdfFontFamily("Resources", "Almonte Snow");
                 formattedText.AppendLine("Hello World 1!");
 
-                // Use font family 'Almonte Woodgrain' whose font file is located in the 'Resources' location of the current assembly.
+                // Use the font family 'Almonte Woodgrain' whose font file is located in the 'Resources' location of the current assembly.
                 formattedText.FontFamily = new PdfFontFamily(null, "Resources", "Almonte Woodgrain");
                 formattedText.AppendLine("Hello World 2!");
 
-                // Another way to use font family 'Almonte Snow' whose font file is located in the 'Resources' directory.
+                // Another way to use the font family 'Almonte Snow' whose font file is located in the 'Resources' directory.
                 formattedText.FontFamily = PdfFonts.GetFontFamilies("Resources").First(ff => ff.Name == "Almonte Snow");
                 formattedText.AppendLine("Hello World 3!");
 
-                // Another way to use font family 'Almonte Woodgrain' whose font file is located in the 'Resources' location of the current assembly.
+                // Another way to use the font family 'Almonte Woodgrain' whose font file is located in the 'Resources' location of the current assembly.
                 formattedText.FontFamily = PdfFonts.GetFontFamilies(null, "Resources").First(ff => ff.Name == "Almonte Woodgrain");
                 formattedText.Append("Hello World 4!");
 

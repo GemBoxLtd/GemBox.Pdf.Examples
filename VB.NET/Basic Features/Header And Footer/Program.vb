@@ -19,12 +19,12 @@ Module Program
 
                 formattedText.Append(DateTime.Now.ToString(CultureInfo.InvariantCulture))
 
-                ' Add header with the current date and time to all pages.
+                ' Add a header with the current date and time to all pages.
                 For Each page In document.Pages
 
                     ' Set the location of the bottom-left corner of the text.
-                    ' We want top-left corner of the text to be at location (marginLeft, marginTop)
-                    ' from top-left corner of the page.
+                    ' We want the top-left corner of the text to be at location (marginLeft, marginTop)
+                    ' from the top-left corner of the page.
                     ' NOTE: In PDF, location (0, 0) is at the bottom-left corner of the page
                     ' and the positive y axis extends vertically upward.
                     Dim x As Double = marginLeft, y As Double = page.CropBox.Top - marginTop - formattedText.Height
@@ -32,7 +32,7 @@ Module Program
                     page.Content.DrawText(formattedText, New PdfPoint(x, y))
                 Next
 
-                ' Add footer with the current page number to all pages.
+                ' Add a footer with the current page number to all pages.
                 Dim pageCount As Integer = document.Pages.Count, pageNumber As Integer = 0
                 For Each page In document.Pages
 
