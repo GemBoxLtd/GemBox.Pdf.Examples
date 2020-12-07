@@ -31,17 +31,14 @@ This repository contains the source code of GemBox.Pdf example projects for demo
 | Basic Features | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Basic%20Features), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Basic%20Features) |
 | Advanced Features | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Advanced%20Features), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Advanced%20Features) |
 | Interactive Forms | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Interactive%20Forms), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Interactive%20Forms) |
-| WPF | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/WPF), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/WPF) |
 | Security | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Security), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Security) |
-| ASP.NET Core | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/ASP.NET%20Core) |
-| Azure | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Azure), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Azure) |
-| Linux / macOS | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Linux_macOS) |
+| Platforms | [C#](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/C%23/Platforms), [VB.NET](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/tree/master/VB.NET/Platforms) |
 | COM | [PYTHON](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.py), [PHP](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.php), [VBSCRIPT](https://github.com/GemBox-d-o-o/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.vbs) |
 
 ## System Requirement
 
 * .NET Framework 3.5 - 4.8
-* .NET Core 3.0
+* .NET Core 3.1
 * Or platforms that implement .NET Standard 2.0 or higher.
 
 ## Installation
