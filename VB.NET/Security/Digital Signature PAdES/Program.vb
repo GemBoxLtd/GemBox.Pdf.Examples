@@ -6,6 +6,9 @@ Module Program
 
     Sub Main()
 
+        ' If using Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         PAdES_B_B()
 
         PAdES_B_T()
@@ -13,13 +16,10 @@ Module Program
         PAdES_B_LT()
 
         PAdES_B_LTA()
+
     End Sub
 
     Sub PAdES_B_B()
-
-        ' If using Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-
         Using document = PdfDocument.Load("Reading.pdf")
 
             ' Add a visible signature field to the first page of the PDF document.
@@ -51,10 +51,6 @@ Module Program
     End Sub
 
     Sub PAdES_B_T()
-
-        ' If using Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-
         Using document = PdfDocument.Load("Reading.pdf")
 
             ' Add a visible signature field to the first page of the PDF document.
@@ -89,10 +85,6 @@ Module Program
     End Sub
 
     Sub PAdES_B_LT()
-
-        ' If using Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-
         Using document = PdfDocument.Load("Reading.pdf")
 
             ' Add a visible signature field to the first page of the PDF document.
@@ -132,10 +124,6 @@ Module Program
     End Sub
 
     Sub PAdES_B_LTA()
-
-        ' If using Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-
         Using document = PdfDocument.Load("Reading.pdf")
 
             ' Add a visible signature field to the first page of the PDF document.
