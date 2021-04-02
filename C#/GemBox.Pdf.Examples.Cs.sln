@@ -93,6 +93,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreMvc", "Platforms\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCorePages", "Platforms\ASP.NET Core Razor Pages\AspNetCorePages.csproj", "{B3E7F249-E8C5-4FB1-BB91-87614438094E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportImages", "Common Uses\Import Images\ImportImages.csproj", "{29C69FC6-AFF0-40D5-8BC0-FADFA106887E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -247,6 +249,10 @@ Global
 		{B3E7F249-E8C5-4FB1-BB91-87614438094E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3E7F249-E8C5-4FB1-BB91-87614438094E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3E7F249-E8C5-4FB1-BB91-87614438094E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C69FC6-AFF0-40D5-8BC0-FADFA106887E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C69FC6-AFF0-40D5-8BC0-FADFA106887E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C69FC6-AFF0-40D5-8BC0-FADFA106887E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C69FC6-AFF0-40D5-8BC0-FADFA106887E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -290,6 +296,7 @@ Global
 		{D7FEBAC3-93D2-40AD-8B78-ADEE6F6F9BB0} = {7224217B-0E9E-452D-990F-38FA26BE11DB}
 		{961F63CD-95F5-4443-8F1B-E55D0C6B1B3F} = {7224217B-0E9E-452D-990F-38FA26BE11DB}
 		{B3E7F249-E8C5-4FB1-BB91-87614438094E} = {7224217B-0E9E-452D-990F-38FA26BE11DB}
+		{29C69FC6-AFF0-40D5-8BC0-FADFA106887E} = {316EDE20-49B0-4646-8E82-C0EE9A003783}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89CC6B70-A1B6-4016-8C49-E65919DC4022}

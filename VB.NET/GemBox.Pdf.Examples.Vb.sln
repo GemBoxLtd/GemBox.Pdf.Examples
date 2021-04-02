@@ -87,6 +87,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WpfExportToImageSource", "P
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WpfExportToXpsDocument", "Platforms\Export to XpsDocument in WPF\WpfExportToXpsDocument.vbproj", "{0DA29309-80A1-4E61-9B15-2889C1A5D103}"
 EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ImportImages", "Common Uses\Import Images\ImportImages.vbproj", "{B6905D23-9B62-462B-895B-1753403DF360}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -229,6 +231,10 @@ Global
 		{0DA29309-80A1-4E61-9B15-2889C1A5D103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DA29309-80A1-4E61-9B15-2889C1A5D103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DA29309-80A1-4E61-9B15-2889C1A5D103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6905D23-9B62-462B-895B-1753403DF360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6905D23-9B62-462B-895B-1753403DF360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6905D23-9B62-462B-895B-1753403DF360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6905D23-9B62-462B-895B-1753403DF360}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -269,6 +275,7 @@ Global
 		{9BF6013C-B363-4BEE-9843-D7F361D5B520} = {8D2FFB09-BD4F-4C1C-8D63-162421A37170}
 		{69239C02-27DE-4961-87E4-711F7CABAF93} = {8D2FFB09-BD4F-4C1C-8D63-162421A37170}
 		{0DA29309-80A1-4E61-9B15-2889C1A5D103} = {8D2FFB09-BD4F-4C1C-8D63-162421A37170}
+		{B6905D23-9B62-462B-895B-1753403DF360} = {89944B14-65AA-486C-8C7E-D43FAB0F7ACE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {33FF006A-4B43-4646-8575-EA8A59A8B43D}

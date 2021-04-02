@@ -6,6 +6,13 @@ Module Program
 
     Sub Main()
 
+        Example1()
+
+        Example2()
+    End Sub
+
+    Sub Example1()
+
         ' If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
         AddHandler ComponentInfo.FreeLimitReached, Sub(sender, e) e.FreeLimitReachedAction = FreeLimitReachedAction.Stop
@@ -59,6 +66,42 @@ Module Program
             End Using
 
             document.Save("Watermarks.pdf")
+        End Using
+    End Sub
+
+    Sub Example2()
+
+        ' If using Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
+        Using document = PdfDocument.Load("LoremIpsum.pdf")
+
+            ' Load the image from a file.
+            Dim image = PdfImage.Load("WatermarkImage.png")
+
+            For Each page In document.Pages
+
+                ' Make sure the watermark is correctly transformed even if
+                ' the page has a custom crop box origin, is rotated, or has custom units.
+                Dim transform = page.Transform
+                transform.Invert()
+
+                ' Center the watermark on the page.
+                Dim pageSize = page.Size
+                transform.Translate((pageSize.Width - 1) / 2, (pageSize.Height - 1) / 2)
+
+                ' Calculate the scaling factor so that the watermark fits the page.
+                Dim cropBox = page.CropBox
+                Dim scale = Math.Min(cropBox.Width, cropBox.Height)
+
+                ' Scale the watermark so that it fits the page.
+                transform.Scale(scale, scale, 0.5, 0.5)
+
+                ' Draw the centered and scaled watermark.
+                page.Content.DrawImage(image, transform)
+            Next
+
+            document.Save("Watermark Images.pdf")
         End Using
     End Sub
 End Module
