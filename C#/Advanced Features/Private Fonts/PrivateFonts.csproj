@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <Resource Condition=" '$(TargetFramework)' == 'net48' " Include="Resources\almonte woodgrain.ttf" />
-    <EmbeddedResource Condition=" '$(TargetFramework)' == 'netcoreapp2.2' " Include="Resources\almonte woodgrain.ttf" />
+    <EmbeddedResource Condition=" '$(TargetFramework)' == 'netcoreapp3.1' " Include="Resources\almonte woodgrain.ttf" />
   </ItemGroup>
 
 </Project>

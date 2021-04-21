@@ -7,10 +7,15 @@
 
   <ItemGroup>
     <PackageReference Include="GemBox.Pdf" Version="*" />
+    <Reference Include="System.IO.Compression" Condition=" '$(TargetFramework)' == 'net48' " />
+    <PackageReference Include="System.IO.Compression" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp3.1' " />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="Corner.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ExportImages.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="FragonardReader.jpg">

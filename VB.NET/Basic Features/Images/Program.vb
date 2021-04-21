@@ -7,9 +7,30 @@ Module Program
         Example1()
 
         Example2()
+
+        Example3()
     End Sub
 
     Sub Example1()
+        ' If using Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
+        Using document = PdfDocument.Load("ExportImages.pdf")
+            ' Iterate through PDF pages and through each page's content elements.
+            For Each page In document.Pages
+                For Each contentElement In page.Content.Elements.All()
+                    If contentElement.ElementType = PdfContentElementType.Image Then
+                        ' Export an image content element to selected image format.
+                        Dim imageContent = CType(contentElement, PdfImageContent)
+                        imageContent.Save("ExportImages.jpg")
+                        Return
+                    End If
+                Next
+            Next
+        End Using
+    End Sub
+
+    Sub Example2()
 
         ' If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
@@ -36,7 +57,7 @@ Module Program
         End Using
     End Sub
 
-    Sub Example2()
+    Sub Example3()
 
         ' If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")

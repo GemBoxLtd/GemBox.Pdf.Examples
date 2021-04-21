@@ -1,16 +1,34 @@
-﻿using GemBox.Pdf;
+using GemBox.Pdf;
 using GemBox.Pdf.Content;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Example1();
-
         Example2();
+
+        Example3();
     }
 
     static void Example1()
+    {
+        // If using Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
+        using (var document = PdfDocument.Load("ExportImages.pdf"))
+            // Iterate through PDF pages and through each page's content elements.
+            foreach (var page in document.Pages)
+                foreach (var contentElement in page.Content.Elements.All())
+                    if (contentElement.ElementType == PdfContentElementType.Image)
+                    {
+                        // Export an image content element to selected image format.
+                        var imageContent = (PdfImageContent)contentElement;
+                        imageContent.Save("ExportImages.jpg");
+                        return;
+                    }
+    }
+
+    static void Example2()
     {
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -37,7 +55,7 @@ class Program
         }
     }
 
-    static void Example2()
+    static void Example3()
     {
         // If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
