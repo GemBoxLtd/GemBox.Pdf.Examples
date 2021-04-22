@@ -95,6 +95,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Images", "Basic Features\Im
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Paths", "Basic Features\Paths\Paths.csproj", "{3B91BFD1-E1DB-41D7-A529-57CA25148936}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentFormatting", "Basic Features\Content Formatting\ContentFormatting.csproj", "{69713B01-3213-4699-B698-61694A49029E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -253,6 +255,10 @@ Global
 		{3B91BFD1-E1DB-41D7-A529-57CA25148936}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B91BFD1-E1DB-41D7-A529-57CA25148936}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B91BFD1-E1DB-41D7-A529-57CA25148936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69713B01-3213-4699-B698-61694A49029E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69713B01-3213-4699-B698-61694A49029E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69713B01-3213-4699-B698-61694A49029E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69713B01-3213-4699-B698-61694A49029E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -297,6 +303,7 @@ Global
 		{511B5938-296B-472E-AD42-448208D48B66} = {A0163421-F1BA-49BB-9866-E42C031272D7}
 		{F50C1D15-D40C-4F23-9557-FC71EC5CF98D} = {4D9FBC3C-EE12-457F-A49D-83A02BD6E5DC}
 		{3B91BFD1-E1DB-41D7-A529-57CA25148936} = {4D9FBC3C-EE12-457F-A49D-83A02BD6E5DC}
+		{69713B01-3213-4699-B698-61694A49029E} = {4D9FBC3C-EE12-457F-A49D-83A02BD6E5DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89CC6B70-A1B6-4016-8C49-E65919DC4022}
