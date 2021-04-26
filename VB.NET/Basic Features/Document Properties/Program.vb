@@ -9,16 +9,16 @@ Module Program
 
         Using document = PdfDocument.Load("LoremIpsum.pdf")
 
-            ' Get document information.
+            ' Get document properties.
             Dim info = document.Info
 
-            ' Modify document information.
-            info.Title = "Document Information Example"
+            ' Modify document properties.
+            info.Title = "Document Properties Example"
             info.Author = "GemBox.Pdf"
             info.Subject = "Introduction to GemBox.Pdf"
             info.Keywords = "GemBox, Pdf, Examples"
 
-            document.Save("Document Information.pdf")
+            document.Save("Document Properties.pdf")
         End Using
     End Sub
 End Module

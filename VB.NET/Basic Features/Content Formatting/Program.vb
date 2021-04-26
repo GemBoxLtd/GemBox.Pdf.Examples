@@ -419,7 +419,7 @@ Module Program
             functionDictionary(PdfName.Create("N")) = PdfNumber.Create(1)
             ' Red color transitions from 1 (C0[0]) to 0 (C1[0]).
             ' Green color transitions from 0 (C0[1]) to 1 (C1[1]).
-            ' Blue color is always 0 (C0[2] and C1[2] is 0).
+            ' Blue color is always 0 (C0[2] and C1[2] are 0).
             functionDictionary(PdfName.Create("C0")) = PdfArray.Create(PdfNumber.Create(1), PdfNumber.Create(0), PdfNumber.Create(0))
             functionDictionary(PdfName.Create("C1")) = PdfArray.Create(PdfNumber.Create(0), PdfNumber.Create(1), PdfNumber.Create(0))
             shadingDictionary(PdfName.Create("Function")) = functionDictionary

@@ -13,9 +13,9 @@ class Program
         {
             var page = document.Pages.Add();
 
-            var markStart = page.Content.Elements.AddMarkStart(new PdfContentMarkTag(PdfContentMarkTagRole.Span));
-
             // Surround the path with marked content start and marked content end elements.
+            var markStart = page.Content.Elements.AddMarkStart(new PdfContentMarkTag(PdfContentMarkTagRole.Span));
+            
             var markedProperties = markStart.GetEditableProperties().GetDictionary();
 
             // Set replacement text for a path, as specified in http://www.adobe.com/content/dam/acom/en/devnet/pdf/PDF32000_2008.pdf#page=623
