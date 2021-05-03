@@ -12,7 +12,7 @@ Module Program
 
             Using formattedText = New PdfFormattedText()
 
-                ' Set font to TrueType font that will be subset and embedded in the document.
+                ' Set the font to TrueType font that will be subset and embedded in the document.
                 formattedText.Font = New PdfFont("Calibri", 96)
 
                 ' Draw a single letter on each page.
@@ -32,7 +32,7 @@ Module Program
             End Using
 
             ' End editing of all pages.
-            ' This will convert back the content of each page to the underlying content stream and the accompanying resource dictionary.
+            ' This will convert the content of each page back to the underlying content stream and the accompanying resource dictionary.
             ' Subset of the 'Calibri' font, that contains only glyphs for characters 'A' to 'B' will be calculated just once before being
             ' embedded in the document.
             For Each page In document.Pages

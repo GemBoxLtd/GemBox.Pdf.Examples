@@ -12,14 +12,14 @@ Module Program
 
             Dim page = document.Pages.Add()
 
-            ' Add a rectangle with green fill whose bottom-left corner is at location (100, 450) from the bottom-left corner of the page.
+            ' Add a rectangle with a green fill whose bottom-left corner is at location (100, 450) from the bottom-left corner of the page.
             Dim path = page.Content.Elements.AddPath()
             path.AddRectangle(100, 450, 200, 100)
             Dim format = path.Format
             format.Fill.IsApplied = True
             format.Fill.Color = PdfColors.Green
 
-            ' Add an outer group whose bottom-left corner is at the same location as page's bottom-left corner.
+            ' Add an outer group whose bottom-left corner is at the same location as the page's bottom-left corner.
             Dim outerGroup = page.Content.Elements.AddGroup()
             ' Add an inner group whose bottom-left corner is at location (100, 250) from the bottom-left corner of the outer group/page.
             Dim innerGroup = outerGroup.Elements.AddGroup()
@@ -36,15 +36,15 @@ Module Program
             format.Stroke.Width = 2
             format.Stroke.DashPattern = PdfLineDashPatterns.Dash
 
-            ' Add a rectangle with red fill that gets clipped by the previous rectangle, thus making it a square.
-            ' The bottom-left corner is at the same location as inner group's bottom-left corner.
+            ' Add a rectangle with a red fill that gets clipped by the previous rectangle, thus making it a square.
+            ' The bottom-left corner is at the same location as the inner group's bottom-left corner.
             Dim clippedPath = innerGroup.Elements.AddPath()
             clippedPath.AddRectangle(0, 0, 200, 100)
             format = clippedPath.Format
             format.Fill.IsApplied = True
             format.Fill.Color = PdfColors.Red
 
-            ' Add the same rectangle as the first one and move it to the bottom by 400 points.
+            ' Add the same rectangle as the first one and move it down by 400 points.
             path = page.Content.Elements.AddClone(path)
             path.Subpaths.Transform(PdfMatrix.CreateTranslation(0, -400))
 

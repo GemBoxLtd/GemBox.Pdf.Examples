@@ -13,7 +13,7 @@ Module Program
 
             Dim page = document.Pages.Add()
 
-            ' Surround the path with marked content start and marked content end elements.
+            ' Surround the path with the marked content start and marked content end elements.
             Dim markStart = page.Content.Elements.AddMarkStart(New PdfContentMarkTag(PdfContentMarkTagRole.Span))
 
             Dim markedProperties = markStart.GetEditableProperties().GetDictionary()
@@ -21,7 +21,7 @@ Module Program
             ' Set replacement text for a path, as specified in http://www.adobe.com/content/dam/acom/en/devnet/pdf/PDF32000_2008.pdf#page=623
             markedProperties(PdfName.Create("ActualText")) = PdfString.Create("H")
 
-            ' Add the path that is a visual representation of a letter 'H'.
+            ' Add the path that is a visual representation of the letter 'H'.
             Dim path = page.Content.Elements.AddPath()
             path.
                 BeginSubpath(100, 600).LineTo(100, 800).
