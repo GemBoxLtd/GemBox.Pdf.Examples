@@ -1,5 +1,7 @@
 # GemBox.Pdf
 
+[![NuGet version](https://img.shields.io/nuget/v/GemBox.Pdf?style=for-the-badge)](https://www.nuget.org/packages/GemBox.Pdf/) [![NuGet downloads](https://img.shields.io/nuget/dt/GemBox.Pdf?style=for-the-badge)](https://www.nuget.org/packages/GemBox.Pdf/) [![Visual Studio Marketplace rating](https://img.shields.io/visual-studio-marketplace/stars/GemBoxSoftware.GemBoxPdf?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=GemBoxSoftware.GemBoxPdf)
+
 <img src="https://www.gemboxsoftware.com/images/NugetGba.png" alt="GemBox.Pdf logo" align="left" />
 
 GemBox.Pdf is a .NET component which enables developers to read, write, convert and print PDF files from .NET applications in a simple and efficient way.
@@ -43,17 +45,15 @@ This repository contains the source code of GemBox.Pdf example projects for demo
 
 ## Installation
 
-You can download GemBox.Pdf from [BugFixes](https://www.gemboxsoftware.com/pdf/downloads/bugfixes.html) 🛠️
+You can download GemBox.Pdf from [BugFixes 🛠️](https://www.gemboxsoftware.com/pdf/downloads/bugfixes.html) or from [NuGet 📦](https://www.nuget.org/packages/GemBox.Pdf/).
 
-Or from [NuGet](https://www.nuget.org/packages/GemBox.Pdf/) 📦
+## Support
 
-## Resources
-
-* [Overview](https://www.gemboxsoftware.com/pdf)
-* [Documentation](https://www.gemboxsoftware.com/pdf/docs/introduction.html)
-* [Support](https://www.gemboxsoftware.com/pdf/support)
+* [Contact Us](https://support.gemboxsoftware.com/new-ticket?ticket%5Bdepartment%5D=1&ticket%5Bproduct%5D=6)
+* [Forum](https://forum.gemboxsoftware.com/c/gembox-pdf/7)
 * [Blog](https://www.gemboxsoftware.com/gembox-pdf)
+* [API Reference](https://www.gemboxsoftware.com/pdf/docs/introduction.html)
 
 ## License
 
-You can download GemBox.Pdf's license agreement from [EULA.rtf](https://www.gemboxsoftware.com/EULA.rtf) 📝
+You can download GemBox.Pdf's license agreement from [EULA.rtf 📝](https://www.gemboxsoftware.com/EULA.rtf).
