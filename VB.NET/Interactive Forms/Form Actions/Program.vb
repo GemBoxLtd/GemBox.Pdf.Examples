@@ -1,4 +1,6 @@
 ﻿Imports GemBox.Pdf
+Imports GemBox.Pdf.Annotations
+Imports GemBox.Pdf.Content
 Imports GemBox.Pdf.Forms
 
 Module Program
@@ -10,25 +12,43 @@ Module Program
 
         Using document = PdfDocument.Load("Form.pdf")
 
-            ' Get a button field.
-            Dim submitButtonField = CType(document.Form.Fields("Submit"), PdfButtonField)
-
-            ' Create "submit form" field action.
-            Dim submitFormAction = submitButtonField.Actions.AddSubmitForm("https://www.gemboxsoftware.com/")
-            ' Set XFDF (XML Forms Data Format) as form data export format.
-            submitFormAction.ExportFormat = PdfFormDataFormat.XFDF
-            ' Submit all form fields.
-            submitFormAction.SelectedFields.All = True
-
-            ' Get a button field.
-            Dim resetButtonField = CType(document.Form.Fields("Reset"), PdfButtonField)
-
-            ' Create "reset form" field action.
-            Dim resetFormAction = resetButtonField.Actions.AddResetForm()
-            ' Reset "Gender" and "Age" fields.
+            ' Update action and label of a 'ResetButton' field so that only 'Notes' field is reset.
+            Dim resetButtonField = CType(document.Form.Fields("ResetButton"), PdfButtonField)
+            Dim resetFormAction = CType(resetButtonField.Actions(0), PdfResetFormAction)
             resetFormAction.SelectedFields.Excluded = False
-            resetFormAction.SelectedFields.Add("Gender")
-            resetFormAction.SelectedFields.Add("Age")
+            resetFormAction.SelectedFields.Add("Notes")
+            resetButtonField.Appearance.Label = "Reset Notes"
+
+            Dim bounds = resetButtonField.Bounds
+
+            ' Add 'ImportButton' field with label and icon that imports field values from the FDF (Forms Data Format) file.
+            Dim importButtonField = document.Form.Fields.AddButton(document.Pages(0), bounds.Left, bounds.Bottom - 80, 150, 60)
+            importButtonField.Name = "ImportButton"
+            importButtonField.Actions.AddImportFormData("FormData.fdf")
+            Dim appearance = importButtonField.Appearance
+            appearance.LabelPlacement = PdfTextPlacement.TextAboveIcon
+            appearance.Label = "Import Data"
+            Dim icon = New PdfForm(document, New PdfSize(128, 128))
+            icon.Content.BeginEdit()
+            icon.Content.DrawImage(PdfImage.Load("import.png"), New PdfPoint(0, 0), New PdfSize(128, 128))
+            icon.Content.EndEdit()
+            appearance.Icon = icon
+
+            bounds = importButtonField.Bounds
+
+            ' Add 'SubmitButton' field with icon that submits all field values to the URL in XFDF (XML Forms Data Format) format.
+            Dim submitButtonField = document.Form.Fields.AddButton(document.Pages(0), bounds.Left, bounds.Bottom - 60, 150, 40)
+            submitButtonField.Name = "SubmitButton"
+            Dim submitFormAction = submitButtonField.Actions.AddSubmitForm("https://www.gemboxsoftware.com/")
+            submitFormAction.ExportFormat = PdfFormDataFormat.XFDF
+            submitFormAction.SelectedFields.All = True
+            appearance = submitButtonField.Appearance
+            appearance.LabelPlacement = PdfTextPlacement.IconOnly
+            icon = New PdfForm(document, New PdfSize(128, 128))
+            icon.Content.BeginEdit()
+            icon.Content.DrawImage(PdfImage.Load("submit.png"), New PdfPoint(0, 0), New PdfSize(128, 128))
+            icon.Content.EndEdit()
+            appearance.Icon = icon
 
             document.Save("Form Actions.pdf")
         End Using

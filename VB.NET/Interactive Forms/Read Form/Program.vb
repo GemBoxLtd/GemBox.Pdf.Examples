@@ -95,6 +95,9 @@ Module Program
 
 
                         Case Else
+                            ' Text field may contain multiple lines of text, if enabled.
+                            If widgetField.FieldType = PdfFieldType.Text AndAlso (CType(widgetField, PdfTextField)).MultiLine AndAlso fieldValue IsNot Nothing Then fieldValue = (CStr(fieldValue)).Replace(vbCr, "\r")
+
                             fieldExportValueOrChoice = Nothing
                             fieldCheckedOrSelected = Nothing
 

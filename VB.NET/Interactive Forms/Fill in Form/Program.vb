@@ -1,6 +1,4 @@
-﻿Imports System.Linq
-Imports GemBox.Pdf
-Imports GemBox.Pdf.Forms
+﻿Imports GemBox.Pdf
 
 Module Program
 
@@ -11,28 +9,15 @@ Module Program
 
         Using document = PdfDocument.Load("Form.pdf")
 
-            ' Set check box field checked state.
-            Dim marriedCheckBox = CType(document.Form.Fields("Married"), PdfCheckBoxField)
-            marriedCheckBox.Checked = True
+            document.Form.Fields("FullName").Value = "Jane Doe"
+            document.Form.Fields("ID").Value = "0123456789"
+            document.Form.Fields("Gender").Value = "Female"
+            document.Form.Fields("Married").Value = "Yes"
+            document.Form.Fields("City").Value = "Berlin"
+            document.Form.Fields("Language").Value = New String() {"German", "Italian"}
+            document.Form.Fields("Notes").Value = "Notes first line" & vbCr & "Notes second line" & vbCr & "Notes third line"
 
-            ' Set check box field value.
-            Dim drivingLicenseCheckBox = CType(document.Form.Fields("Driving License"), PdfCheckBoxField)
-            drivingLicenseCheckBox.Value = "Yes"
-
-            ' Set radio button field checked state.
-            ' There are multiple radio button fields with name 'Gender' so
-            ' set checked state only to the radio button field whose choice is 'Male'.
-            For Each genderRadioButton As PdfRadioButtonField In document.Form.Fields.Where(Function(field) field.Name = "Gender")
-                genderRadioButton.Checked = genderRadioButton.Choice = "Male"
-            Next
-
-            ' Set radio button field value.
-            ' It is enough to set value to only one radio button field 
-            ' from a group of radio button fields with name 'Age'.
-            Dim ageRadioButton = CType(document.Form.Fields("Age"), PdfRadioButtonField)
-            ageRadioButton.Value = "18 - 39"
-
-            document.Save("Fill in Form.pdf")
+            document.Save("FormFilled.pdf")
         End Using
     End Sub
 End Module

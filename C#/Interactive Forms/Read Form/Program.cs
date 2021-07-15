@@ -95,6 +95,10 @@ class Program
                             break;
 
                         default:
+                            // Text field may contain multiple lines of text, if enabled.
+                            if (widgetField.FieldType == PdfFieldType.Text && ((PdfTextField)widgetField).MultiLine && fieldValue != null)
+                                fieldValue = ((string)fieldValue).Replace("\r", "\\r");
+                            
                             fieldExportValueOrChoice = null;
                             fieldCheckedOrSelected = null;
 
