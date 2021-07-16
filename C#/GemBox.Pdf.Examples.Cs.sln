@@ -105,6 +105,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentStreamsAndResources"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateForm", "Interactive Forms\Create Form\CreateForm.csproj", "{70B1B2B9-925F-4B15-956F-6032F201283B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hyperlinks", "Basic Features\Hyperlinks\Hyperlinks.csproj", "{7EDEA9EE-DF09-4215-852A-3FB3C2155A9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -283,6 +285,10 @@ Global
 		{70B1B2B9-925F-4B15-956F-6032F201283B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70B1B2B9-925F-4B15-956F-6032F201283B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70B1B2B9-925F-4B15-956F-6032F201283B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EDEA9EE-DF09-4215-852A-3FB3C2155A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EDEA9EE-DF09-4215-852A-3FB3C2155A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EDEA9EE-DF09-4215-852A-3FB3C2155A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EDEA9EE-DF09-4215-852A-3FB3C2155A9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -332,6 +338,7 @@ Global
 		{F3E72BCD-ACD8-4B6F-96AD-E9D97BAB2777} = {4D9FBC3C-EE12-457F-A49D-83A02BD6E5DC}
 		{9FA1F863-E8AB-4259-8793-6944DD46C310} = {A0163421-F1BA-49BB-9866-E42C031272D7}
 		{70B1B2B9-925F-4B15-956F-6032F201283B} = {8BE9C17D-5FCF-4739-97C0-E5EAF8CEDFCE}
+		{7EDEA9EE-DF09-4215-852A-3FB3C2155A9C} = {4D9FBC3C-EE12-457F-A49D-83A02BD6E5DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89CC6B70-A1B6-4016-8C49-E65919DC4022}

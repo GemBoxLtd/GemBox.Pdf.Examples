@@ -1,5 +1,6 @@
 Imports System.Linq
 Imports GemBox.Pdf
+Imports GemBox.Pdf.Annotations
 Imports GemBox.Pdf.Content
 Imports GemBox.Pdf.Forms
 Imports GemBox.Pdf.Security
@@ -56,21 +57,31 @@ Module Program
         Using document = PdfDocument.Load("Reading.pdf")
 
             ' Add a visible signature field to the first page of the PDF document.
-            Dim signatureField = document.Form.Fields.AddSignature(document.Pages(0), 300, 500, 250, 50)
+            Dim signatureField = document.Form.Fields.AddSignature(document.Pages(0), 300, 500, 250, 100)
 
             ' Retrieve signature appearance settings to customize it.
             Dim signatureAppearance = signatureField.Appearance
 
-            ' Set font family.
-            signatureAppearance.FontFamily = New PdfFontFamily("Times New Roman")
+            ' Signature appearance will consist of a text above an image.
+            signatureAppearance.TextPlacement = PdfTextPlacement.TextAboveIcon
+            ' Text should occupy 40% of the annotation rectangle height. The rest will be occupied by the image.
+            signatureAppearance.TextExtent = 0.4
+            ' Text should be right aligned.
+            signatureAppearance.TextAlignment = PdfTextAlignment.Right
+            ' Set font. A zero value for font size means that the text is auto-sized to fit the annotation rectangle.
+            signatureAppearance.Font = New PdfFont("Times New Roman", 0)
             ' Show 'Reason' label and value.
             signatureAppearance.Reason = "Legal agreement between the seller and the buyer about the purchase"
             ' Show 'Location' label and value.
             signatureAppearance.Location = "New York, USA"
             ' Do not show 'Date' label nor value.
             signatureAppearance.DateFormat = String.Empty
-            ' Shrink text if it overflows signature field's annotation rectangle.
-            signatureAppearance.ShrinkTextOnOverflow = True
+            ' Set signature image.
+            signatureAppearance.Icon = PdfImage.Load("GemBoxSignature.png")
+            ' Signature image should be scaled only if it is too big to fit.
+            signatureAppearance.IconScaleCondition = PdfScaleCondition.ContentTooBig
+            ' Signature image should dock to the bottom (y = 0) right (x = 1) corner.
+            signatureAppearance.IconAlignment = New PdfPoint(1, 0)
 
             ' Get a digital ID from PKCS#12/PFX file.
             Dim digitalId = New PdfDigitalId("GemBoxRSA1024.pfx", "GemBoxPassword")
