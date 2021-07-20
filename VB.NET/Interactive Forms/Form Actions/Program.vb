@@ -7,12 +7,12 @@ Module Program
 
     Sub Main()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = PdfDocument.Load("Form.pdf")
 
-            ' Update action and label of a 'ResetButton' field so that only 'Notes' field is reset.
+            ' Update the action and label of the 'ResetButton' field so that only the 'Notes' field is reset.
             Dim resetButtonField = CType(document.Form.Fields("ResetButton"), PdfButtonField)
             Dim resetFormAction = CType(resetButtonField.Actions(0), PdfResetFormAction)
             resetFormAction.SelectedFields.Excluded = False
@@ -21,7 +21,7 @@ Module Program
 
             Dim bounds = resetButtonField.Bounds
 
-            ' Add 'ImportButton' field with label and icon that imports field values from the FDF (Forms Data Format) file.
+            ' Add an 'ImportButton' field with a label and icon that imports field values from the FDF (Forms Data Format) file.
             Dim importButtonField = document.Form.Fields.AddButton(document.Pages(0), bounds.Left, bounds.Bottom - 80, 150, 60)
             importButtonField.Name = "ImportButton"
             importButtonField.Actions.AddImportFormData("FormData.fdf")
@@ -36,7 +36,7 @@ Module Program
 
             bounds = importButtonField.Bounds
 
-            ' Add 'SubmitButton' field with icon that submits all field values to the URL in XFDF (XML Forms Data Format) format.
+            ' Add a 'SubmitButton' field with an icon that submits all field values to the URL in XFDF (XML Forms Data Format) format.
             Dim submitButtonField = document.Form.Fields.AddButton(document.Pages(0), bounds.Left, bounds.Bottom - 60, 150, 40)
             submitButtonField.Name = "SubmitButton"
             Dim submitFormAction = submitButtonField.Actions.AddSubmitForm("https://www.gemboxsoftware.com/")

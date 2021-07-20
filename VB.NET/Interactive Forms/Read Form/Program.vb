@@ -9,13 +9,13 @@ Module Program
 
     Sub Main()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Dim writer = New StringWriter(CultureInfo.InvariantCulture)
         Dim format As String = "{0,-16}|{1,20}|{2,-20}|{3,-20}|{4,-20}", separator As String = New String("-"c, 100)
 
-        ' Write header.
+        ' Write the header.
         writer.WriteLine("Document contains the following form fields:")
         writer.WriteLine()
         writer.WriteLine(format,

@@ -5,7 +5,7 @@ class Program
 {
     static void Main()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = new PdfDocument())
@@ -29,7 +29,7 @@ class Program
                 origin = new PdfPoint((pageWidth - image.Size.Width) / 2, y);
                 page.Content.DrawImage(image, origin);
 
-                // Add link annotation over the drawn image that opens a website.
+                // Add a link annotation over the drawn image that opens a website.
                 var link = page.Annotations.AddLink(origin.X, origin.Y, image.Size.Width, image.Size.Height);
                 link.Actions.AddOpenWebLink("https://www.gemboxsoftware.com/");
 
@@ -39,7 +39,7 @@ class Program
                 origin = new PdfPoint((pageWidth - formattedText.Width) / 2, y);
                 page.Content.DrawText(formattedText, origin);
 
-                // Add link annotation over the drawn text that opens a file.
+                // Add a link annotation over the drawn text that opens a file.
                 link = page.Annotations.AddLink(origin.X, origin.Y, formattedText.Width, formattedText.Height);
                 link.Actions.AddOpenFile("Reading.pdf");
 
@@ -49,7 +49,7 @@ class Program
                 origin = new PdfPoint((pageWidth - formattedText.Width) / 2, y);
                 page.Content.DrawText(formattedText, origin);
 
-                // Add link annotation over the drawn text that goes to the second page.
+                // Add a link annotation over the drawn text that goes to the second page.
                 link = page.Annotations.AddLink(origin.X, origin.Y, formattedText.Width, formattedText.Height);
                 link.Actions.AddGoToPageView(secondPage, PdfDestinationViewType.FitPage);
 

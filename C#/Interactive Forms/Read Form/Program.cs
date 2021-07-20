@@ -9,13 +9,13 @@ class Program
 {
     static void Main()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         var writer = new StringWriter(CultureInfo.InvariantCulture);
         string format = "{0,-16}|{1,20}|{2,-20}|{3,-20}|{4,-20}", separator = new string('-', 100);
 
-        // Write header.
+        // Write the header.
         writer.WriteLine("Document contains the following form fields:");
         writer.WriteLine();
         writer.WriteLine(format,
@@ -87,7 +87,7 @@ class Program
                                 fieldExportValueOrChoice,
                                 fieldCheckedOrSelected);
 
-                                // Write field type, field name and field value just once for a field group.
+                                // Write the field type, field name, and field value just once for a field group.
                                 fieldType = null;
                                 fieldName = null;
                                 fieldValue = null;
@@ -111,7 +111,7 @@ class Program
                             break;
                     }
 
-                    // Write field type, field name and field value just once for a field group.
+                    // Write the field type, field name, and field value just once for a field group.
                     fieldType = null;
                     fieldName = null;
                     fieldValue = null;

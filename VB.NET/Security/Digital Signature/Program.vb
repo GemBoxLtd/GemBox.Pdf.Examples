@@ -51,7 +51,7 @@ Module Program
 
     Sub VisibleSignature()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = PdfDocument.Load("Reading.pdf")
@@ -59,7 +59,7 @@ Module Program
             ' Add a visible signature field to the first page of the PDF document.
             Dim signatureField = document.Form.Fields.AddSignature(document.Pages(0), 300, 500, 250, 100)
 
-            ' Retrieve signature appearance settings to customize it.
+            ' Retrieve the signature's appearance settings to customize it.
             Dim signatureAppearance = signatureField.Appearance
 
             ' Signature appearance will consist of a text above an image.
@@ -70,17 +70,17 @@ Module Program
             signatureAppearance.TextAlignment = PdfTextAlignment.Right
             ' Set font. A zero value for font size means that the text is auto-sized to fit the annotation rectangle.
             signatureAppearance.Font = New PdfFont("Times New Roman", 0)
-            ' Show 'Reason' label and value.
+            ' Show a 'Reason' label and value.
             signatureAppearance.Reason = "Legal agreement between the seller and the buyer about the purchase"
-            ' Show 'Location' label and value.
+            ' Show a 'Location' label and value.
             signatureAppearance.Location = "New York, USA"
-            ' Do not show 'Date' label nor value.
+            ' Do not show a 'Date' label nor value.
             signatureAppearance.DateFormat = String.Empty
-            ' Set signature image.
+            ' Set the signature image.
             signatureAppearance.Icon = PdfImage.Load("GemBoxSignature.png")
-            ' Signature image should be scaled only if it is too big to fit.
+            ' The signature image should be scaled only if it is too big to fit.
             signatureAppearance.IconScaleCondition = PdfScaleCondition.ContentTooBig
-            ' Signature image should dock to the bottom (y = 0) right (x = 1) corner.
+            ' The signature image should dock to the bottom (y = 0) right (x = 1) corner.
             signatureAppearance.IconAlignment = New PdfPoint(1, 0)
 
             ' Get a digital ID from PKCS#12/PFX file.
@@ -89,8 +89,8 @@ Module Program
             ' Create a PDF signer that will create the digital signature.
             Dim signer = New PdfSigner(digitalId)
 
-            ' Adobe Acrobat Reader currently doesn't download certificate chain
-            ' so we will also embed certificate of intermediate Certificate Authority in the signature.
+            ' Adobe Acrobat Reader currently doesn't download the certificate chain
+            ' so we will also embed a certificate of intermediate Certificate Authority in the signature.
             ' (see https://community.adobe.com/t5/acrobat/signature-validation-using-aia-extension-not-enabled-by-default/td-p/10729647)
             signer.ValidationInfo = New PdfSignatureValidationInfo(New PdfCertificate() {New PdfCertificate("GemBoxRSA.crt")}, Nothing, Nothing)
 
