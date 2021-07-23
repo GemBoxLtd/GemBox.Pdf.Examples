@@ -23,6 +23,7 @@ This repository contains the source code of GemBox.Pdf example projects for demo
 * [Export images from PDF files in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-export-images-from-pdf/206)
 * [PDF digital signatures in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-digital-signature/1102)
 * [PDF Encryption in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-encryption/1101)
+* [Optical character recognition (OCR) in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/ocr-optical-character-recognition/408)
 
 ## Examples
 
