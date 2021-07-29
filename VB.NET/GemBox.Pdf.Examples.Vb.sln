@@ -103,6 +103,8 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Hyperlinks", "Basic Feature
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FlattenForm", "Interactive Forms\Flatten Form\FlattenForm.vbproj", "{FDB19590-8CB1-4734-AE4F-754A932B999E}"
 EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "OpticalCharacterRecognition", "Advanced Features\Optical Character Recognition\OpticalCharacterRecognition.vbproj", "{0127A2EA-83FF-409D-8352-ABC09A7A933C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -277,6 +279,10 @@ Global
 		{FDB19590-8CB1-4734-AE4F-754A932B999E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDB19590-8CB1-4734-AE4F-754A932B999E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDB19590-8CB1-4734-AE4F-754A932B999E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0127A2EA-83FF-409D-8352-ABC09A7A933C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0127A2EA-83FF-409D-8352-ABC09A7A933C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0127A2EA-83FF-409D-8352-ABC09A7A933C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0127A2EA-83FF-409D-8352-ABC09A7A933C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -325,6 +331,7 @@ Global
 		{4EB4ADAC-6227-42B5-95A1-BF4176B8D5AA} = {9B46ED74-89AE-47DC-90AA-0ED5C84AF296}
 		{12FFDD43-5646-4DAF-A8E6-B918A6ACAF21} = {26CF12E5-E73F-4811-95FD-A35C38265C56}
 		{FDB19590-8CB1-4734-AE4F-754A932B999E} = {9B46ED74-89AE-47DC-90AA-0ED5C84AF296}
+		{0127A2EA-83FF-409D-8352-ABC09A7A933C} = {9B8954FD-D06E-4131-AFCE-D6E39646208F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {33FF006A-4B43-4646-8575-EA8A59A8B43D}
