@@ -11,11 +11,18 @@ class Program
 
         using (var document = PdfDocument.Load("FormFilled.pdf"))
         {
+            // A flag specifying whether to construct appearance for all form fields in the document.
+            bool needAppearances = document.Form.NeedAppearances;
+
             foreach (var field in document.Form.Fields)
             {
                 // Do not flatten button fields.
                 if (field.FieldType == PdfFieldType.Button)
                     continue;
+
+                // Construct appearance, if needed.
+                if (needAppearances)
+                    field.Appearance.Refresh();
 
                 // Get the field's appearance form.
                 var fieldAppearance = field.Appearance.Get();
