@@ -11,10 +11,16 @@ Module Program
 
         Using document = PdfDocument.Load("FormFilled.pdf")
 
+            ' A flag specifying whether to construct appearance for all form fields in the document.
+            Dim needAppearances = document.Form.NeedAppearances
+
             For Each field In document.Form.Fields
 
                 ' Do not flatten button fields.
                 If field.FieldType = PdfFieldType.Button Then Continue For
+
+                ' Construct appearance, if needed.
+                if needAppearances Then field.Appearance.Refresh()
 
                 ' Get the field's appearance form.
                 Dim fieldAppearance = field.Appearance.Get()
