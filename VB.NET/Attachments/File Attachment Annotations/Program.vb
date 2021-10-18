@@ -22,7 +22,7 @@ Module Program
 
         Using document = PdfDocument.Load("Reading.pdf")
 
-            ' Extracts all the files in the zip archive to a directory on the file system.
+            ' Extract all the files in the zip archive to a directory on the file system.
             ZipFile.ExtractToDirectory("Attachments.zip", "Attachments")
 
             Dim page = document.Pages(0)

@@ -24,7 +24,7 @@ Module Program
             ' Make Attachments panel visible.
             document.PageMode = PdfPageMode.UseAttachments
 
-            ' Extracts all the files in the zip archive to a directory on the file system.
+            ' Extract all the files in the zip archive to a directory on the file system.
             ZipFile.ExtractToDirectory("Attachments.zip", "Attachments")
 
             ' Embed in the PDF document all the files extracted from the zip archive.
