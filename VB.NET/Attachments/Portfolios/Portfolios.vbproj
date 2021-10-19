@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GemBox.Pdf" Version="17.0.1047-hotfix" />
+    <PackageReference Include="GemBox.Pdf" Version="17.0.1049-hotfix" />
     <Reference Include="System.IO.Compression" Condition=" '$(TargetFramework)' == 'net48' " />
   </ItemGroup>
   
