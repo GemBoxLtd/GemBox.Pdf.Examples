@@ -77,9 +77,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfExportToXpsDocument", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Linux_macOS", "Platforms\Linux_macOS\Linux_macOS.csproj", "{D7FEBAC3-93D2-40AD-8B78-ADEE6F6F9BB0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreMvc", "Platforms\ASP.NET Core MVC\AspNetCoreMvc.csproj", "{961F63CD-95F5-4443-8F1B-E55D0C6B1B3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreMvc", "Platforms\ASP.NET Core\MVC\AspNetCoreMvc.csproj", "{961F63CD-95F5-4443-8F1B-E55D0C6B1B3F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCorePages", "Platforms\ASP.NET Core Razor Pages\AspNetCorePages.csproj", "{B3E7F249-E8C5-4FB1-BB91-87614438094E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCorePages", "Platforms\ASP.NET Core\Razor Pages\AspNetCorePages.csproj", "{B3E7F249-E8C5-4FB1-BB91-87614438094E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cloning", "Advanced Features\Cloning\Cloning.csproj", "{9C0263A8-5BE5-4BD2-8F23-FEB69B24ADA0}"
 EndProject
