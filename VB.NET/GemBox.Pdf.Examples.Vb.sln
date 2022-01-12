@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29709.97
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hello World", "Hello World", "{146BA242-30CE-474C-AF2B-22A2DA140385}"
 EndProject
@@ -27,7 +27,7 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PrintInWpf", "Common Uses\P
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic Features", "Basic Features", "{26CF12E5-E73F-4811-95FD-A35C38265C56}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Outlines", "Basic Features\Outlines\Outlines.vbproj", "{B82C176E-2859-43B2-8120-25E67EEE448C}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Outlines", "Basic Features\Bookmarks (Outlines)\Outlines.vbproj", "{B82C176E-2859-43B2-8120-25E67EEE448C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Advanced Features", "Advanced Features", "{9B8954FD-D06E-4131-AFCE-D6E39646208F}"
 EndProject
@@ -81,7 +81,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "IncrementalUpdate", "Advanc
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Images", "Basic Features\Images\Images.vbproj", "{3A566DAB-BAAF-49BC-ADCB-B475B18F89AF}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Paths", "Basic Features\Paths\Paths.vbproj", "{F00C6C3F-67B8-4157-9045-ECB572FC2452}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Paths", "Basic Features\Shapes (Paths)\Paths.vbproj", "{F00C6C3F-67B8-4157-9045-ECB572FC2452}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ContentFormatting", "Basic Features\Content Formatting\ContentFormatting.vbproj", "{9567C2BD-91DE-4043-A262-B840B143A79B}"
 EndProject
@@ -103,7 +103,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Hyperlinks", "Basic Feature
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FlattenForm", "Interactive Forms\Flatten Form\FlattenForm.vbproj", "{FDB19590-8CB1-4734-AE4F-754A932B999E}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "OpticalCharacterRecognition", "Advanced Features\Optical Character Recognition\OpticalCharacterRecognition.vbproj", "{0127A2EA-83FF-409D-8352-ABC09A7A933C}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "OpticalCharacterRecognition", "Advanced Features\Optical Character Recognition (OCR)\OpticalCharacterRecognition.vbproj", "{0127A2EA-83FF-409D-8352-ABC09A7A933C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attachments", "Attachments", "{7C880134-8B05-4048-8C7A-B67A4A7731C1}"
 EndProject
@@ -114,6 +114,8 @@ EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Portfolios", "Attachments\Portfolios\Portfolios.vbproj", "{92C5C322-9710-4B2C-8774-75C8E27BBE44}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "AssociatedFiles", "Attachments\Associated Files\AssociatedFiles.vbproj", "{DB59D096-6B5F-4C20-A9F5-19C6BF37BC19}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ConvertFromImage", "Common Uses\Convert from Image\ConvertFromImage.vbproj", "{AA2B4730-6E63-48E9-B418-7ACBC60B6AF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -309,6 +311,10 @@ Global
 		{DB59D096-6B5F-4C20-A9F5-19C6BF37BC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB59D096-6B5F-4C20-A9F5-19C6BF37BC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB59D096-6B5F-4C20-A9F5-19C6BF37BC19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA2B4730-6E63-48E9-B418-7ACBC60B6AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2B4730-6E63-48E9-B418-7ACBC60B6AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2B4730-6E63-48E9-B418-7ACBC60B6AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2B4730-6E63-48E9-B418-7ACBC60B6AF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -362,6 +368,7 @@ Global
 		{9784D421-B569-44D9-B84D-65BD9F42964A} = {7C880134-8B05-4048-8C7A-B67A4A7731C1}
 		{92C5C322-9710-4B2C-8774-75C8E27BBE44} = {7C880134-8B05-4048-8C7A-B67A4A7731C1}
 		{DB59D096-6B5F-4C20-A9F5-19C6BF37BC19} = {7C880134-8B05-4048-8C7A-B67A4A7731C1}
+		{AA2B4730-6E63-48E9-B418-7ACBC60B6AF6} = {89944B14-65AA-486C-8C7E-D43FAB0F7ACE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {33FF006A-4B43-4646-8575-EA8A59A8B43D}
