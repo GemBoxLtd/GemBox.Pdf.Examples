@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GemBox.Pdf" Version="*" />
+    <Reference Include="System.Security" Condition=" '$(TargetFramework)' == 'net48' " />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp3.1' " />
+    <PackageReference Include="BouncyCastle" Version="*" Condition=" '$(TargetFramework)' == 'net48' " />
+    <PackageReference Include="Portable.BouncyCastle" Version="*" Condition=" '$(TargetFramework)' == 'netcoreapp3.1' " />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="GemBoxECDsa.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="GemBoxECDsa521.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="GemBoxRSA.crt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="GemBoxRSA1024.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Reading.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

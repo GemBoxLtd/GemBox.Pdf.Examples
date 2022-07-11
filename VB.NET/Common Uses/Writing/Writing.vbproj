@@ -13,4 +13,10 @@
     <!--<PackageReference Include="HarfBuzzSharp.NativeAssets.Linux" Version="*" />-->
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="LoremIpsum.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

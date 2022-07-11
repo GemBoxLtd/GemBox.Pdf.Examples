@@ -10,24 +10,19 @@ Module Program
 
     Sub Main()
 
-        Example1()
-
-        Example2()
-
-        Example3()
-
-        Example4()
-
-        Example5()
-
-        Example6()
-    End Sub
-
-    Sub Example1()
-
         ' If using Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
+        Example1()
+        Example2()
+        Example3()
+        Example4()
+        Example5()
+        Example6()
+
+    End Sub
+
+    Sub Example1()
         Using document = New PdfDocument()
 
             Dim page = document.Pages.Add()
@@ -80,10 +75,6 @@ Module Program
     End Sub
 
     Sub Example2()
-
-        ' If using Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-
         Using document = New PdfDocument()
 
             Dim page = document.Pages.Add()
@@ -160,10 +151,6 @@ Module Program
     End Sub
 
     Sub Example3()
-
-        ' If using Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-
         Using document = New PdfDocument()
 
             Dim page = document.Pages.Add()
@@ -242,10 +229,6 @@ Module Program
     End Sub
 
     Sub Example4()
-
-        ' If using Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-
         Using document = New PdfDocument()
 
             Dim page = document.Pages.Add()
@@ -311,10 +294,6 @@ Module Program
     End Sub
 
     Sub Example5()
-
-        ' If using Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-
         Using document = New PdfDocument()
 
             ' The uncolored tiling pattern should not specify the color of its content, instead the outer element that uses the uncolored tiling pattern will specify the color of the tiling pattern content.
@@ -398,10 +377,6 @@ Module Program
     End Sub
 
     Sub Example6()
-
-        ' If using Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-
         Using document = New PdfDocument()
 
             ' Create axial shading (which is currently not supported by GemBox.Pdf)

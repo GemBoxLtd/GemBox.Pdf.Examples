@@ -1,4 +1,5 @@
-﻿using GemBox.Pdf;
+﻿using System.IO;
+using GemBox.Pdf;
 using GemBox.Pdf.Content;
 
 class Program
@@ -12,6 +13,8 @@ class Program
         Example3();
 
         Example4();
+
+        Example5();
     }
 
     static void Example1()
@@ -394,6 +397,59 @@ class Program
             }
 
             document.Save("Complex scripts.pdf");
+        }
+    }
+
+    static void Example5()
+    {
+        // If using Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
+        using (var document = new PdfDocument())
+        {
+            var page = document.Pages.Add();
+
+            double margins = 50;
+            double maxWidth = page.CropBox.Width - margins * 2;
+            double halfWidth = maxWidth / 2;
+
+            double maxHeight = page.CropBox.Height - margins * 2;
+            double heightOffset = maxHeight + margins;
+
+            using (var formattedText = new PdfFormattedText())
+            {
+                foreach (string line in File.ReadAllLines("LoremIpsum.txt"))
+                    formattedText.AppendLine(line);
+
+                double y = 0;
+                int lineIndex = 0, charIndex = 0;
+                bool useHalfWidth = false;
+
+                while (charIndex < formattedText.Length)
+                {
+                    // Switch every 10 lines between full and half width.
+                    if (lineIndex % 10 == 0)
+                        useHalfWidth = !useHalfWidth;
+
+                    var line = formattedText.FormatLine(charIndex, useHalfWidth ? halfWidth : maxWidth);
+                    y += line.Height;
+
+                    // If line cannot fit on the current page, write it on a new page.
+                    bool lineCannotFit = y > maxHeight;
+                    if (lineCannotFit)
+                    {
+                        page = document.Pages.Add();
+                        y = line.Height;
+                    }
+
+                    page.Content.DrawText(line, new PdfPoint(margins, heightOffset - y));
+
+                    ++lineIndex;
+                    charIndex += line.Length;
+                }
+            }
+
+            document.Save("Lines.pdf");
         }
     }
 }

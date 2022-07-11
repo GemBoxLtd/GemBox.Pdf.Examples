@@ -1,4 +1,5 @@
-﻿Imports GemBox.Pdf
+﻿Imports System.IO
+Imports GemBox.Pdf
 Imports GemBox.Pdf.Content
 
 Module Program
@@ -12,6 +13,9 @@ Module Program
         Example3()
 
         Example4()
+
+        Example5()
+
     End Sub
 
     Sub Example1()
@@ -396,4 +400,57 @@ Module Program
             document.Save("Complex scripts.pdf")
         End Using
     End Sub
+
+    Sub Example5()
+        ' If using Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
+        Using document = New PdfDocument()
+
+            Dim page = document.Pages.Add()
+
+            Dim margins As Double = 50
+            Dim maxWidth As Double = page.CropBox.Width - margins * 2
+            Dim halfWidth As Double = maxWidth / 2
+
+            Dim maxHeight As Double = page.CropBox.Height - margins * 2
+            Dim heightOffset As Double = maxHeight + margins
+
+            Using formattedText = New PdfFormattedText()
+
+                For Each line In File.ReadAllLines("LoremIpsum.txt")
+                    formattedText.AppendLine(line)
+                Next
+
+                Dim y As Double = 0
+                Dim lineIndex As Integer = 0, charIndex As Integer = 0
+                Dim useHalfWidth As Boolean = False
+
+                While charIndex < formattedText.Length
+
+                    ' Switch every 10 lines between full and half width.
+                    If lineIndex Mod 10 = 0 Then useHalfWidth = Not useHalfWidth
+
+                    Dim line = formattedText.FormatLine(charIndex, If(useHalfWidth, halfWidth, maxWidth))
+                    y += line.Height
+
+                    ' If line cannot fit on the current page, write it on a new page.
+                    Dim lineCannotFit As Boolean = y > maxHeight
+                    If lineCannotFit Then
+                        page = document.Pages.Add()
+                        y = line.Height
+                    End If
+
+                    page.Content.DrawText(line, New PdfPoint(margins, heightOffset - y))
+
+                    lineIndex += 1
+                    charIndex += line.Length
+
+                End While
+            End Using
+
+            document.Save("Lines.pdf")
+        End Using
+    End Sub
+
 End Module

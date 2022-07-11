@@ -7,10 +7,14 @@
   
   <ItemGroup>
     <PackageReference Include="GemBox.Pdf" Version="*" />
-    <PackageReference Include="HarfBuzzSharp" Version="*" />
-
     <!-- If running on Linux. -->
     <!--<PackageReference Include="HarfBuzzSharp.NativeAssets.Linux" Version="*" />-->
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="LoremIpsum.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

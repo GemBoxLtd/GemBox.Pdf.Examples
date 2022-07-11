@@ -28,14 +28,8 @@ Module Program
                 ' If the field doesn't have an appearance, skip it.
                 If fieldAppearance Is Nothing Then Continue For
 
-                ' Add a new content group to the field's page and
-                ' add new form content with the field's appearance form to the content group.
-                ' The content group is added so that transformation from the next statement is localized to the content group.
-                Dim flattenedContent = field.Page.Content.Elements.AddGroup().Elements.AddForm(fieldAppearance)
-
-                ' Translate the form content to the same position on the page that the field is in.
-                Dim fieldBounds = field.Bounds
-                flattenedContent.Transform = PdfMatrix.CreateTranslation(fieldBounds.Left, fieldBounds.Bottom)
+                ' Draw field's appearance on the page.
+                field.Page.Content.DrawAnnotation(field)
             Next
 
             ' Remove all fields, thus making the document non-interactive,

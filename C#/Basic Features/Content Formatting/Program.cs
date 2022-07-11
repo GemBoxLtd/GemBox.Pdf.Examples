@@ -186,7 +186,7 @@ class Program
             format.Clip.IsApplied = true;
             // Draw an image in the same content group as the text.
             // The image will be clipped to the text.
-            var image = PdfImage.Load("%#Acme.png%");
+            var image = PdfImage.Load("Acme.png");
             textGroup.DrawImage(image, new PdfPoint(50, 700), new PdfSize(500, 100));
 
             // Add a new content group. Clipping is localized to the content group.
