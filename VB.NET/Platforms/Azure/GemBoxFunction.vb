@@ -7,30 +7,30 @@ Imports Microsoft.Extensions.Logging
 Imports GemBox.Pdf
 
 Module GemBoxFunction
-        <FunctionName("GemBoxFunction")>
-        Async Function Run(
-            <HttpTrigger(AuthorizationLevel.Anonymous, "get", Route := Nothing)> req As HttpRequest,
-            log As ILogger) as Task(Of IActionResult)
-        
-            ' If using Professional version, put your serial key below.
-            ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+#Disable Warning BC42356 ' This async method lacks 'Await'.
+    <FunctionName("GemBoxFunction")>
+    Async Function Run(<HttpTrigger(AuthorizationLevel.Anonymous, "get", Route:=Nothing)> req As HttpRequest, log As ILogger) As Task(Of IActionResult)
+#Enable Warning BC42356
 
-            Using document As New PdfDocument()
+        ' If using Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
-                ' Add a first empty page.
-                document.Pages.Add()
+        Using document As New PdfDocument()
 
-                ' Add a second empty page.
-                document.Pages.Add()
+            ' Add a first empty page.
+            document.Pages.Add()
 
-                Dim fileName = "Output.pdf"
+            ' Add a second empty page.
+            document.Pages.Add()
 
-                Using stream As new MemoryStream()
-                    document.Save(stream)
-                    return New FileContentResult(stream.ToArray(), "application/pdf") With { .FileDownloadName = fileName }
-                End Using
+            Dim fileName = "Output.pdf"
 
+            Using stream As new MemoryStream()
+                document.Save(stream)
+                return New FileContentResult(stream.ToArray(), "application/pdf") With { .FileDownloadName = fileName }
             End Using
-             
-        End Function
+
+        End Using
+
+    End Function
 End Module

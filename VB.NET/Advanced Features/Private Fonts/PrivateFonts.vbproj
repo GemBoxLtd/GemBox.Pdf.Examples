@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net48;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net48;net6.0</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <Resource Condition=" '$(TargetFramework)' == 'net48' " Include="Resources\almonte woodgrain.ttf" />
-    <EmbeddedResource Condition=" '$(TargetFramework)' == 'netcoreapp3.1' " Include="Resources\almonte woodgrain.ttf" LogicalName="PrivateFonts.Resources.almonte woodgrain.ttf" />
+    <EmbeddedResource Condition=" '$(TargetFramework)' != 'net48' " Include="Resources\almonte woodgrain.ttf" LogicalName="PrivateFonts.Resources.almonte woodgrain.ttf" />
   </ItemGroup>
 
 </Project>
