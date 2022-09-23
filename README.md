@@ -1,60 +1,78 @@
-# GemBox.Pdf
+## What is GemBox.Pdf?
 
-[![NuGet version](https://img.shields.io/nuget/v/GemBox.Pdf?style=for-the-badge)](https://www.nuget.org/packages/GemBox.Pdf/) [![NuGet downloads](https://img.shields.io/nuget/dt/GemBox.Pdf?style=for-the-badge)](https://www.nuget.org/packages/GemBox.Pdf/) [![Visual Studio Marketplace rating](https://img.shields.io/visual-studio-marketplace/stars/GemBoxSoftware.GemBoxPdf?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=GemBoxSoftware.GemBoxPdf)
+GemBox.Pdf is a .NET component that enables you to read, write, edit, and print PDF files from .NET applications.
 
-<img src="https://www.gemboxsoftware.com/images/NugetGba.png" alt="GemBox.Pdf logo" align="left" />
+With GemBox.Pdf you get a fast and reliable component that’s easy to use and doesn't depend on Adobe Acrobat. It requires only .NET so you can deploy your applications without having to think about other licenses.
 
-GemBox.Pdf is a .NET component which enables developers to read, write, convert and print PDF files from .NET applications in a simple and efficient way.
 
-<br/>
+## GemBox.Pdf Features
 
-With GemBox.Pdf you get a standalone .NET component that doesn't dependent on Adobe Acrobat; that's fast and reliable; that's easy to install, use and deploy.
+-   [Convert](https://www.gemboxsoftware.com/pdf/examples/c-sharp-convert-pdf-to-image/208) PDF files to image (PNG, JPEG, GIF, BMP, TIFF, and WMP) and XML Paper Specification (XPS) formats.
+-   View PDF files in [WPF](https://www.gemboxsoftware.com/pdf/examples/pdf-xpsdocument-wpf/1001) applications.
+-   [Print](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-print-pdf/207) PDF files.
+-   [Merge](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-merge-pdf/201) PDF files.
+-   [Split](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-split-pdf/202) PDF files.
+-   [Create](https://www.gemboxsoftware.com/pdf/examples/c-sharp-create-pdf-interactive-form-fields/505), [fill in](https://www.gemboxsoftware.com/pdf/examples/c-sharp-fill-in-pdf-interactive-form/502), [flatten](https://www.gemboxsoftware.com/pdf/examples/c-sharp-flatten-pdf-interactive-form-fields/506), [read](https://www.gemboxsoftware.com/pdf/examples/c-sharp-read-pdf-interactive-form-fields/501), and [export](https://www.gemboxsoftware.com/pdf/examples/c-sharp-export-pdf-interactive-form-data/503) PDF interactive forms.
+-   Extract a [Unicode representation of a PDF page](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-read-pdf/205) and individual [text elements with their bounds and font](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-read-pdf/205#read-text-info).
+-   Extract [images from PDF files](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-export-import-images-to-pdf/206#export).
+-   Extract text from images or scanned PDF files with [optical character recognition (OCR)](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-ocr-pdf/408).
+-   [Encrypt](https://www.gemboxsoftware.com/pdf/examples/decrypt-encrypt-pdf-file/1101) and [digitally sign](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-digital-signature/1102) PDF files.
+-   [Clone or import](https://www.gemboxsoftware.com/pdf/examples/cloning-pdf-pages/203) pages between PDF documents.
+-   [Read](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-read-pdf/205), [write](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-create-write-pdf-file/209) and [update](https://www.gemboxsoftware.com/pdf/examples/incremental-update/204) PDF files.
+-   Get, create or edit [bookmarks (outlines)](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-bookmarks-outlines/301).
+-   Get and set [document properties](https://www.gemboxsoftware.com/pdf/examples/pdf-document-properties/302).
+-   Add [watermark](https://www.gemboxsoftware.com/pdf/examples/pdf-watermarks/305), [header and footer](https://www.gemboxsoftware.com/pdf/examples/pdf-header-footer/304) to PDF pages.
+-   Get and set [viewer preferences](https://www.gemboxsoftware.com/pdf/examples/pdf-viewer-preferences/303).
+-   Get, create, remove or reorder [pages](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-pages/401).
+-   Add [text](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-create-write-pdf-file/209), [images](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-export-import-images-to-pdf/206#import), [shapes (paths)](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-add-pdf-shapes-paths/306), [form XObjects](https://www.gemboxsoftware.com/pdf/examples/pdf-form-xobjects/405), [content groups](https://www.gemboxsoftware.com/pdf/examples/pdf-content-groups/409), and [marked content](https://www.gemboxsoftware.com/pdf/examples/pdf-marked-content/407) to pages and [format](https://www.gemboxsoftware.com/pdf/examples/pdf-content-formatting/307) (fill, stroke, and clip) the content.
+-   Annotate PDF pages with [hyperlinks](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-pdf-hyperlinks/308).
+-   [Use basic PDF objects](https://www.gemboxsoftware.com/pdf/examples/basic-pdf-objects/402) for currently unsupported PDF features.
 
-This repository contains the source code of GemBox.Pdf example projects for demos and live examples that are available on [PDF Library in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-library/101) ▶
+## Get Started
 
-## Top Features
+You are not sure how to start working with PDF documents in .NET using GemBox.Pdf? Check the code below that shows how to create a PDF file from scratch and write 'Hello World!' on it.
 
-* [Read text from PDF files in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-read-pdf/205)
-* [Create and write PDF files in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-create-write-pdf-file/209)
-* [Convert PDF files to image in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-convert-pdf-to-image/208)
-* [Print PDF files in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-print-pdf/207)
-* [Merge PDF files in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-merge-pdf/201)
-* [Split PDF file in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-split-pdf/202)
-* [Export images from PDF files in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-export-images-from-pdf/206)
-* [PDF digital signatures in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-digital-signature/1102)
-* [PDF Encryption in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-encryption/1101)
-* [Optical character recognition (OCR) in C# and VB.NET](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-ocr-pdf/408)
+```CSharp
+// If using Professional version, put your serial key below.
+ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-## Examples
+// Create a new PDF document
+using (var document = new PdfDocument())
+{
 
-| | |
-| --- | --- |
-| Hello World | [C#](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/C%23/Hello%20World), [VB.NET](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/VB.NET/Hello%20World) |
-| Common Uses | [C#](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/C%23/Common%20Uses), [VB.NET](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/VB.NET/Common%20Uses) |
-| Basic Features | [C#](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/C%23/Basic%20Features), [VB.NET](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/VB.NET/Basic%20Features) |
-| Advanced Features | [C#](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/C%23/Advanced%20Features), [VB.NET](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/VB.NET/Advanced%20Features) |
-| Interactive Forms | [C#](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/C%23/Interactive%20Forms), [VB.NET](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/VB.NET/Interactive%20Forms) |
-| Security | [C#](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/C%23/Security), [VB.NET](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/VB.NET/Security) |
-| Platforms | [C#](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/C%23/Platforms), [VB.NET](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/tree/master/VB.NET/Platforms) |
-| COM | [PYTHON](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.py), [PHP](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.php), [VBSCRIPT](https://github.com/GemBoxLtd/GemBox.Pdf.Examples/blob/master/PYTHON%2C%20PHP%2C%20VBSCRIPT/COM.vbs) |
+// Add a page.
+var page = document.Pages.Add();
+using (var formattedText = new PdfFormattedText())
+{
 
-## System Requirement
+// Add text 
+formattedText.AppendLine("Hello World");
 
-* .NET Framework 3.5 - 4.8
-* .NET Core 3.1 (.NET 5 & 6 for Windows)
-* .NET Standard 2.0 (.NET 5 & 6 for Linux, macOS, Android, iOS, …)
+// Draw text to the page.
+page.Content.DrawText(formattedText, new PdfPoint(x, y));
+}
+
+// Save the document as PDF file.    
+document.Save("Writing.pdf");
+}
+
+```
+
+For more GemBox.Pdf code examples and demos, please visit our [examples page](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-library/101).
+
 
 ## Installation
 
 You can download GemBox.Pdf from [BugFixes 🛠️](https://www.gemboxsoftware.com/pdf/downloads/bugfixes.html) or from [NuGet 📦](https://www.nuget.org/packages/GemBox.Pdf/).
 
-## Support
+## Resources
 
-* [Contact Us](https://support.gemboxsoftware.com/new-ticket?ticket%5Bdepartment%5D=1&ticket%5Bproduct%5D=6)
+* [Product Page](https://www.gemboxsoftware.com/pdf)
+* [Documentation](https://www.gemboxsoftware.com/pdf/docs/introduction.html)
 * [Forum](https://forum.gemboxsoftware.com/c/gembox-pdf/7)
+* [Examples](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-library/101)
 * [Blog](https://www.gemboxsoftware.com/gembox-pdf)
 * [API Reference](https://www.gemboxsoftware.com/pdf/docs/introduction.html)
 
-## License
 
-You can download GemBox.Pdf's license agreement from [EULA.rtf 📝](https://www.gemboxsoftware.com/EULA.rtf).
+
