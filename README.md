@@ -61,7 +61,7 @@ For more GemBox.Pdf code examples and demos, please visit our [examples page](ht
 
 ## Installation
 
-You can download GemBox.Pdf from [BugFixes 🛠️](https://www.gemboxsoftware.com/pdf/downloads/bugfixes.html) or from [NuGet 📦](https://www.nuget.org/packages/GemBox.Pdf/).
+You can download GemBox.Pdf from [NuGet 📦](https://www.nuget.org/packages/GemBox.Pdf/) or from [BugFixes 🛠️](https://www.gemboxsoftware.com/pdf/downloads/bugfixes.html).
 
 ## Resources
 
