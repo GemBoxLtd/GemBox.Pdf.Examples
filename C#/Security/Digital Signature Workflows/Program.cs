@@ -15,7 +15,7 @@ class Program
 
     static void AuthorSignature()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         // Create signed document with author permission.
@@ -56,7 +56,7 @@ class Program
 
     static void SignatureLocks()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = PdfDocument.Load("Reading.pdf"))
@@ -89,7 +89,7 @@ class Program
 
     static void SignaturesWorkflow()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = PdfDocument.Load("Reading.pdf"))

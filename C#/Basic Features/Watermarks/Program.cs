@@ -13,7 +13,7 @@ class Program
 
     static void Example1()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
         ComponentInfo.FreeLimitReached += (sender, e) => e.FreeLimitReachedAction = FreeLimitReachedAction.Stop;
 
@@ -71,7 +71,7 @@ class Program
 
     static void Example2()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = PdfDocument.Load("LoremIpsum.pdf"))

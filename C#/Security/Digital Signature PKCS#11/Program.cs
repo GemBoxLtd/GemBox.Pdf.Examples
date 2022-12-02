@@ -18,7 +18,7 @@ class Program
         // Specify path to PKCS#11/Cryptoki library, depending on the runtime architecture (64-bit or 32-bit).
         var libraryPath = Path.Combine(pkcs11SoftwareModuleDirectory, IntPtr.Size == 8 ? "softhsm2-x64.dll" : "softhsm2.dll");
 
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var pkcs11Module = new PdfPkcs11Module(libraryPath))

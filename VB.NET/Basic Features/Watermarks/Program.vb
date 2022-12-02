@@ -13,7 +13,7 @@ Module Program
 
     Sub Example1()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
         AddHandler ComponentInfo.FreeLimitReached, Sub(sender, e) e.FreeLimitReachedAction = FreeLimitReachedAction.Stop
 
@@ -71,7 +71,7 @@ Module Program
 
     Sub Example2()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = PdfDocument.Load("LoremIpsum.pdf")

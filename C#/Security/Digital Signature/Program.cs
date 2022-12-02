@@ -22,7 +22,7 @@ class Program
 
     static void SimpleSignature()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = PdfDocument.Load("Reading.pdf"))
@@ -104,7 +104,7 @@ class Program
 
     static void MultipleSignature()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = PdfDocument.Load("Reading.pdf"))
@@ -153,7 +153,7 @@ class Program
 
     static void ExternalSignature()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = PdfDocument.Load("Reading.pdf"))
@@ -182,7 +182,7 @@ class Program
 
     static void RemoveSignature()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = PdfDocument.Load("Multiple Digital Signature.pdf"))

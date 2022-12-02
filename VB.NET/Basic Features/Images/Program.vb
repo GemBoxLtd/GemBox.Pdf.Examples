@@ -12,7 +12,7 @@ Module Program
     End Sub
 
     Sub Example1()
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = PdfDocument.Load("ExportImages.pdf")
@@ -32,7 +32,7 @@ Module Program
 
     Sub Example2()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = New PdfDocument()
@@ -59,7 +59,7 @@ Module Program
 
     Sub Example3()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = New PdfDocument()

@@ -15,7 +15,7 @@ Module Program
     End Sub
 
     Sub AuthorSignature()
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         ' Create signed document with author permission.
@@ -53,7 +53,7 @@ Module Program
     End Sub
 
     Sub SignatureLocks()
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = PdfDocument.Load("Reading.pdf")
@@ -86,7 +86,7 @@ Module Program
     End Sub
 
     Sub SignaturesWorkflow()
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = PdfDocument.Load("Reading.pdf")

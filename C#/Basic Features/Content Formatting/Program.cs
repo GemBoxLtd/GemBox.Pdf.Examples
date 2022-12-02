@@ -25,7 +25,7 @@ class Program
 
     static void Example1()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = new PdfDocument())
@@ -81,7 +81,7 @@ class Program
 
     static void Example2()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = new PdfDocument())
@@ -161,7 +161,7 @@ class Program
 
     static void Example3()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = new PdfDocument())
@@ -243,7 +243,7 @@ class Program
 
     static void Example4()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = new PdfDocument())
@@ -312,7 +312,7 @@ class Program
 
     static void Example5()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = new PdfDocument())
@@ -399,7 +399,7 @@ class Program
 
     static void Example6()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         using (var document = new PdfDocument())

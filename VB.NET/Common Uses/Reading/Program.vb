@@ -16,7 +16,7 @@ Module Program
 
     Sub Example1()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         ' Iterate through PDF pages and extract each page's Unicode text content.
@@ -31,7 +31,7 @@ Module Program
 
     Sub Example2()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         ' Iterate through all PDF pages and through each page's content elements,
@@ -74,7 +74,7 @@ Module Program
 
     Sub Example3()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Dim pageIndex = 0

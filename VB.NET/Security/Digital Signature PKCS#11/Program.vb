@@ -18,7 +18,7 @@ Module Program
         ' Specify path to PKCS#11/Cryptoki library, depending on the runtime architecture (64-bit or 32-bit).
         Dim libraryPath = Path.Combine(pkcs11SoftwareModuleDirectory, If(IntPtr.Size = 8, "softhsm2-x64.dll", "softhsm2.dll"))
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using pkcs11Module = New PdfPkcs11Module(libraryPath)

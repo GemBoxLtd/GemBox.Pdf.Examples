@@ -22,7 +22,7 @@ Module Program
 
     Sub SimpleSignature()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = PdfDocument.Load("Reading.pdf")
@@ -104,7 +104,7 @@ Module Program
 
     Sub MultipleSignature()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = PdfDocument.Load("Reading.pdf")
@@ -153,7 +153,7 @@ Module Program
 
     Sub ExternalSignature()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = PdfDocument.Load("Reading.pdf")
@@ -182,7 +182,7 @@ Module Program
 
     Sub RemoveSignature()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = PdfDocument.Load("Multiple Digital Signature.pdf")

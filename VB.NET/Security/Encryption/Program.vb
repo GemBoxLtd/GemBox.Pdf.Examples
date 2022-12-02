@@ -16,7 +16,7 @@ Module Program
 
     Sub Example1()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         ' Load PDF document from an unencrypted PDF file.
@@ -32,7 +32,7 @@ Module Program
 
     Sub Example2()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Try
@@ -58,7 +58,7 @@ Module Program
 
     Sub Example3()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         ' Load PDF document from an unencrypted PDF file.
@@ -85,7 +85,7 @@ Module Program
 
     Sub Example4()
 
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         ' Load PDF document from an unencrypted PDF file.

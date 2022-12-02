@@ -15,7 +15,7 @@ class Program
 
     static void Example1()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         // Iterate through PDF pages and extract each page's Unicode text content.
@@ -30,7 +30,7 @@ class Program
 
     static void Example2()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         // Iterate through all PDF pages and through each page's content elements,
@@ -73,7 +73,7 @@ class Program
 
     static void Example3()
     {
-        // If using Professional version, put your serial key below.
+        // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         var pageIndex = 0;

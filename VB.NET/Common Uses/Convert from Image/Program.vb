@@ -14,7 +14,7 @@ Module Program
     End Sub
 
     Sub Example1()
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         ' Create new document.
@@ -37,7 +37,7 @@ Module Program
     End Sub
 
     Sub Example2()
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Dim jpgs As String() = {"penguin.jpg", "jellyfish.jpg", "dolphin.jpg", "lion.jpg", "deer.jpg"}
@@ -72,7 +72,7 @@ Module Program
     End Sub
 
     Sub Example3()
-        ' If using Professional version, put your serial key below.
+        ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         ' Create new document.

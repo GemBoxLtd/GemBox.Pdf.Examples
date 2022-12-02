@@ -9,10 +9,10 @@ Module Program
 
     Sub Main()
 
-        ' If using Professional version, put your GemBox.Pdf serial key below.
+        ' If using the Professional version, put your GemBox.Pdf serial key below.
         GemBox.Pdf.ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
-        ' If using Professional version, put your GemBox.Document serial key below.
+        ' If using the Professional version, put your GemBox.Document serial key below.
         GemBox.Document.ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Dim files = New String() _
