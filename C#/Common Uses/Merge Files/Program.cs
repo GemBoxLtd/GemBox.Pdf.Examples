@@ -1,3 +1,4 @@
+using System.IO;
 using GemBox.Pdf;
 
 class Program
@@ -7,6 +8,12 @@ class Program
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
+        Example1();
+        Example2();
+    }
+
+    static void Example1()
+    {
         // List of source file names.
         var fileNames = new string[]
         {
@@ -17,14 +24,46 @@ class Program
 
         using (var document = new PdfDocument())
         {
+            // Merge multiple PDF files into single PDF by loading source documents
+            // and cloning all their pages to destination document.
             foreach (var fileName in fileNames)
-                // Load a source document from the specified path.
                 using (var source = PdfDocument.Load(fileName))
-                    // Clone all pages from the source document and add them to the destination document.
-                    foreach (var page in source.Pages)
-                        document.Pages.AddClone(page);
+                    document.Pages.Kids.AddClone(source.Pages);
 
             document.Save("Merge Files.pdf");
+        }
+    }
+
+    static void Example2()
+    {
+        var files = Directory.EnumerateFiles("Merge Many Pdfs");
+
+        int fileCounter = 0;
+        int chunkSize = 50;
+
+        using (var document = new PdfDocument())
+        {
+            // Create output PDF file that will have large number of PDF files merged into it.
+            document.Save("Merged Files.pdf");
+
+            foreach (var file in files)
+            {
+                using (var source = PdfDocument.Load(file))
+                    document.Pages.Kids.AddClone(source.Pages);
+
+                ++fileCounter;
+                if (fileCounter % chunkSize == 0)
+                {
+                    // Save the new pages that were added after the document was last saved.
+                    document.Save();
+
+                    // Clear previously parsed pages and thus free memory necessary for merging additional pages.
+                    document.Unload();
+                }
+            }
+
+            // Save the last chunk of merged files.
+            document.Save();
         }
     }
 }
