@@ -129,6 +129,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableOfContents", "Basic Fe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalSignatureWorkflows", "Security\Digital Signature Workflows\DigitalSignatureWorkflows.csproj", "{91BF030D-A988-4DA5-858E-E80AB89DF844}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfMaui", "Platforms\Maui\PdfMaui.csproj", "{AAC9D294-CCEE-493D-849B-D16974558F99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -351,6 +353,12 @@ Global
 		{91BF030D-A988-4DA5-858E-E80AB89DF844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91BF030D-A988-4DA5-858E-E80AB89DF844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91BF030D-A988-4DA5-858E-E80AB89DF844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC9D294-CCEE-493D-849B-D16974558F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC9D294-CCEE-493D-849B-D16974558F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC9D294-CCEE-493D-849B-D16974558F99}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AAC9D294-CCEE-493D-849B-D16974558F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC9D294-CCEE-493D-849B-D16974558F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC9D294-CCEE-493D-849B-D16974558F99}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -411,6 +419,7 @@ Global
 		{19121AC7-6714-4BA2-BBA6-1321FEE44BA2} = {4D9FBC3C-EE12-457F-A49D-83A02BD6E5DC}
 		{0DE90C48-3823-4ECA-913A-2DA8B3581587} = {4D9FBC3C-EE12-457F-A49D-83A02BD6E5DC}
 		{91BF030D-A988-4DA5-858E-E80AB89DF844} = {9301271F-5ADB-4D58-9221-72A98A928B89}
+		{AAC9D294-CCEE-493D-849B-D16974558F99} = {7224217B-0E9E-452D-990F-38FA26BE11DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89CC6B70-A1B6-4016-8C49-E65919DC4022}
