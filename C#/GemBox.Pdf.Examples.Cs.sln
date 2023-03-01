@@ -129,7 +129,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableOfContents", "Basic Fe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalSignatureWorkflows", "Security\Digital Signature Workflows\DigitalSignatureWorkflows.csproj", "{91BF030D-A988-4DA5-858E-E80AB89DF844}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfMaui", "Platforms\Maui\PdfMaui.csproj", "{AAC9D294-CCEE-493D-849B-D16974558F99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfMaui", "Platforms\MAUI\PdfMaui.csproj", "{AAC9D294-CCEE-493D-849B-D16974558F99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
