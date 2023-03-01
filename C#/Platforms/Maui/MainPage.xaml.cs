@@ -1,6 +1,5 @@
 ﻿using GemBox.Pdf;
 using GemBox.Pdf.Content;
-using System.Reflection;
 
 namespace PdfMaui
 {
@@ -33,13 +32,13 @@ namespace PdfMaui
                 formattedText.AppendLine("Hello World");
                 document.Pages[0].Content.DrawText(formattedText, new PdfPoint(100, 100));
             }
-            
+
             var image = PdfImage.Load(await FileSystem.OpenAppPackageFileAsync("dices.png"));
             document.Pages[0].Content.DrawImage(image, new PdfPoint(100, 200));
 
             var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Example.pdf");
 
-            document.Save(filePath);
+            await Task.Run(() => document.Save(filePath));
 
             return filePath;
         }
@@ -49,9 +48,15 @@ namespace PdfMaui
             button.IsEnabled = false;
             activity.IsRunning = true;
 
-            // In real apps the call to the method should be async (Task.Run(() => ....)
-            var filePath = await CreateDocumentAsync();
-            await Launcher.OpenAsync(new OpenFileRequest(Path.GetFileName(filePath), new ReadOnlyFile(filePath)));
+            try
+            {
+                var filePath = await CreateDocumentAsync();
+                await Launcher.OpenAsync(new OpenFileRequest(Path.GetFileName(filePath), new ReadOnlyFile(filePath)));
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "Close");
+            }
 
             activity.IsRunning = false;
             button.IsEnabled = true;
