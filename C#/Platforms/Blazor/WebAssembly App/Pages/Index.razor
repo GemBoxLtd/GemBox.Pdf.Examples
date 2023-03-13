@@ -1,0 +1,63 @@
+﻿@page "/"
+@inject IJSRuntime JS
+@using BlazorWebAssemblyApp.Data
+@using System.IO
+@using GemBox.Pdf
+@using GemBox.Pdf.Content
+
+<h1>Card generator [Blazor WebAssembly App]</h1>
+
+<EditForm Model="model" OnSubmit="CreatePdf">
+    <div class="form-group">Header text: <InputTextArea @bind-Value="model.Header" class="form-control"></InputTextArea></div>
+    <div class="form-group">Body text: <InputTextArea @bind-Value="model.Body" class="form-control" rows="8"></InputTextArea></div>
+    <div class="form-group">Footer text: <InputTextArea @bind-Value="model.Footer" class="form-control"></InputTextArea></div>
+    <div class="form-group"><button class="btn btn-primary mt-2" type="submit">Create</button></div>
+</EditForm>
+
+@code {
+    private FileModel model = new();
+
+    private async Task CreatePdf()
+    {
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
+        // Create new document.
+        using var document = new PdfDocument();
+
+        // Add page.
+        var page = document.Pages.Add();
+
+        using var formattedText = new PdfFormattedText();
+
+        // Write header.
+        formattedText.TextAlignment = PdfTextAlignment.Center;
+        formattedText.FontSize = 18;
+        formattedText.MaxTextWidth = 400;
+        formattedText.Append(this.model.Header);
+        page.Content.DrawText(formattedText, new PdfPoint(90, 750));
+
+        // Write body.
+        formattedText.Clear();
+        formattedText.TextAlignment = PdfTextAlignment.Justify;
+        formattedText.FontSize = 14;
+        formattedText.Append(this.model.Body);
+        page.Content.DrawText(formattedText, new PdfPoint(90, 400));
+
+        // Write footer.
+        formattedText.Clear();
+        formattedText.TextAlignment = PdfTextAlignment.Right;
+        formattedText.FontSize = 10;
+        formattedText.MaxTextWidth = 100;
+        formattedText.Append(this.model.Footer);
+        page.Content.DrawText(formattedText, new PdfPoint(450, 40));
+
+        // Save PDF file.
+        var stream = new MemoryStream();
+        document.Save(stream);
+        stream.Position = 0;
+
+        // Download file.
+        using var streamRef = new DotNetStreamReference(stream);
+        await JS.InvokeVoidAsync("downloadFileFromStream", "BlazorWebAssemblyOutput.pdf", streamRef);
+    }
+}
