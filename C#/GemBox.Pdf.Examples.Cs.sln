@@ -133,6 +133,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorServerApp", "Platform
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebAssemblyApp", "Platforms\Blazor\WebAssembly App\BlazorWebAssemblyApp.csproj", "{C802CF35-4325-4686-A5BF-02DCAEA490EF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfMaui", "Platforms\MAUI\PdfMaui.csproj", "{AAC9D294-CCEE-493D-849B-D16974558F99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -363,6 +365,12 @@ Global
 		{C802CF35-4325-4686-A5BF-02DCAEA490EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C802CF35-4325-4686-A5BF-02DCAEA490EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C802CF35-4325-4686-A5BF-02DCAEA490EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC9D294-CCEE-493D-849B-D16974558F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC9D294-CCEE-493D-849B-D16974558F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC9D294-CCEE-493D-849B-D16974558F99}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AAC9D294-CCEE-493D-849B-D16974558F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC9D294-CCEE-493D-849B-D16974558F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC9D294-CCEE-493D-849B-D16974558F99}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -425,6 +433,7 @@ Global
 		{91BF030D-A988-4DA5-858E-E80AB89DF844} = {9301271F-5ADB-4D58-9221-72A98A928B89}
 		{CF780CA6-4B38-453E-8CAB-7341DC80F25F} = {7224217B-0E9E-452D-990F-38FA26BE11DB}
 		{C802CF35-4325-4686-A5BF-02DCAEA490EF} = {7224217B-0E9E-452D-990F-38FA26BE11DB}
+		{AAC9D294-CCEE-493D-849B-D16974558F99} = {7224217B-0E9E-452D-990F-38FA26BE11DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89CC6B70-A1B6-4016-8C49-E65919DC4022}
