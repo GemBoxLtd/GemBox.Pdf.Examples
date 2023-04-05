@@ -55,15 +55,14 @@ Module Program
                 labelText.Append("Gender:")
                 Dim labelTextHeight = labelText.Height
                 page.Content.DrawText(labelText, New PdfPoint(xLabel, y - labelTextHeight))
+                document.Form.Fields.NewRadioButtonName = "Gender"
                 Dim genderMaleField = document.Form.Fields.AddRadioButton(page, xField, y - (labelTextHeight + fieldSize.Height) / 2, fieldSize.Height, fieldSize.Height)
-                genderMaleField.Name = "Gender"
                 genderMaleField.Choice = "Male"
                 labelText.Clear()
                 labelText.TextAlignment = PdfTextAlignment.Left
                 labelText.Append("Male")
                 page.Content.DrawText(labelText, New PdfPoint(xField + fieldSize.Height + 5, y - (labelTextHeight + labelText.Height) / 2))
                 Dim genderFemaleField = document.Form.Fields.AddRadioButton(page, xField + fieldSize.Width / 2, y - (labelTextHeight + fieldSize.Height) / 2, fieldSize.Height, fieldSize.Height)
-                genderFemaleField.Name = "Gender"
                 genderFemaleField.Choice = "Female"
                 labelText.Clear()
                 labelText.Append("Female")
