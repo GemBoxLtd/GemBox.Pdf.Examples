@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hello World", "Hello World", "{5B124386-2F05-4EEC-88E2-A8B16D28F7FC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Getting Started", "Getting Started", "{5B124386-2F05-4EEC-88E2-A8B16D28F7FC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common Uses", "Common Uses", "{316EDE20-49B0-4646-8E82-C0EE9A003783}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interactive Forms", "Intera
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Security", "Security", "{9301271F-5ADB-4D58-9221-72A98A928B89}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld", "Hello World\HelloWorld.csproj", "{9E811A2F-080B-4AAC-8B8E-F493848AAE19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GettingStarted", "Getting Started\GettingStarted.csproj", "{9E811A2F-080B-4AAC-8B8E-F493848AAE19}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Convert", "Common Uses\Convert\Convert.csproj", "{6D908CC6-B6DA-4616-AE46-FB601DF3811A}"
 EndProject
