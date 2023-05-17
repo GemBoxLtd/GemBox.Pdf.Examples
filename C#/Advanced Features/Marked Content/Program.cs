@@ -22,11 +22,11 @@ class Program
             markedProperties[PdfName.Create("ActualText")] = PdfString.Create("H");
 
             // Add the path that is a visual representation of the letter 'H'.
-            var path = page.Content.Elements.AddPath();
-            path.
-                BeginSubpath(100, 600).LineTo(100, 800).
-                BeginSubpath(100, 700).LineTo(200, 700).
-                BeginSubpath(200, 600).LineTo(200, 800);
+            var path = page.Content.Elements.AddPath()
+                .BeginSubpath(100, 600).LineTo(100, 800)
+                .BeginSubpath(100, 700).LineTo(200, 700)
+                .BeginSubpath(200, 600).LineTo(200, 800);
+
             var format = path.Format;
             format.Stroke.IsApplied = true;
             format.Stroke.Width = 10;
