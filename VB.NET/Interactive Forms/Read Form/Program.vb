@@ -1,7 +1,4 @@
 ﻿Imports System
-Imports System.Globalization
-Imports System.IO
-Imports System.Linq
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Forms
 
@@ -12,114 +9,56 @@ Module Program
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
-        Dim writer = New StringWriter(CultureInfo.InvariantCulture)
-        Dim format As String = "{0,-16}|{1,20}|{2,-20}|{3,-20}|{4,-20}", separator As String = New String("-"c, 100)
+        Example1()
+        Example2()
 
-        ' Write the header.
-        writer.WriteLine("Document contains the following form fields:")
-        writer.WriteLine()
-        writer.WriteLine(format,
-            "Type",
-            """"c & "Name" & """"c,
-            "Value",
-            "ExportValue/Choice",
-            "Checked/Selected")
-        writer.WriteLine(separator)
+    End Sub
 
-        Dim fieldType As PdfFieldType?
-        Dim fieldName, fieldExportValueOrChoice As String
-        Dim fieldValue As Object
-        Dim fieldCheckedOrSelected As Boolean?
-
+    Sub Example1()
         Using document = PdfDocument.Load("FormFilled.pdf")
-            ' Group fields by name because all fields with the same name are actually different representations (widget annotations) of the same field.
-            ' Radio button fields are usually grouped. Other field types are rarely grouped.
-            For Each fieldGroup In document.Form.Fields.GroupBy(Function(field) field.Name)
+            Console.WriteLine(" Field Name      | Field Type      | Field Value ")
+            Console.WriteLine(New String("-"c, 50))
 
-                Dim field = fieldGroup.First()
-
-                fieldType = field.FieldType
-                fieldName = """"c + field.Name + """"c
-                fieldValue = field.Value
-
-                For Each widgetField In fieldGroup
-
-                    Select Case widgetField.FieldType
-
-                        Case PdfFieldType.CheckBox,
-                             PdfFieldType.RadioButton
-                            ' Check box and radio button are toggle button fields.
-                            Dim toggleField = CType(widgetField, PdfToggleButtonField)
-
-                            fieldExportValueOrChoice = If(toggleField.FieldType = PdfFieldType.CheckBox,
-                                CType(toggleField, PdfCheckBoxField).ExportValue,
-                                CType(toggleField, PdfRadioButtonField).Choice)
-                            fieldCheckedOrSelected = toggleField.Checked
-
-                            writer.WriteLine(format,
-                                fieldType,
-                                fieldName,
-                                fieldValue,
-                                fieldExportValueOrChoice,
-                                fieldCheckedOrSelected)
-
-
-                        Case PdfFieldType.ListBox,
-                             PdfFieldType.Dropdown
-                            ' List box and drop-down are choice fields.
-                            Dim choiceField = CType(widgetField, PdfChoiceField)
-
-                            ' List box can have multiple values if multiple selection is enabled.
-                            Dim fieldValues = TryCast(fieldValue, String())
-                            If fieldValues IsNot Nothing Then fieldValue = String.Join(", ", fieldValues)
-
-                            For itemIndex As Integer = 0 To choiceField.Items.Count - 1
-
-                                fieldExportValueOrChoice = If(choiceField.Items(itemIndex).ExportValue, choiceField.Items(itemIndex).Value)
-                                fieldCheckedOrSelected = If(choiceField.FieldType = PdfFieldType.ListBox,
-                                    CType(choiceField, PdfListBoxField).SelectedIndices.Contains(itemIndex),
-                                    CType(choiceField, PdfDropdownField).SelectedIndex = itemIndex)
-
-                                writer.WriteLine(format,
-                                    fieldType,
-                                    fieldName,
-                                    fieldValue,
-                                    fieldExportValueOrChoice,
-                                    fieldCheckedOrSelected)
-
-                                ' Write field type, field name and field value just once for a field group.
-                                fieldType = Nothing
-                                fieldName = Nothing
-                                fieldValue = Nothing
-                            Next
-
-
-                        Case Else
-                            ' Text field may contain multiple lines of text, if enabled.
-                            If widgetField.FieldType = PdfFieldType.Text AndAlso (CType(widgetField, PdfTextField)).MultiLine AndAlso fieldValue IsNot Nothing Then fieldValue = (CStr(fieldValue)).Replace(vbCr, "\r")
-
-                            fieldExportValueOrChoice = Nothing
-                            fieldCheckedOrSelected = Nothing
-
-                            writer.WriteLine(format,
-                                fieldType,
-                                fieldName,
-                                fieldValue,
-                                fieldExportValueOrChoice,
-                                fieldCheckedOrSelected)
-
-                    End Select
-
-                    ' Write field type, field name and field value just once for a field group.
-                    fieldType = Nothing
-                    fieldName = Nothing
-                    fieldValue = Nothing
-                Next
-
-                writer.WriteLine(separator)
+            For Each field In document.Form.Fields
+                Dim value As String = (If(field.Value, String.Empty)).ToString().Replace(vbCr, ", ")
+                Console.WriteLine($" {field.Name,-15} | {field.FieldType,-15} | {value}")
             Next
         End Using
-
-        Console.Write(writer.ToString())
     End Sub
+
+    Sub Example2()
+        Using document = PdfDocument.Load("FormFilled.pdf")
+            Console.WriteLine(" Field Name                         | Field Data ")
+            Console.WriteLine(New String("-"c, 50))
+
+            For Each field In document.Form.Fields
+
+                Select Case field.FieldType
+
+                    Case PdfFieldType.RadioButton
+                        Dim radioButton = CType(field, PdfRadioButtonField)
+                        Console.Write($" {radioButton.Name,12} [PdfRadioButtonField] | ")
+                        Console.WriteLine($"{radioButton.Choice} [{If(radioButton.Checked, "Checked", "Unchecked")}]")
+
+                    Case PdfFieldType.CheckBox
+                        Dim checkBox = CType(field, PdfCheckBoxField)
+                        Console.Write($" {checkBox.Name,15} [PdfCheckBoxField] | ")
+                        Console.WriteLine($"{checkBox.ExportValue} [{If(checkBox.Checked, "Checked", "Unchecked")}]")
+
+                    Case PdfFieldType.Dropdown
+                        Dim dropdown = CType(field, PdfDropdownField)
+                        Console.Write($" {dropdown.Name,15} [PdfDropdownField] | ")
+                        Console.WriteLine(dropdown.SelectedItem)
+
+                    Case PdfFieldType.ListBox
+                        Dim listBox = CType(field, PdfListBoxField)
+                        Console.Write($" {listBox.Name,16} [PdfListBoxField] | ")
+                        Console.WriteLine(String.Join(", ", listBox.SelectedItems))
+
+                End Select
+
+            Next
+        End Using
+    End Sub
+
 End Module

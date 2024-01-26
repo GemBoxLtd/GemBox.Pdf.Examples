@@ -1,7 +1,7 @@
-FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
+FROM mcr.microsoft.com/dotnet/runtime:8.0 AS base
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY ["PdfDocker.csproj", ""]
 RUN dotnet restore "./PdfDocker.csproj"
@@ -10,12 +10,12 @@ WORKDIR "/src/."
 RUN dotnet build "PdfDocker.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "PdfDocker.csproj" -c Release -o /app/publish
+RUN dotnet publish "PdfDocker.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 
 # Update package sources to include supplemental packages (contrib archive area).
-RUN sed -i 's/main/main contrib/g' /etc/apt/sources.list
+RUN sed -i 's/main/main contrib/g' /etc/apt/sources.list.d/debian.sources
 
 # Downloads the package lists from the repositories.
 RUN apt-get update

@@ -10,24 +10,19 @@ class Program
 {
     static void Main()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         Example1();
-
         Example2();
-
         Example3();
-
         Example4();
-
         Example5();
-
         Example6();
     }
 
     static void Example1()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         using (var document = new PdfDocument())
         {
             var page = document.Pages.Add();
@@ -37,7 +32,7 @@ class Program
             {
                 formattedText.Font = new PdfFont("Helvetica", 100);
 
-                // Make the text fill black (in DeviceGray color space) and 50% opaque.
+                // Make the text fill black (in DeviceGray color space) and 50% opaque. 
                 formattedText.Color = PdfColor.FromGray(0);
                 // In PDF, opacity is defined separately from the color.
                 formattedText.Opacity = 0.5;
@@ -81,9 +76,6 @@ class Program
 
     static void Example2()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         using (var document = new PdfDocument())
         {
             var page = document.Pages.Add();
@@ -161,9 +153,6 @@ class Program
 
     static void Example3()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         using (var document = new PdfDocument())
         {
             var page = document.Pages.Add();
@@ -243,9 +232,6 @@ class Program
 
     static void Example4()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         using (var document = new PdfDocument())
         {
             var page = document.Pages.Add();
@@ -283,7 +269,7 @@ class Program
             }
 
             // Create an Indexed color space (which is currently not supported by GemBox.Pdf)
-            // as specified in http://www.adobe.com/content/dam/acom/en/devnet/pdf/PDF32000_2008.pdf#page=164
+            // as specified in https://opensource.adobe.com/dc-acrobat-sdk-docs/standards/pdfstandards/pdf/PDF32000_2008.pdf#page=164
             // Base color space is DeviceRGB and the created Indexed color space consists of two colors:
             // at index 0: green color (0x00FF00)
             // at index 1: blue color (0x0000FF)
@@ -312,9 +298,6 @@ class Program
 
     static void Example5()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         using (var document = new PdfDocument())
         {
             // The uncolored tiling pattern should not specify the color of its content, instead the outer element that uses the uncolored tiling pattern will specify the color of the tiling pattern content.
@@ -331,7 +314,7 @@ class Program
             uncoloredTilingPattern.Content.EndEdit();
 
             // Create an uncolored tiling Pattern color space (which is currently not supported by GemBox.Pdf)
-            // as specified in http://www.adobe.com/content/dam/acom/en/devnet/pdf/PDF32000_2008.pdf#page=186.
+            // as specified in https://opensource.adobe.com/dc-acrobat-sdk-docs/standards/pdfstandards/pdf/PDF32000_2008.pdf#page=186.
             // The underlying color space is DeviceRGB and colorants will be specified in DeviceRGB.
             var uncoloredTilingPatternColorSpaceArray = PdfArray.Create(2);
             uncoloredTilingPatternColorSpaceArray.Add(PdfName.Create("Pattern"));
@@ -399,31 +382,18 @@ class Program
 
     static void Example6()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         using (var document = new PdfDocument())
         {
-            // Create axial shading (which is currently not supported by GemBox.Pdf)
-            // as specified in http://www.adobe.com/content/dam/acom/en/devnet/pdf/PDF32000_2008.pdf#page=193
-            var shadingDictionary = PdfDictionary.Create();
-            PdfIndirectObject.Create(shadingDictionary);
-            shadingDictionary[PdfName.Create("ShadingType")] = PdfInteger.Create(2);
-            // Color values of the shading will be expressed in DeviceRGB color space.
-            shadingDictionary[PdfName.Create("ColorSpace")] = PdfName.Create("DeviceRGB");
             // Shading transitions the colors in the axis from location (0, 0) to location (250, 250).
-            shadingDictionary[PdfName.Create("Coords")] = PdfArray.Create(PdfNumber.Create(0), PdfNumber.Create(0), PdfNumber.Create(250), PdfNumber.Create(250));
-            var functionDictionary = PdfDictionary.Create();
-            functionDictionary[PdfName.Create("FunctionType")] = PdfInteger.Create(2);
-            functionDictionary[PdfName.Create("Domain")] = PdfArray.Create(PdfNumber.Create(0), PdfNumber.Create(1));
-            functionDictionary[PdfName.Create("N")] = PdfNumber.Create(1);
-            // Red color transitions from 1 (C0[0]) to 0 (C1[0]).
-            // Green color transitions from 0 (C0[1]) to 1 (C1[1]).
-            // Blue color is always 0 (C0[2] and C1[2] are 0).
-            functionDictionary[PdfName.Create("C0")] = PdfArray.Create(PdfNumber.Create(1), PdfNumber.Create(0), PdfNumber.Create(0));
-            functionDictionary[PdfName.Create("C1")] = PdfArray.Create(PdfNumber.Create(0), PdfNumber.Create(1), PdfNumber.Create(0));
-            shadingDictionary[PdfName.Create("Function")] = functionDictionary;
-            var shading = PdfShading.FromDictionary(shadingDictionary);
+            var startPoint = new PdfPoint(0, 0);
+            var size = new PdfSize(250, 250);
+
+            // Create axial shading as specified in https://opensource.adobe.com/dc-acrobat-sdk-docs/standards/pdfstandards/pdf/PDF32000_2008.pdf#page=193
+            var shading = new PdfAxialShading(
+                startPoint,
+                new PdfPoint(startPoint.X + size.Width, startPoint.Y + size.Height),
+                PdfColors.Red,
+                PdfColors.Green);
 
             var shadingPattern = new PdfShadingPattern(document, shading);
 

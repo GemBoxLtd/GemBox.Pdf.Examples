@@ -42,7 +42,7 @@ Module Program
         Using document = PdfDocument.Load("LoremIpsum.pdf")
 
             ' Get document properties dictionary.
-            Dim infoDictionary = document.Info.GetOrAddDictionary(getOrAdd:=True)
+            Dim infoDictionary = document.Info.GetOrAddDictionary()
 
             ' Create or update custom properties.
             infoDictionary(PdfName.Create("Custom Name 1")) = PdfString.Create("My Value 1")

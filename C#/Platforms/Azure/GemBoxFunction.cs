@@ -1,18 +1,14 @@
 using System.IO;
+using System.Net;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
 using GemBox.Pdf;
 
-public static class GemBoxFunction
+public class GemBoxFunction
 {
-    [FunctionName("GemBoxFunction")]
-#pragma warning disable CS1998 // Async method lacks 'await' operators.
-    public static async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req, ILogger log)
-#pragma warning restore CS1998
+    [Function("GemBoxFunction")]
+    public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req)
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -27,11 +23,15 @@ public static class GemBoxFunction
 
             var fileName = "Output.pdf";
 
-            using (var stream = new MemoryStream())
-            {
-                document.Save(stream);
-                return new FileContentResult(stream.ToArray(), "application/pdf") { FileDownloadName = fileName };
-            }
+            using var stream = new MemoryStream();
+            document.Save(stream);
+            var bytes = stream.ToArray();
+
+            var response = req.CreateResponse(HttpStatusCode.OK);
+            response.Headers.Add("Content-Type", "application/pdf");
+            response.Headers.Add("Content-Disposition", "attachment; filename=" + fileName);
+            await response.Body.WriteAsync(bytes, 0, bytes.Length);
+            return response;
         }
     }
 }

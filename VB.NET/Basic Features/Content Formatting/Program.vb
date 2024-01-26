@@ -266,7 +266,7 @@ Module Program
             End Using
 
             ' Create an Indexed color space (which is currently not supported by GemBox.Pdf)
-            ' as specified in http://www.adobe.com/content/dam/acom/en/devnet/pdf/PDF32000_2008.pdf#page=164
+            ' as specified in https://opensource.adobe.com/dc-acrobat-sdk-docs/standards/pdfstandards/pdf/PDF32000_2008.pdf#page=164
             ' Base color space is DeviceRGB and the created Indexed color space consists of two colors:
             ' at index 0: green color (0x00FF00)
             ' at index 1: blue color (0x0000FF)
@@ -310,7 +310,7 @@ Module Program
             uncoloredTilingPattern.Content.EndEdit()
 
             ' Create an uncolored tiling Pattern color space (which is currently not supported by GemBox.Pdf)
-            ' as specified in http://www.adobe.com/content/dam/acom/en/devnet/pdf/PDF32000_2008.pdf#page=186.
+            ' as specified in https://opensource.adobe.com/dc-acrobat-sdk-docs/standards/pdfstandards/pdf/PDF32000_2008.pdf#page=186.
             ' The underlying color space is DeviceRGB and colorants will be specified in DeviceRGB.
             Dim uncoloredTilingPatternColorSpaceArray = PdfArray.Create(2)
             uncoloredTilingPatternColorSpaceArray.Add(PdfName.Create("Pattern"))
@@ -379,26 +379,12 @@ Module Program
     Sub Example6()
         Using document = New PdfDocument()
 
-            ' Create axial shading (which is currently not supported by GemBox.Pdf)
-            ' as specified in http://www.adobe.com/content/dam/acom/en/devnet/pdf/PDF32000_2008.pdf#page=193
-            Dim shadingDictionary = PdfDictionary.Create()
-            PdfIndirectObject.Create(shadingDictionary)
-            shadingDictionary(PdfName.Create("ShadingType")) = PdfInteger.Create(2)
-            ' Color values of the shading will be expressed in DeviceRGB color space.
-            shadingDictionary(PdfName.Create("ColorSpace")) = PdfName.Create("DeviceRGB")
             ' Shading transitions the colors in the axis from location (0, 0) to location (250, 250).
-            shadingDictionary(PdfName.Create("Coords")) = PdfArray.Create(PdfNumber.Create(0), PdfNumber.Create(0), PdfNumber.Create(250), PdfNumber.Create(250))
-            Dim functionDictionary = PdfDictionary.Create()
-            functionDictionary(PdfName.Create("FunctionType")) = PdfInteger.Create(2)
-            functionDictionary(PdfName.Create("Domain")) = PdfArray.Create(PdfNumber.Create(0), PdfNumber.Create(1))
-            functionDictionary(PdfName.Create("N")) = PdfNumber.Create(1)
-            ' Red color transitions from 1 (C0[0]) to 0 (C1[0]).
-            ' Green color transitions from 0 (C0[1]) to 1 (C1[1]).
-            ' Blue color is always 0 (C0[2] and C1[2] are 0).
-            functionDictionary(PdfName.Create("C0")) = PdfArray.Create(PdfNumber.Create(1), PdfNumber.Create(0), PdfNumber.Create(0))
-            functionDictionary(PdfName.Create("C1")) = PdfArray.Create(PdfNumber.Create(0), PdfNumber.Create(1), PdfNumber.Create(0))
-            shadingDictionary(PdfName.Create("Function")) = functionDictionary
-            Dim shading = PdfShading.FromDictionary(shadingDictionary)
+            Dim startPoint = New PdfPoint(0, 0)
+            Dim size = New PdfSize(250, 250)
+
+            ' Create axial shading as specified in https://opensource.adobe.com/dc-acrobat-sdk-docs/standards/pdfstandards/pdf/PDF32000_2008.pdf#page=193
+            Dim shading = New PdfAxialShading(startPoint, New PdfPoint(startPoint.X + size.Width, startPoint.Y + size.Height), PdfColors.Red, PdfColors.Green)
 
             Dim shadingPattern = New PdfShadingPattern(document, shading)
 

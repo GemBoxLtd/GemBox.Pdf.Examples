@@ -6,20 +6,18 @@ class Program
 {
     static void Main()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         Example1();
-
         Example2();
-
         Example3();
-
         Example4();
+        Example5();
     }
 
     static void Example1()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         // Load PDF document from an unencrypted PDF file.
         using (var document = PdfDocument.Load("Reading.pdf"))
         {
@@ -33,35 +31,6 @@ class Program
 
     static void Example2()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
-        try
-        {
-            // Load PDF document from a potentially encrypted PDF file.
-            using (var document = PdfDocument.Load("Encryption.pdf",
-                new PdfLoadOptions() { Password = "user" }))
-            {
-                // Remove encryption from an output PDF file.
-                document.SaveOptions.Encryption = null;
-
-                // Save PDF document to an unencrypted PDF file.
-                document.Save("Decryption.pdf");
-            }
-        }
-        catch (InvalidPdfPasswordException ex)
-        {
-            // Gracefully handle the case when input PDF file is encrypted 
-            // and provided password is invalid.
-            Console.WriteLine(ex.Message);
-        }
-    }
-
-    static void Example3()
-    {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         // Load PDF document from an unencrypted PDF file.
         using (var document = PdfDocument.Load("Reading.pdf"))
         {
@@ -84,11 +53,8 @@ class Program
         }
     }
 
-    static void Example4()
+    static void Example3()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         // Load PDF document from an unencrypted PDF file.
         using (var document = PdfDocument.Load("Reading.pdf"))
         {
@@ -117,6 +83,65 @@ class Program
 
             // Save PDF document to an encrypted PDF file.
             document.Save("Encryption Settings.pdf");
+        }
+    }
+
+    static void Example4()
+    {
+        try
+        {
+            // Load PDF document from a potentially encrypted PDF file.
+            using (var document = PdfDocument.Load("Encryption.pdf",
+                new PdfLoadOptions() { Password = "user" }))
+            {
+                // Remove encryption from an output PDF file.
+                document.SaveOptions.Encryption = null;
+
+                // Save PDF document to an unencrypted PDF file.
+                document.Save("Decryption.pdf");
+            }
+        }
+        catch (InvalidPdfPasswordException ex)
+        {
+            // Gracefully handle the case when input PDF file is encrypted 
+            // and provided password is invalid.
+            Console.WriteLine(ex.Message);
+        }
+    }
+
+    static void Example5()
+    {
+        var loadOptions = new PdfLoadOptions();
+        loadOptions.AuthorizationOnDocumentOpen = true;
+
+        loadOptions.LoadingEncrypted += (sender, e) =>
+        {
+            Console.WriteLine("PDF file is encrypted, please enter the password:");
+            bool wrongPassword;
+
+            do
+            {
+                string password = Console.ReadLine();
+                if (string.IsNullOrEmpty(password))
+                    break;
+
+                wrongPassword = !e.SetPassword(password);
+                if (wrongPassword)
+                    Console.WriteLine("The password is incorrect, please try again:");
+            }
+            while (wrongPassword);
+        };
+
+        try
+        {
+            using (var document = PdfDocument.Load("Encryption.pdf", loadOptions))
+            {
+                Console.WriteLine("The correct password was provided.");
+            }
+        }
+        catch (InvalidPdfPasswordException)
+        {
+            Console.WriteLine("The incorrect password was provided.");
         }
     }
 }
