@@ -123,6 +123,8 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "TableOfContents", "Basic Fe
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DigitalSignatureWorkflows", "Security\Digital Signature Workflows\DigitalSignatureWorkflows.vbproj", "{1D39BBD8-E183-41CA-A64E-A5BA64A45E0A}"
 EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "RedactionOfContent", "Advanced Features\Redaction Of Content\RedactionOfContent.vbproj", "{49C34350-AFD5-4431-958C-4C219690E507}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -333,6 +335,10 @@ Global
 		{1D39BBD8-E183-41CA-A64E-A5BA64A45E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D39BBD8-E183-41CA-A64E-A5BA64A45E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D39BBD8-E183-41CA-A64E-A5BA64A45E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49C34350-AFD5-4431-958C-4C219690E507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49C34350-AFD5-4431-958C-4C219690E507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49C34350-AFD5-4431-958C-4C219690E507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49C34350-AFD5-4431-958C-4C219690E507}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -390,6 +396,7 @@ Global
 		{7454CE45-5164-418A-A739-0B321328FAFD} = {26CF12E5-E73F-4811-95FD-A35C38265C56}
 		{2C6FCE6F-F64C-47EF-A150-ECFCB249F119} = {26CF12E5-E73F-4811-95FD-A35C38265C56}
 		{1D39BBD8-E183-41CA-A64E-A5BA64A45E0A} = {73DC14F1-F478-4F6C-8E89-0372ADF469E7}
+		{49C34350-AFD5-4431-958C-4C219690E507} = {9B8954FD-D06E-4131-AFCE-D6E39646208F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {33FF006A-4B43-4646-8575-EA8A59A8B43D}

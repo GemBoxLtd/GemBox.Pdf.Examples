@@ -135,6 +135,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebAssemblyApp", "Pla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfMaui", "Platforms\MAUI\PdfMaui.csproj", "{AAC9D294-CCEE-493D-849B-D16974558F99}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedactionOfContent", "Advanced Features\Redaction Of Content\RedactionOfContent.csproj", "{FE0C33E4-ECE8-47F6-8E50-690F2F08D896}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -371,6 +373,10 @@ Global
 		{AAC9D294-CCEE-493D-849B-D16974558F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAC9D294-CCEE-493D-849B-D16974558F99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AAC9D294-CCEE-493D-849B-D16974558F99}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FE0C33E4-ECE8-47F6-8E50-690F2F08D896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE0C33E4-ECE8-47F6-8E50-690F2F08D896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE0C33E4-ECE8-47F6-8E50-690F2F08D896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE0C33E4-ECE8-47F6-8E50-690F2F08D896}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -434,6 +440,7 @@ Global
 		{CF780CA6-4B38-453E-8CAB-7341DC80F25F} = {7224217B-0E9E-452D-990F-38FA26BE11DB}
 		{C802CF35-4325-4686-A5BF-02DCAEA490EF} = {7224217B-0E9E-452D-990F-38FA26BE11DB}
 		{AAC9D294-CCEE-493D-849B-D16974558F99} = {7224217B-0E9E-452D-990F-38FA26BE11DB}
+		{FE0C33E4-ECE8-47F6-8E50-690F2F08D896} = {A0163421-F1BA-49BB-9866-E42C031272D7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89CC6B70-A1B6-4016-8C49-E65919DC4022}
