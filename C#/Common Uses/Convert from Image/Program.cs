@@ -6,9 +6,7 @@ class Program
     static void Main()
     {
         Example1();
-
         Example2();
-
         Example3();
     }
 

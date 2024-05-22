@@ -10,9 +10,6 @@ class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         Example1();
         Example2();
         Example3();
@@ -23,6 +20,9 @@ class Program
 
     static void Example1()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = new PdfDocument())
         {
             var page = document.Pages.Add();
@@ -76,6 +76,9 @@ class Program
 
     static void Example2()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = new PdfDocument())
         {
             var page = document.Pages.Add();
@@ -153,6 +156,9 @@ class Program
 
     static void Example3()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = new PdfDocument())
         {
             var page = document.Pages.Add();
@@ -232,6 +238,9 @@ class Program
 
     static void Example4()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = new PdfDocument())
         {
             var page = document.Pages.Add();
@@ -298,6 +307,9 @@ class Program
 
     static void Example5()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = new PdfDocument())
         {
             // The uncolored tiling pattern should not specify the color of its content, instead the outer element that uses the uncolored tiling pattern will specify the color of the tiling pattern content.
@@ -382,6 +394,9 @@ class Program
 
     static void Example6()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = new PdfDocument())
         {
             // Shading transitions the colors in the axis from location (0, 0) to location (250, 250).

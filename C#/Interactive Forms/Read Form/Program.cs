@@ -6,15 +6,15 @@ class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         Example1();
         Example2();
     }
 
     static void Example1()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = PdfDocument.Load("FormFilled.pdf"))
         {
             Console.WriteLine(" Field Name      | Field Type      | Field Value ");
@@ -30,6 +30,9 @@ class Program
 
     static void Example2()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = PdfDocument.Load("FormFilled.pdf"))
         {
             Console.WriteLine(" Field Name                         | Field Data ");

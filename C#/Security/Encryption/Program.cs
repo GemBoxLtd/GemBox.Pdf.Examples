@@ -6,9 +6,6 @@ class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         Example1();
         Example2();
         Example3();
@@ -18,6 +15,9 @@ class Program
 
     static void Example1()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         // Load PDF document from an unencrypted PDF file.
         using (var document = PdfDocument.Load("Reading.pdf"))
         {
@@ -31,6 +31,9 @@ class Program
 
     static void Example2()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         // Load PDF document from an unencrypted PDF file.
         using (var document = PdfDocument.Load("Reading.pdf"))
         {
@@ -55,6 +58,9 @@ class Program
 
     static void Example3()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         // Load PDF document from an unencrypted PDF file.
         using (var document = PdfDocument.Load("Reading.pdf"))
         {
@@ -88,6 +94,9 @@ class Program
 
     static void Example4()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         try
         {
             // Load PDF document from a potentially encrypted PDF file.
@@ -111,6 +120,9 @@ class Program
 
     static void Example5()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         var loadOptions = new PdfLoadOptions();
         loadOptions.AuthorizationOnDocumentOpen = true;
 

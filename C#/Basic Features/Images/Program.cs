@@ -8,9 +8,6 @@ class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         Example1();
         Example2();
         Example3();
@@ -20,6 +17,9 @@ class Program
 
     static void Example1()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = PdfDocument.Load("ExportImages.pdf"))
         {
             // Iterate through PDF pages.
@@ -40,6 +40,9 @@ class Program
 
     static void Example2()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = PdfDocument.Load("ExportImages.pdf"))
         {
             // Iterate through all PDF pages and through each page's content elements,
@@ -69,6 +72,9 @@ class Program
 
     static void Example3()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = new PdfDocument())
         {
             // Add a page.
@@ -93,6 +99,9 @@ class Program
 
     static void Example4()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = new PdfDocument())
         {
             var page = document.Pages.Add();
@@ -165,6 +174,9 @@ class Program
 
     static void Example5()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         var imageFiles = Directory.EnumerateFiles("Images");
 
         int imageCounter = 0;

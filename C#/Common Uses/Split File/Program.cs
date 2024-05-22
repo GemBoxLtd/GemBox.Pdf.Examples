@@ -9,9 +9,6 @@ class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         Example1();
         Example2();
         Example3();
@@ -20,6 +17,9 @@ class Program
 
     static void Example1()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         // Open a source PDF file and create a destination ZIP file.
         using (var source = PdfDocument.Load("Chapters.pdf"))
         using (var archiveStream = File.OpenWrite("Output.zip"))
@@ -44,6 +44,9 @@ class Program
 
     static void Example2()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         // List of page numbers used for splitting the PDF document.
         var pageRanges = new[]
         {
@@ -80,6 +83,9 @@ class Program
 
     static void Example3()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var source = PdfDocument.Load("Chapters.pdf"))
         using (var archiveStream = File.OpenWrite("OutputBookmarks.zip"))
         using (var archive = new ZipArchive(archiveStream, ZipArchiveMode.Create))
@@ -115,6 +121,9 @@ class Program
 
     static void Example4()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var source = PdfDocument.Load("lorem-ipsum-1000-pages.pdf"))
         {
             int chunkSize = 220;
