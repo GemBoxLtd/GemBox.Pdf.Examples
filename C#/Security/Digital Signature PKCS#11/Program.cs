@@ -1,9 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Linq;
 using GemBox.Pdf;
 using GemBox.Pdf.Forms;
 using GemBox.Pdf.Security;
+using System;
+using System.IO;
+using System.Linq;
 
 class Program
 {

@@ -1,8 +1,8 @@
+using GemBox.Pdf;
+using GemBox.Pdf.Annotations;
 using System;
 using System.IO;
 using System.IO.Compression;
-using GemBox.Pdf;
-using GemBox.Pdf.Annotations;
 
 class Program
 {

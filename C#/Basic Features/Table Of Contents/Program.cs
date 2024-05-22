@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using GemBox.Document;
 using GemBox.Pdf;
 using GemBox.Pdf.Annotations;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 class Program
 {

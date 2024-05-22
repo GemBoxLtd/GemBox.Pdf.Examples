@@ -1,10 +1,10 @@
+using GemBox.Pdf;
+using GemBox.Pdf.Objects;
+using GemBox.Pdf.Portfolios;
 using System;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using GemBox.Pdf;
-using GemBox.Pdf.Objects;
-using GemBox.Pdf.Portfolios;
 
 class Program
 {
