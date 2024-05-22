@@ -9,7 +9,6 @@ class Program
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-        ComponentInfo.FreeLimitReached += (sender, e) => e.FreeLimitReachedAction = FreeLimitReachedAction.Stop;
 
         using (var document = PdfDocument.Load("LoremIpsum.pdf"))
         {
