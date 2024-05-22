@@ -1,26 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GemBox.Pdf;
+using GemBox.Pdf.Content;
+using Microsoft.AspNetCore.Mvc;
+using PdfCoreMvc.Models;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using PdfCoreMvc.Models;
-using GemBox.Pdf;
-using GemBox.Pdf.Content;
 
 namespace PdfCoreMvc.Controllers
 {
     public class HomeController : Controller
     {
-        static HomeController()
-        {
-            // If using the Professional version, put your serial key below.
-            ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-        }
+        // If using the Professional version, put your serial key below.
+        static HomeController() => ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        public IActionResult Index()
-        {
-            return View(new FileModel());
-        }
+        public IActionResult Index() => this.View(new FileModel());
 
         public FileStreamResult Download(FileModel model)
         {
@@ -69,10 +63,8 @@ namespace PdfCoreMvc.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel() { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        public IActionResult Error() =>
+            this.View(new ErrorViewModel() { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
 
@@ -83,7 +75,8 @@ namespace PdfCoreMvc.Models
         [DisplayFormat(ConvertEmptyStringToNull = false)]
         public string Header { get; set; } = "Header text from ASP.NET Core MVC";
         [DisplayFormat(ConvertEmptyStringToNull = false)]
-        public string Body { get; set; } = string.Join(" ", Enumerable.Repeat("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.", 4));
+        public string Body { get; set; } = string.Join(" ",
+            Enumerable.Repeat("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.", 4));
         [DisplayFormat(ConvertEmptyStringToNull = false)]
         public string Footer { get; set; } = "Page 1 of 1";
     }

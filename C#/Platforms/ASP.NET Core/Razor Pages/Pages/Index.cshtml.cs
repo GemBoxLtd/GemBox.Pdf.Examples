@@ -1,11 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.IO;
-using System.Linq;
+﻿using GemBox.Pdf;
+using GemBox.Pdf.Content;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PdfCorePages.Models;
-using GemBox.Pdf;
-using GemBox.Pdf.Content;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
 
 namespace PdfCorePages.Pages
 {
@@ -14,13 +14,10 @@ namespace PdfCorePages.Pages
         [BindProperty]
         public new FileModel File { get; set; }
 
-        public IndexModel()
-        {
-            this.File = new FileModel();
+        // If using the Professional version, put your serial key below.
+        static IndexModel() => ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-            // If using the Professional version, put your serial key below.
-            ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-        }
+        public IndexModel() => this.File = new FileModel();
 
         public void OnGet() { }
 
@@ -79,7 +76,8 @@ namespace PdfCorePages.Models
         [DisplayFormat(ConvertEmptyStringToNull = false)]
         public string Header { get; set; } = "Header text from ASP.NET Core Razor Pages";
         [DisplayFormat(ConvertEmptyStringToNull = false)]
-        public string Body { get; set; } = string.Join(" ", Enumerable.Repeat("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.", 4));
+        public string Body { get; set; } = string.Join(" ",
+            Enumerable.Repeat("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.", 4));
         [DisplayFormat(ConvertEmptyStringToNull = false)]
         public string Footer { get; set; } = "Page 1 of 1";
     }

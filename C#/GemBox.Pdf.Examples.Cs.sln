@@ -101,7 +101,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewerPreferences", "Advanc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentProperties", "Basic Features\Document Properties\DocumentProperties.csproj", "{F3E72BCD-ACD8-4B6F-96AD-E9D97BAB2777}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentStreamsAndResources", "Advanced Features\Content Streams And Resources\ContentStreamsAndResources.csproj", "{9FA1F863-E8AB-4259-8793-6944DD46C310}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentStreamsAndResources", "Advanced Features\Content Streams and Resources\ContentStreamsAndResources.csproj", "{9FA1F863-E8AB-4259-8793-6944DD46C310}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreateForm", "Interactive Forms\Create Form\CreateForm.csproj", "{70B1B2B9-925F-4B15-956F-6032F201283B}"
 EndProject
@@ -135,7 +135,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebAssemblyApp", "Pla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PdfMaui", "Platforms\MAUI\PdfMaui.csproj", "{AAC9D294-CCEE-493D-849B-D16974558F99}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedactionOfContent", "Advanced Features\Redaction Of Content\RedactionOfContent.csproj", "{FE0C33E4-ECE8-47F6-8E50-690F2F08D896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedactionOfContent", "Advanced Features\Redaction of Content\RedactionOfContent.csproj", "{FE0C33E4-ECE8-47F6-8E50-690F2F08D896}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

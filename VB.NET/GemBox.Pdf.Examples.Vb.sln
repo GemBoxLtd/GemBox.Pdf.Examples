@@ -95,7 +95,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ViewerPreferences", "Advanc
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DocumentProperties", "Basic Features\Document Properties\DocumentProperties.vbproj", "{37F2EF51-94D1-4F02-A75C-222981DD8E4C}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ContentStreamsAndResources", "Advanced Features\Content Streams And Resources\ContentStreamsAndResources.vbproj", "{D50B4A85-5921-4B65-A092-85CC1497C930}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ContentStreamsAndResources", "Advanced Features\Content Streams and Resources\ContentStreamsAndResources.vbproj", "{D50B4A85-5921-4B65-A092-85CC1497C930}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CreateForm", "Interactive Forms\Create Form\CreateForm.vbproj", "{4EB4ADAC-6227-42B5-95A1-BF4176B8D5AA}"
 EndProject
@@ -123,7 +123,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "TableOfContents", "Basic Fe
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DigitalSignatureWorkflows", "Security\Digital Signature Workflows\DigitalSignatureWorkflows.vbproj", "{1D39BBD8-E183-41CA-A64E-A5BA64A45E0A}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "RedactionOfContent", "Advanced Features\Redaction Of Content\RedactionOfContent.vbproj", "{49C34350-AFD5-4431-958C-4C219690E507}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "RedactionOfContent", "Advanced Features\Redaction of Content\RedactionOfContent.vbproj", "{49C34350-AFD5-4431-958C-4C219690E507}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
