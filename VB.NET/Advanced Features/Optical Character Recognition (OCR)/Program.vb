@@ -1,14 +1,11 @@
-Imports System
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Content
 Imports GemBox.Pdf.Ocr
+Imports System
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -16,6 +13,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = OcrReader.Read("BookPage.jpg")
 
             Dim page = document.Pages(0)
@@ -33,6 +33,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' TesseractDataPath specifies the directory which contains language data.
         ' You can download the language data files from: https://www.gemboxsoftware.com/pdf/docs/ocr.html#language-data
         Dim readOptions As New OcrReadOptions() With {.TesseractDataPath = "languagedata"}

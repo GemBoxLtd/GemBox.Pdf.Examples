@@ -1,8 +1,8 @@
-﻿Imports System
-Imports System.IO
-Imports System.IO.Compression
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Annotations
+Imports System
+Imports System.IO
+Imports System.IO.Compression
 
 Module Program
 

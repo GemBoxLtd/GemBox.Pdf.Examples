@@ -1,13 +1,10 @@
-Imports System
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Security
+Imports System
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -18,6 +15,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Load PDF document from an unencrypted PDF file.
         Using document = PdfDocument.Load("Reading.pdf")
 
@@ -30,6 +30,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Load PDF document from an unencrypted PDF file.
         Using document = PdfDocument.Load("Reading.pdf")
 
@@ -53,6 +56,9 @@ Module Program
     End Sub
 
     Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Load PDF document from an unencrypted PDF file.
         Using document = PdfDocument.Load("Reading.pdf")
 
@@ -85,6 +91,9 @@ Module Program
     End Sub
 
     Sub Example4()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Try
 
             ' Load PDF document from a potentially encrypted PDF file.
@@ -106,6 +115,9 @@ Module Program
         End Try
     End Sub
     Sub Example5()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim loadOptions As New PdfLoadOptions()
         loadOptions.AuthorizationOnDocumentOpen = True
 

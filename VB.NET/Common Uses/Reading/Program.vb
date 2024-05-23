@@ -1,21 +1,16 @@
-Imports System
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Content
+Imports System
 
 Module Program
 
     Sub Main()
-
         Example1()
-
         Example2()
-
         Example3()
-
     End Sub
 
     Sub Example1()
-
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -30,7 +25,6 @@ Module Program
     End Sub
 
     Sub Example2()
-
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -73,7 +67,6 @@ Module Program
     End Sub
 
     Sub Example3()
-
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -106,4 +99,5 @@ Module Program
             End While
         End Using
     End Sub
+
 End Module

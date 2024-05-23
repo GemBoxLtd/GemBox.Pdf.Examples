@@ -1,9 +1,9 @@
-﻿Imports System.Collections.Generic
-Imports System.IO
-Imports System.Linq
 Imports GemBox.Document
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Annotations
+Imports System.Collections.Generic
+Imports System.IO
+Imports System.Linq
 
 Module Program
 

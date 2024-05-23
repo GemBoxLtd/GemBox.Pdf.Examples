@@ -6,9 +6,6 @@ Module Program
 
     Sub Main()
 
-        ' If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-
         Example1()
         Example2()
         Example3()
@@ -18,6 +15,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = PdfDocument.Load("Invoice.pdf")
             Dim page = document.Pages(0)
 
@@ -30,6 +30,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = PdfDocument.Load("Reading.pdf")
             Dim page = document.Pages(0)
 
@@ -59,6 +62,9 @@ Module Program
     End Sub
 
     Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = PdfDocument.Load("Document.pdf")
             ' Applying all redactions existing in the PDF document
             For Each page In document.Pages
@@ -70,6 +76,9 @@ Module Program
     End Sub
 
     Sub Example4()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = PdfDocument.Load("Invoice.pdf")
             Dim page = document.Pages(0)
 
@@ -86,6 +95,9 @@ Module Program
     End Sub
 
     Sub Example5()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = PdfDocument.Load("Invoice.pdf")
             Dim page = document.Pages(0)
             Dim redaction = page.Annotations.AddRedaction(0, 0, 1, 1)

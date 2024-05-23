@@ -1,13 +1,10 @@
-﻿Imports System
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Forms
+Imports System
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -15,6 +12,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = PdfDocument.Load("FormFilled.pdf")
             Console.WriteLine(" Field Name      | Field Type      | Field Value ")
             Console.WriteLine(New String("-"c, 50))
@@ -27,6 +27,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = PdfDocument.Load("FormFilled.pdf")
             Console.WriteLine(" Field Name                         | Field Data ")
             Console.WriteLine(New String("-"c, 50))

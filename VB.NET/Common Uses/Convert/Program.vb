@@ -1,14 +1,11 @@
-Imports System.IO
-Imports System.IO.Compression
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Content
+Imports System.IO
+Imports System.IO.Compression
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -17,6 +14,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Load a PDF document.
         Using document = PdfDocument.Load("Input.pdf")
 
@@ -34,6 +34,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Load a PDF document.
         Using document = PdfDocument.Load("Input.pdf")
 
@@ -74,6 +77,9 @@ Module Program
     End Sub
 
     Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Load a PDF document.
         Using document = PdfDocument.Load("Input.pdf")
 

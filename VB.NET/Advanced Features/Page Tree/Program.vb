@@ -7,7 +7,6 @@ Module Program
 
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-        AddHandler ComponentInfo.FreeLimitReached, Sub(sender, e) e.FreeLimitReachedAction = FreeLimitReachedAction.Stop
 
         Using document = New PdfDocument()
 
@@ -56,5 +55,7 @@ Module Program
 
             document.Save("Page Tree.pdf")
         End Using
+
     End Sub
+
 End Module

@@ -4,13 +4,9 @@ Imports GemBox.Pdf.Content
 Module Program
 
     Sub Main()
-
         Example1()
-
         Example2()
-
         Example3()
-
     End Sub
 
     Sub Example1()

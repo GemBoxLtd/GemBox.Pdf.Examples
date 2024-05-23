@@ -1,4 +1,4 @@
-﻿Imports GemBox.Pdf
+Imports GemBox.Pdf
 Imports GemBox.Pdf.Annotations
 Imports GemBox.Pdf.Content
 Imports GemBox.Pdf.Forms

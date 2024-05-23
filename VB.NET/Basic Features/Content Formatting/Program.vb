@@ -1,17 +1,14 @@
-﻿Imports System
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Content
 Imports GemBox.Pdf.Content.Colors
 Imports GemBox.Pdf.Content.Patterns
 Imports GemBox.Pdf.Objects
 Imports GemBox.Pdf.Text
+Imports System
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -23,6 +20,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = New PdfDocument()
 
             Dim page = document.Pages.Add()
@@ -75,6 +75,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = New PdfDocument()
 
             Dim page = document.Pages.Add()
@@ -151,6 +154,9 @@ Module Program
     End Sub
 
     Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = New PdfDocument()
 
             Dim page = document.Pages.Add()
@@ -229,6 +235,9 @@ Module Program
     End Sub
 
     Sub Example4()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = New PdfDocument()
 
             Dim page = document.Pages.Add()
@@ -294,6 +303,9 @@ Module Program
     End Sub
 
     Sub Example5()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = New PdfDocument()
 
             ' The uncolored tiling pattern should not specify the color of its content, instead the outer element that uses the uncolored tiling pattern will specify the color of the tiling pattern content.
@@ -377,6 +389,9 @@ Module Program
     End Sub
 
     Sub Example6()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = New PdfDocument()
 
             ' Shading transitions the colors in the axis from location (0, 0) to location (250, 250).

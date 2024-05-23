@@ -1,16 +1,13 @@
+Imports GemBox.Pdf
 Imports System
 Imports System.Collections.Generic
 Imports System.IO
 Imports System.IO.Compression
 Imports System.Linq
-Imports GemBox.Pdf
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
@@ -20,6 +17,9 @@ Module Program
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Open a source PDF file and create a destination ZIP file.
         Using source = PdfDocument.Load("Chapters.pdf")
             Using archiveStream = File.OpenWrite("Output.zip")
@@ -47,6 +47,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' List of page numbers used for splitting the PDF document.
         Dim pageRanges = {
             New With {.FirstPageIndex = 0, .LastPageIndex = 2},
@@ -86,6 +89,9 @@ Module Program
     End Sub
 
     Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' Open a source PDF file and create a destination ZIP file.
         Using source = PdfDocument.Load("Chapters.pdf")
             Using archiveStream = File.OpenWrite("Output.zip")
@@ -129,6 +135,9 @@ Module Program
     End Sub
 
     Sub Example4()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using source = PdfDocument.Load("lorem-ipsum-1000-pages.pdf")
 
             Dim chunkSize As Integer = 220

@@ -1,7 +1,7 @@
-Imports System
-Imports System.Globalization
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Content
+Imports System
+Imports System.Globalization
 
 Module Program
 
@@ -9,7 +9,6 @@ Module Program
 
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-        AddHandler ComponentInfo.FreeLimitReached, Sub(sender, e) e.FreeLimitReachedAction = FreeLimitReachedAction.Stop
 
         Using document = PdfDocument.Load("LoremIpsum.pdf")
 
@@ -50,5 +49,7 @@ Module Program
 
             document.Save("Header and Footer.pdf")
         End Using
+
     End Sub
+
 End Module

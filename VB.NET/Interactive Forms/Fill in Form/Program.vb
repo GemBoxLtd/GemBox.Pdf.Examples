@@ -1,4 +1,4 @@
-﻿Imports GemBox.Pdf
+Imports GemBox.Pdf
 
 Module Program
 

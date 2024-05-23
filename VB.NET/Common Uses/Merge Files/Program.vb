@@ -1,18 +1,18 @@
-Imports System.IO
 Imports GemBox.Pdf
+Imports System.IO
 
 Module Program
 
     Sub Main()
-
-        ' If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Example1()
         Example2()
     End Sub
 
     Sub Example1()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         ' List of source file names.
         Dim fileNames = New String() _
         {
@@ -37,6 +37,9 @@ Module Program
     End Sub
 
     Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Dim files = Directory.EnumerateFiles("Merge Many Pdfs")
 
         Dim fileCounter As Integer = 0

@@ -1,10 +1,10 @@
-﻿Imports System
-Imports System.IO
-Imports System.IO.Compression
-Imports System.Linq
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Objects
 Imports GemBox.Pdf.Portfolios
+Imports System
+Imports System.IO
+Imports System.IO.Compression
+Imports System.Linq
 
 Module Program
 

@@ -1,21 +1,17 @@
-Imports System
 Imports GemBox.Pdf
 Imports GemBox.Pdf.Content
+Imports System
 
 Module Program
 
     Sub Main()
-
         Example1()
-
         Example2()
     End Sub
 
     Sub Example1()
-
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-        AddHandler ComponentInfo.FreeLimitReached, Sub(sender, e) e.FreeLimitReachedAction = FreeLimitReachedAction.Stop
 
         Using document = PdfDocument.Load("LoremIpsum.pdf")
 
@@ -70,7 +66,6 @@ Module Program
     End Sub
 
     Sub Example2()
-
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -104,4 +99,5 @@ Module Program
             document.Save("Watermark Images.pdf")
         End Using
     End Sub
+
 End Module
