@@ -9,9 +9,9 @@ class Program
 
         using (PdfDocument document = PdfDocument.Load("Print.pdf"))
         {
-            // Print Word document to default printer.
-            string printer = null;
-            document.Print(printer);
+            // Print PDF document to default printer (e.g. 'Microsoft Print to Pdf').
+            string printerName = null;
+            document.Print(printerName);
         }
     }
 }

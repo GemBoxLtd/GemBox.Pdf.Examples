@@ -5,21 +5,16 @@ Imports GemBox.Pdf.Security
 Module Program
 
     Sub Main()
+        Example1()
+        Example2()
+        Example3()
+        Example4()
+    End Sub
 
+    Sub Example1()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
-        PAdES_B_B()
-
-        PAdES_B_T()
-
-        PAdES_B_LT()
-
-        PAdES_B_LTA()
-
-    End Sub
-
-    Sub PAdES_B_B()
         Using document = PdfDocument.Load("Reading.pdf")
 
             ' Add a visible signature field to the first page of the PDF document.
@@ -50,7 +45,10 @@ Module Program
         End Using
     End Sub
 
-    Sub PAdES_B_T()
+    Sub Example2()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = PdfDocument.Load("Reading.pdf")
 
             ' Add a visible signature field to the first page of the PDF document.
@@ -84,7 +82,10 @@ Module Program
         End Using
     End Sub
 
-    Sub PAdES_B_LT()
+    Sub Example3()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = PdfDocument.Load("Reading.pdf")
 
             ' Add a visible signature field to the first page of the PDF document.
@@ -123,7 +124,10 @@ Module Program
         End Using
     End Sub
 
-    Sub PAdES_B_LTA()
+    Sub Example4()
+        ' If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = PdfDocument.Load("Reading.pdf")
 
             ' Add a visible signature field to the first page of the PDF document.
@@ -165,4 +169,5 @@ Module Program
             document.Save()
         End Using
     End Sub
+
 End Module

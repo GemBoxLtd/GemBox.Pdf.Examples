@@ -9,18 +9,14 @@ class Program
 {
     static void Main()
     {
-        SimpleSignature();
-
-        VisibleSignature();
-
-        MultipleSignature();
-
-        ExternalSignature();
-
-        RemoveSignature();
+        Example1();
+        Example2();
+        Example3();
+        Example4();
+        Example5();
     }
 
-    static void SimpleSignature()
+    static void Example1()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -49,7 +45,7 @@ class Program
         }
     }
 
-    static void VisibleSignature()
+    static void Example2()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -102,7 +98,7 @@ class Program
         }
     }
 
-    static void MultipleSignature()
+    static void Example3()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -151,7 +147,7 @@ class Program
         }
     }
 
-    static void ExternalSignature()
+    static void Example4()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -180,7 +176,7 @@ class Program
         }
     }
 
-    static void RemoveSignature()
+    static void Example5()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");

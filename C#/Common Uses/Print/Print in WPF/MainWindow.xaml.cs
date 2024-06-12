@@ -1,8 +1,8 @@
-﻿using System.Windows;
+﻿using GemBox.Pdf;
+using Microsoft.Win32;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Xps.Packaging;
-using GemBox.Pdf;
-using Microsoft.Win32;
 
 public partial class MainWindow : Window
 {

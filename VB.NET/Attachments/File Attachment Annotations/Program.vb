@@ -7,16 +7,12 @@ Imports System.IO.Compression
 Module Program
 
     Sub Main()
-
-        CreateFileAttachmentAnnotationsFromFileSystem()
-
-        CreateFileAttachmentAnnotationsFromStreams()
-
-        ExtractFilesFromFileAttachmentAnnotations()
+        Example1()
+        Example2()
+        Example3()
     End Sub
 
-    Sub CreateFileAttachmentAnnotationsFromFileSystem()
-
+    Sub Example1()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -60,8 +56,7 @@ Module Program
         End Using
     End Sub
 
-    Sub CreateFileAttachmentAnnotationsFromStreams()
-
+    Sub Example2()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -119,8 +114,7 @@ Module Program
         End Using
     End Sub
 
-    Sub ExtractFilesFromFileAttachmentAnnotations()
-
+    Sub Example3()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -162,4 +156,5 @@ Module Program
             End Using
         End Using
     End Sub
+
 End Module

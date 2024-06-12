@@ -6,14 +6,12 @@ class Program
 {
     static void Main()
     {
-        AuthorSignature();
-
-        SignatureLocks();
-
-        SignaturesWorkflow();
+        Example1();
+        Example2();
+        Example3();
     }
 
-    static void AuthorSignature()
+    static void Example1()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -54,7 +52,7 @@ class Program
         }
     }
 
-    static void SignatureLocks()
+    static void Example2()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -87,7 +85,7 @@ class Program
         }
     }
 
-    static void SignaturesWorkflow()
+    static void Example3()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");

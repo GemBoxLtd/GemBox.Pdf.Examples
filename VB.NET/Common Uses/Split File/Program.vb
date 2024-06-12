@@ -8,12 +8,10 @@ Imports System.Linq
 Module Program
 
     Sub Main()
-
         Example1()
         Example2()
         Example3()
         Example4()
-
     End Sub
 
     Sub Example1()
@@ -152,7 +150,8 @@ Module Program
                     Dim chunkName As String = $"Pages {pageIndex + 1}-{chunkCount}.pdf"
 
                     While pageIndex < chunkCount
-                        destination.Pages.AddClone(source.Pages(Math.Min(System.Threading.Interlocked.Increment(pageIndex), pageIndex - 1)))
+                        destination.Pages.AddClone(source.Pages(pageIndex))
+                        pageIndex = pageIndex + 1
                     End While
 
                     destination.Save(Path.Combine("Split Large Pdf", chunkName))

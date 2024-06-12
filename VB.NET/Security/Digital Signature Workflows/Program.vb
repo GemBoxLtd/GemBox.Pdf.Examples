@@ -5,16 +5,12 @@ Imports GemBox.Pdf.Security
 Module Program
 
     Sub Main()
-
-        AuthorSignature()
-
-        SignatureLocks()
-
-        SignaturesWorkflow()
-
+        Example1()
+        Example2()
+        Example3()
     End Sub
 
-    Sub AuthorSignature()
+    Sub Example1()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -52,7 +48,7 @@ Module Program
         End Using
     End Sub
 
-    Sub SignatureLocks()
+    Sub Example2()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -85,7 +81,7 @@ Module Program
         End Using
     End Sub
 
-    Sub SignaturesWorkflow()
+    Sub Example3()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 

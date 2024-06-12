@@ -6,16 +6,12 @@ Imports System.IO.Compression
 Module Program
 
     Sub Main()
-
-        CreateEmbeddedFilesFromFileSystem()
-
-        CreateEmbeddedFilesFromStreams()
-
-        ExtractEmbeddedFiles()
+        Example1()
+        Example2()
+        Example3()
     End Sub
 
-    Sub CreateEmbeddedFilesFromFileSystem()
-
+    Sub Example1()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -43,8 +39,7 @@ Module Program
         End Using
     End Sub
 
-    Sub CreateEmbeddedFilesFromStreams()
-
+    Sub Example2()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -86,8 +81,7 @@ Module Program
         End Using
     End Sub
 
-    Sub ExtractEmbeddedFiles()
-
+    Sub Example3()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -125,4 +119,5 @@ Module Program
             End Using
         End Using
     End Sub
+
 End Module

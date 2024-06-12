@@ -1,13 +1,12 @@
-Imports System.Windows.Xps.Packaging
 Imports GemBox.Pdf
 Imports Microsoft.Win32
+Imports System.Windows.Xps.Packaging
 
 Class MainWindow
 
     Dim xpsDoc As XpsDocument
 
     Public Sub New()
-
         InitializeComponent()
 
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
@@ -29,4 +28,5 @@ Class MainWindow
         End If
 
     End Sub
+
 End Class

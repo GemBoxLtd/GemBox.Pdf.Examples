@@ -18,7 +18,7 @@ Module Program
 
             Dim markedProperties = markStart.GetEditableProperties().GetDictionary()
 
-            ' Set replacement text for a path, as specified in http://www.adobe.com/content/dam/acom/en/devnet/pdf/PDF32000_2008.pdf#page=623
+            ' Set replacement text for a path, as specified in https://opensource.adobe.com/dc-acrobat-sdk-docs/standards/pdfstandards/pdf/PDF32000_2008.pdf#page=623
             markedProperties(PdfName.Create("ActualText")) = PdfString.Create("H")
 
             ' Add the path that is a visual representation of the letter 'H'.

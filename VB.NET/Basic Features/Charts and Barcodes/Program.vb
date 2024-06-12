@@ -10,26 +10,18 @@ Imports System.Runtime.CompilerServices
 Module Program
 
     Sub Main()
+        Example1()
+        Example2()
+        Example3()
+    End Sub
 
+    Sub Example1()
         ' If using the Professional version, put your GemBox.Pdf serial key below.
         GemBox.Pdf.ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         ' If using the Professional version, put your GemBox.Spreadsheet serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
+        GemBox.Spreadsheet.SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY")
 
-        ' If using the Professional version, put your GemBox.Document serial key below.
-        GemBox.Document.ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-
-        ' If using the Professional version, put your GemBox.Presentation serial key below.
-        GemBox.Presentation.ComponentInfo.SetLicense("FREE-LIMITED-KEY")
-
-        Example1()
-        Example2()
-        Example3()
-
-    End Sub
-
-    Sub Example1()
         Using document = New PdfDocument()
             Dim page = document.Pages.Add()
             Dim x As Double = 50
@@ -80,6 +72,12 @@ Module Program
     End Function
 
     Sub Example2()
+        ' If using the Professional version, put your GemBox.Pdf serial key below.
+        GemBox.Pdf.ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
+        ' If using the Professional version, put your GemBox.Document serial key below.
+        GemBox.Document.ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = New PdfDocument()
             Dim page = document.Pages.Add()
             Dim x As Double = 50
@@ -128,6 +126,12 @@ Module Program
     End Function
 
     Sub Example3()
+        ' If using the Professional version, put your GemBox.Pdf serial key below.
+        GemBox.Pdf.ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
+        ' If using the Professional version, put your GemBox.Presentation serial key below.
+        GemBox.Presentation.ComponentInfo.SetLicense("FREE-LIMITED-KEY")
+
         Using document = New PdfDocument()
             Dim page = document.Pages.Add()
             Dim x As Double = 50

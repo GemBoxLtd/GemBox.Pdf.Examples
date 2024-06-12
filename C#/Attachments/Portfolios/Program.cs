@@ -10,14 +10,12 @@ class Program
 {
     static void Main()
     {
-        CreatePortfolioFromFileSystem();
-
-        CreatePortfolioFromStreams();
-
-        ExtractFilesAndFoldersFromPortfolio();
+        Example1();
+        Example2();
+        Example3();
     }
 
-    static void CreatePortfolioFromFileSystem()
+    static void Example1()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -62,7 +60,7 @@ class Program
         }
     }
 
-    static void CreatePortfolioFromStreams()
+    static void Example2()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -125,7 +123,7 @@ class Program
         }
     }
 
-    static void ExtractFilesAndFoldersFromPortfolio()
+    static void Example3()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");

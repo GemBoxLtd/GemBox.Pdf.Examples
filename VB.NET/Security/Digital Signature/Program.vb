@@ -8,19 +8,14 @@ Imports System.Linq
 Module Program
 
     Sub Main()
-
-        SimpleSignature()
-
-        VisibleSignature()
-
-        MultipleSignature()
-
-        ExternalSignature()
-
-        RemoveSignature()
+        Example1()
+        Example2()
+        Example3()
+        Example4()
+        Example5()
     End Sub
 
-    Sub SimpleSignature()
+    Sub Example1()
 
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
@@ -49,7 +44,7 @@ Module Program
         End Using
     End Sub
 
-    Sub VisibleSignature()
+    Sub Example2()
 
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
@@ -102,7 +97,7 @@ Module Program
         End Using
     End Sub
 
-    Sub MultipleSignature()
+    Sub Example3()
 
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
@@ -151,7 +146,7 @@ Module Program
         End Using
     End Sub
 
-    Sub ExternalSignature()
+    Sub Example4()
 
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
@@ -180,7 +175,7 @@ Module Program
         End Using
     End Sub
 
-    Sub RemoveSignature()
+    Sub Example5()
 
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
@@ -205,4 +200,5 @@ Module Program
             document.Save("Remove Digital Signature.pdf")
         End Using
     End Sub
+
 End Module

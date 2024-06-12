@@ -32,13 +32,13 @@ Module Program
                 labelText.TextAlignment = PdfTextAlignment.Right
                 labelText.Font = New PdfFont("Helvetica", 12)
 
-                ' Add 'Full name' label and 'FullName' text field.
+                ' Add a 'Full name' label and a 'FullName' text field.
                 labelText.Append("Full name:")
                 page.Content.DrawText(labelText, New PdfPoint(xLabel, y - labelText.Height))
                 Dim fullNameField = document.Form.Fields.AddText(page, xField, y - (labelText.Height + fieldSize.Height) / 2, fieldSize.Width, fieldSize.Height)
                 fullNameField.Name = "FullName"
 
-                ' Add 'ID' label and 'ID' text field that accepts at most 10 characters that are evenly spaced between vertical, comb-like, lines.
+                ' Add an 'ID' label and an 'ID' text field that accepts at most 10 characters that are evenly spaced between vertical, comb-like, lines.
                 y -= 40
                 labelText.Clear()
                 labelText.Append("ID:")
@@ -46,7 +46,7 @@ Module Program
                 Dim idField = document.Form.Fields.AddText(page, xField, y - (labelText.Height + fieldSize.Height) / 2, fieldSize.Width, fieldSize.Height)
                 idField.Name = "ID"
                 idField.CombOfCharacters = 10
-                ' Make vertical comb-like lines, colored black.
+                ' Make vertical, comb-like, lines black.
                 idField.Appearance.BorderColor = PdfColors.Black
 
                 ' Add 'Gender', 'Male', and 'Female' labels and two 'Gender' radio button fields with the choices 'Male' and 'Female'.

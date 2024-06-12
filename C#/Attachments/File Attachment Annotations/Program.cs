@@ -8,14 +8,12 @@ class Program
 {
     static void Main()
     {
-        CreateFileAttachmentAnnotationsFromFileSystem();
-
-        CreateFileAttachmentAnnotationsFromStreams();
-
-        ExtractFilesFromFileAttachmentAnnotations();
+        Example1();
+        Example2();
+        Example3();
     }
 
-    static void CreateFileAttachmentAnnotationsFromFileSystem()
+    static void Example1()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -61,7 +59,7 @@ class Program
         }
     }
 
-    static void CreateFileAttachmentAnnotationsFromStreams()
+    static void Example2()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -117,7 +115,7 @@ class Program
         }
     }
 
-    static void ExtractFilesFromFileAttachmentAnnotations()
+    static void Example3()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");

@@ -71,11 +71,12 @@ Module Program
             metadata.Add(New XElement(xmp + "CreatorTool", "GemBox.Pdf for .NET"))
             metadata.Add(New XElement(xmp + "CreateDate", DateTime.Now))
 
+            ' Define the document title in multiple languages.
             metadata.Add(New XElement(dc + "title",
                 New XElement(rdf + "Alt",
                     New XElement(rdf + "li", New XAttribute(xml + "lang", "x-default"), "My Title"),
                     New XElement(rdf + "li", New XAttribute(xml + "lang", "en"), "My Title"),
-                    New XElement(rdf + "li", New XAttribute(xml + "lang", "es"), "Mi T�tulo"),
+                    New XElement(rdf + "li", New XAttribute(xml + "lang", "es"), "Mi Título"),
                     New XElement(rdf + "li", New XAttribute(xml + "lang", "fr"), "Mon Titre"))))
 
             document.Save("XMP Metadata.pdf")

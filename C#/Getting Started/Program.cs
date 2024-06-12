@@ -21,7 +21,7 @@ class Program
                 page.Content.DrawText(formattedText, new PdfPoint(100, 700));
             }
 
-            document.Save("Hello World.pdf");
+            document.Save("HelloWorld.pdf");
         }
     }
 }

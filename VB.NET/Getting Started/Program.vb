@@ -21,7 +21,9 @@ Module Program
                 page.Content.DrawText(formattedText, New PdfPoint(100, 700))
             End Using
 
-            document.Save("Hello World.pdf")
+            document.Save("HelloWorld.pdf")
         End Using
+
     End Sub
+
 End Module

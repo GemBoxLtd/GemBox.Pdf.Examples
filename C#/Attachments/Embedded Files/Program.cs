@@ -7,14 +7,12 @@ class Program
 {
     static void Main()
     {
-        CreateEmbeddedFilesFromFileSystem();
-
-        CreateEmbeddedFilesFromStreams();
-
-        ExtractEmbeddedFiles();
+        Example1();
+        Example2();
+        Example3();
     }
 
-    static void CreateEmbeddedFilesFromFileSystem()
+    static void Example1()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -43,7 +41,7 @@ class Program
         }
     }
 
-    static void CreateEmbeddedFilesFromStreams()
+    static void Example2()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
@@ -82,7 +80,7 @@ class Program
         }
     }
 
-    static void ExtractEmbeddedFiles()
+    static void Example3()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");

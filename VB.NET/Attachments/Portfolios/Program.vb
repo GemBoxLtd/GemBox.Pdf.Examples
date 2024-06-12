@@ -9,16 +9,12 @@ Imports System.Linq
 Module Program
 
     Sub Main()
-
-        CreatePortfolioFromFileSystem()
-
-        CreatePortfolioFromStreams()
-
-        ExtractFilesAndFoldersFromPortfolio()
+        Example1()
+        Example2()
+        Example3()
     End Sub
 
-    Sub CreatePortfolioFromFileSystem()
-
+    Sub Example1()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -65,8 +61,7 @@ Module Program
         End Using
     End Sub
 
-    Sub CreatePortfolioFromStreams()
-
+    Sub Example2()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -132,8 +127,7 @@ Module Program
         End Using
     End Sub
 
-    Sub ExtractFilesAndFoldersFromPortfolio()
-
+    Sub Example3()
         ' If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
@@ -239,4 +233,5 @@ Module Program
             ExtractFilesAndFoldersToArchive(folder.Files, folder.Folders, archive, folderFullName, portfolioFieldKey)
         Next
     End Sub
+
 End Module

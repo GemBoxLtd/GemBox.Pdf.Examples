@@ -10,18 +10,6 @@ class Program
 {
     static void Main()
     {
-        // If using the Professional version, put your GemBox.Pdf serial key below.
-        GemBox.Pdf.ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
-        // If using the Professional version, put your GemBox.Spreadsheet serial key below.
-        SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
-
-        // If using the Professional version, put your GemBox.Document serial key below.
-        GemBox.Document.ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
-        // If using the Professional version, put your GemBox.Presentation serial key below.
-        GemBox.Presentation.ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
         Example1();
         Example2();
         Example3();
@@ -29,6 +17,12 @@ class Program
 
     static void Example1()
     {
+        // If using the Professional version, put your GemBox.Pdf serial key below.
+        GemBox.Pdf.ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
+        // If using the Professional version, put your GemBox.Spreadsheet serial key below.
+        GemBox.Spreadsheet.SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = new PdfDocument())
         {
             var page = document.Pages.Add();
@@ -82,6 +76,12 @@ class Program
 
     static void Example2()
     {
+        // If using the Professional version, put your GemBox.Pdf serial key below.
+        GemBox.Pdf.ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
+        // If using the Professional version, put your GemBox.Document serial key below.
+        GemBox.Document.ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = new PdfDocument())
         {
             var page = document.Pages.Add();
@@ -133,6 +133,12 @@ class Program
 
     static void Example3()
     {
+        // If using the Professional version, put your GemBox.Pdf serial key below.
+        GemBox.Pdf.ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
+        // If using the Professional version, put your GemBox.Presentation serial key below.
+        GemBox.Presentation.ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = new PdfDocument())
         {
             var page = document.Pages.Add();

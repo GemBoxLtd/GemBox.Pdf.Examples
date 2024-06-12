@@ -8,10 +8,11 @@ Module Program
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document As PdfDocument = PdfDocument.Load("Print.pdf")
-            ' Print Word document to default printer.
-            Dim printer As String = Nothing
-            document.Print(printer)
+            ' Print PDF document to default printer (e.g. 'Microsoft Print to Pdf').
+            Dim printerName As String = Nothing
+            document.Print(printerName)
         End Using
 
     End Sub
+
 End Module

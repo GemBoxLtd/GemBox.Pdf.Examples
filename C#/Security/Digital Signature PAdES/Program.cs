@@ -6,20 +6,17 @@ class Program
 {
     static void Main()
     {
+        Example1();
+        Example2();
+        Example3();
+        Example4();
+    }
+
+    static void Example1()
+    {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        PAdES_B_B();
-
-        PAdES_B_T();
-
-        PAdES_B_LT();
-
-        PAdES_B_LTA();
-    }
-
-    static void PAdES_B_B()
-    {
         using (var document = PdfDocument.Load("Reading.pdf"))
         {
             // Add a visible signature field to the first page of the PDF document.
@@ -50,8 +47,11 @@ class Program
         }
     }
 
-    static void PAdES_B_T()
+    static void Example2()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = PdfDocument.Load("Reading.pdf"))
         {
             // Add a visible signature field to the first page of the PDF document.
@@ -85,8 +85,11 @@ class Program
         }
     }
 
-    static void PAdES_B_LT()
+    static void Example3()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = PdfDocument.Load("Reading.pdf"))
         {
             // Add a visible signature field to the first page of the PDF document.
@@ -125,8 +128,11 @@ class Program
         }
     }
 
-    static void PAdES_B_LTA()
+    static void Example4()
     {
+        // If using the Professional version, put your serial key below.
+        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
         using (var document = PdfDocument.Load("Reading.pdf"))
         {
             // Add a visible signature field to the first page of the PDF document.

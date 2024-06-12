@@ -10,7 +10,6 @@ Module Program
         ComponentInfo.SetLicense("FREE-LIMITED-KEY")
 
         Using document = PdfDocument.Load("Multiple Digital Signature.pdf")
-
             For Each field In document.Form.Fields
                 If field.FieldType = PdfFieldType.Signature Then
 
@@ -36,5 +35,7 @@ Module Program
                 End If
             Next
         End Using
+
     End Sub
+
 End Module
