@@ -3,10 +3,15 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net8.0;net48</TargetFrameworks>
+    BasicObjects
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="GemBox.Pdf" Version="*" />
+    <PackageReference Include="Roslynator.Analyzers" Version="4.12.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

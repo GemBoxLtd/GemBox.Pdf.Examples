@@ -1,30 +1,32 @@
-using GemBox.Pdf;
 using System;
+using GemBox.Pdf;
 
-class Program
+namespace Cloning;
+
+static class Program
 {
     static void Main()
     {
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        using (var document = PdfDocument.Load("Invoice.pdf"))
+        using var document = PdfDocument.Load("Invoice.pdf");
+        const int pageCount = 5;
+
+        // Load a source document.
+        using (var source = PdfDocument.Load("LoremIpsum.pdf"))
         {
-            int pageCount = 5;
+            // Get the number of pages to clone.
+            var cloneCount = Math.Min(pageCount, source.Pages.Count);
 
-            // Load a source document.
-            using (var source = PdfDocument.Load("LoremIpsum.pdf"))
+            // Clone the requested number of pages from the source document
+            // and add them to the destination document.
+            for (var i = 0; i < cloneCount; i++)
             {
-                // Get the number of pages to clone.
-                int cloneCount = Math.Min(pageCount, source.Pages.Count);
-
-                // Clone the requested number of pages from the source document
-                // and add them to the destination document.
-                for (int i = 0; i < cloneCount; i++)
-                    document.Pages.AddClone(source.Pages[i]);
+                document.Pages.AddClone(source.Pages[i]);
             }
-
-            document.Save("Cloning.pdf");
         }
+
+        document.Save("Cloning.pdf");
     }
 }

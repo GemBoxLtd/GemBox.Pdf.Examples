@@ -1,11 +1,11 @@
-﻿using GemBox.Pdf;
-using GemBox.Pdf.Content;
-using Microsoft.AspNetCore.Mvc;
-using PdfCoreMvc.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using GemBox.Pdf;
+using GemBox.Pdf.Content;
+using Microsoft.AspNetCore.Mvc;
+using PdfCoreMvc.Models;
 
 namespace PdfCoreMvc.Controllers
 {
@@ -14,7 +14,7 @@ namespace PdfCoreMvc.Controllers
         // If using the Professional version, put your serial key below.
         static HomeController() => ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        public IActionResult Index() => this.View(new FileModel());
+        public IActionResult Index() => View(new FileModel());
 
         public FileStreamResult Download(FileModel model)
         {
@@ -22,7 +22,7 @@ namespace PdfCoreMvc.Controllers
             var document = new PdfDocument();
 
             // Add page.
-            var page = document.Pages.Add();
+            PdfPage page = document.Pages.Add();
 
             // Write text.
             using (var formattedText = new PdfFormattedText())
@@ -32,24 +32,24 @@ namespace PdfCoreMvc.Controllers
                 formattedText.FontSize = 18;
                 formattedText.MaxTextWidth = 400;
 
-                formattedText.Append(model.Header);
+                _ = formattedText.Append(model.Header);
                 page.Content.DrawText(formattedText, new PdfPoint(90, 750));
 
                 // Write body.
-                formattedText.Clear();
+                _ = formattedText.Clear();
                 formattedText.TextAlignment = PdfTextAlignment.Justify;
                 formattedText.FontSize = 14;
 
-                formattedText.Append(model.Body);
+                _ = formattedText.Append(model.Body);
                 page.Content.DrawText(formattedText, new PdfPoint(90, 400));
 
                 // Write footer.
-                formattedText.Clear();
+                _ = formattedText.Clear();
                 formattedText.TextAlignment = PdfTextAlignment.Right;
                 formattedText.FontSize = 10;
                 formattedText.MaxTextWidth = 100;
 
-                formattedText.Append(model.Footer);
+                _ = formattedText.Append(model.Footer);
                 page.Content.DrawText(formattedText, new PdfPoint(450, 40));
             }
 
@@ -64,7 +64,7 @@ namespace PdfCoreMvc.Controllers
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error() =>
-            this.View(new ErrorViewModel() { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            View(new ErrorViewModel() { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
 

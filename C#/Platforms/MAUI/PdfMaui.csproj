@@ -50,6 +50,15 @@
 
     <ItemGroup>
       <PackageReference Include="GemBox.Pdf" Version="*" />
+      <PackageReference Include="Roslynator.Analyzers" Version="4.12.7">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.91" />
+      <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.91" />
     </ItemGroup>
 
 </Project>

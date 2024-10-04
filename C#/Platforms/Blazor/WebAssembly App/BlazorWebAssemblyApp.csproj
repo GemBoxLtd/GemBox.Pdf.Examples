@@ -8,15 +8,16 @@
 
   <ItemGroup>
     <PackageReference Include="GemBox.Pdf" Version="*" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.1" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.8" PrivateAssets="all" />
   </ItemGroup>
 
   <!-- Add HarfBuzzSharp and SkiaSharp native assets. -->
   <ItemGroup>
-    <PackageReference Include="HarfBuzzSharp.NativeAssets.WebAssembly" Version="7.3.0.1" />
+    <PackageReference Include="HarfBuzzSharp.NativeAssets.WebAssembly" Version="7.3.0.2" />
     <NativeFileReference Include="$(HarfBuzzSharpStaticLibraryPath)\3.1.34\**\*.a" />
-    <PackageReference Include="SkiaSharp.NativeAssets.WebAssembly" Version="2.88.7" />
+    <PackageReference Include="SkiaSharp.NativeAssets.WebAssembly" Version="2.88.8" />
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
     <NativeFileReference Include="$(SkiaSharpStaticLibraryPath)\3.1.34\**\*.a" />
   </ItemGroup>
 

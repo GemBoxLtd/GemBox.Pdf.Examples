@@ -1,7 +1,9 @@
 using GemBox.Pdf;
 using GemBox.Pdf.Content;
 
-class Program
+namespace IncrementalUpdate;
+
+static class Program
 {
     static void Main()
     {
@@ -9,21 +11,19 @@ class Program
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
         // Load a PDF document from a file.
-        using (var document = PdfDocument.Load("Hello World.pdf"))
+        using var document = PdfDocument.Load("Hello World.pdf");
+        // Add a page.
+        var page = document.Pages.Add();
+
+        // Write a text.
+        using (var formattedText = new PdfFormattedText())
         {
-            // Add a page.
-            var page = document.Pages.Add();
+            formattedText.Append("Hello World again!");
 
-            // Write a text.
-            using (var formattedText = new PdfFormattedText())
-            {
-                formattedText.Append("Hello World again!");
-
-                page.Content.DrawText(formattedText, new PdfPoint(100, 700));
-            }
-
-            // Save all the changes made to the current PDF document using an incremental update.
-            document.Save();
+            page.Content.DrawText(formattedText, new PdfPoint(100, 700));
         }
+
+        // Save all the changes made to the current PDF document using an incremental update.
+        document.Save();
     }
 }

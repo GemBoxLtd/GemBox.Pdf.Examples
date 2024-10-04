@@ -1,6 +1,6 @@
-﻿using GemBox.Pdf;
+﻿using System.Windows;
+using GemBox.Pdf;
 using Microsoft.Win32;
-using System.Windows;
 
 public partial class MainWindow : Window
 {
@@ -13,15 +13,15 @@ public partial class MainWindow : Window
 
     private void MenuItem_Click(object sender, RoutedEventArgs e)
     {
-        OpenFileDialog fileDialog = new OpenFileDialog();
-        fileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+        var fileDialog = new OpenFileDialog
+        {
+            Filter = "PDF files (*.pdf)|*.pdf"
+        };
 
         if (fileDialog.ShowDialog() == true)
         {
-            using (var document = PdfDocument.Load(fileDialog.FileName))
-            {
-                this.ImageControl.Source = document.ConvertToImageSource(SaveOptions.Image);
-            }
+            using var document = PdfDocument.Load(fileDialog.FileName);
+            ImageControl.Source = document.ConvertToImageSource(SaveOptions.Image);
         }
     }
 }

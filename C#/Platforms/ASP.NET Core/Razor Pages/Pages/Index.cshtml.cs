@@ -1,11 +1,11 @@
-﻿using GemBox.Pdf;
+﻿using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Linq;
+using GemBox.Pdf;
 using GemBox.Pdf.Content;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PdfCorePages.Models;
-using System.ComponentModel.DataAnnotations;
-using System.IO;
-using System.Linq;
 
 namespace PdfCorePages.Pages
 {
@@ -17,7 +17,7 @@ namespace PdfCorePages.Pages
         // If using the Professional version, put your serial key below.
         static IndexModel() => ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        public IndexModel() => this.File = new FileModel();
+        public IndexModel() => File = new FileModel();
 
         public void OnGet() { }
 
@@ -27,7 +27,7 @@ namespace PdfCorePages.Pages
             var document = new PdfDocument();
 
             // Add page.
-            var page = document.Pages.Add();
+            PdfPage page = document.Pages.Add();
 
             // Write text.
             using (var formattedText = new PdfFormattedText())
@@ -37,24 +37,24 @@ namespace PdfCorePages.Pages
                 formattedText.FontSize = 18;
                 formattedText.MaxTextWidth = 400;
 
-                formattedText.Append(this.File.Header);
+                _ = formattedText.Append(File.Header);
                 page.Content.DrawText(formattedText, new PdfPoint(90, 750));
 
                 // Write body.
-                formattedText.Clear();
+                _ = formattedText.Clear();
                 formattedText.TextAlignment = PdfTextAlignment.Justify;
                 formattedText.FontSize = 14;
 
-                formattedText.Append(this.File.Body);
+                _ = formattedText.Append(File.Body);
                 page.Content.DrawText(formattedText, new PdfPoint(90, 400));
 
                 // Write footer.
-                formattedText.Clear();
+                _ = formattedText.Clear();
                 formattedText.TextAlignment = PdfTextAlignment.Right;
                 formattedText.FontSize = 10;
                 formattedText.MaxTextWidth = 100;
 
-                formattedText.Append(this.File.Footer);
+                _ = formattedText.Append(File.Footer);
                 page.Content.DrawText(formattedText, new PdfPoint(450, 40));
             }
 

@@ -5,24 +5,25 @@ using System;
 using System.IO;
 using System.Linq;
 
-class Program
+namespace Namespace
 {
-    static void Main()
+    static class Program
     {
-        // Extract GemBoxPkcs11SoftwareModule from ZIP archive and setup environment variable with path to configuration file.
-        // Required only for SoftHSM device used in this example. Not required for yours PKCS#11/Cryptoki device.
-        var pkcs11SoftwareModuleDirectory = "GemBoxPkcs11SoftwareModule";
-        System.IO.Compression.ZipFile.ExtractToDirectory("GemBoxPkcs11SoftwareModule.zip", pkcs11SoftwareModuleDirectory);
-        Environment.SetEnvironmentVariable("SOFTHSM2_CONF", Path.Combine(pkcs11SoftwareModuleDirectory, "softhsm2.conf"));
-
-        // Specify path to PKCS#11/Cryptoki library, depending on the runtime architecture (64-bit or 32-bit).
-        var libraryPath = Path.Combine(pkcs11SoftwareModuleDirectory, IntPtr.Size == 8 ? "softhsm2-x64.dll" : "softhsm2.dll");
-
-        // If using the Professional version, put your serial key below.
-        ComponentInfo.SetLicense("FREE-LIMITED-KEY");
-
-        using (var pkcs11Module = new PdfPkcs11Module(libraryPath))
+        static void Main()
         {
+            // Extract GemBoxPkcs11SoftwareModule from ZIP archive and setup environment variable with path to configuration file.
+            // Required only for SoftHSM device used in this example. Not required for yours PKCS#11/Cryptoki device.
+            var pkcs11SoftwareModuleDirectory = "GemBoxPkcs11SoftwareModule";
+            System.IO.Compression.ZipFile.ExtractToDirectory("GemBoxPkcs11SoftwareModule.zip", pkcs11SoftwareModuleDirectory);
+            Environment.SetEnvironmentVariable("SOFTHSM2_CONF", Path.Combine(pkcs11SoftwareModuleDirectory, "softhsm2.conf"));
+
+            // Specify path to PKCS#11/Cryptoki library, depending on the runtime architecture (64-bit or 32-bit).
+            var libraryPath = Path.Combine(pkcs11SoftwareModuleDirectory, IntPtr.Size == 8 ? "softhsm2-x64.dll" : "softhsm2.dll");
+
+            // If using the Professional version, put your serial key below.
+            ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
+            using var pkcs11Module = new PdfPkcs11Module(libraryPath);
             // Get a token from PKCS#11/Cryptoki device.
             var token = pkcs11Module.Tokens.Single(t => t.TokenLabel == "GemBoxECDsaToken");
 

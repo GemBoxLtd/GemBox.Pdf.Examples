@@ -1,12 +1,14 @@
+using System.IO;
 using GemBox.Document;
 using GemBox.Pdf;
 using GemBox.Pdf.Content;
 using GemBox.Presentation;
 using GemBox.Spreadsheet;
 using GemBox.Spreadsheet.Charts;
-using System.IO;
 
-class Program
+namespace ChartsBarcodes;
+
+static class Program
 {
     static void Main()
     {
@@ -23,35 +25,35 @@ class Program
         // If using the Professional version, put your GemBox.Spreadsheet serial key below.
         GemBox.Spreadsheet.SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
 
-        using (var document = new PdfDocument())
+        using var document = new PdfDocument();
+        PdfPage page = document.Pages.Add();
+        const double x = 50;
+        var y = page.Size.Height;
+
+        using (var formattedText = new PdfFormattedText())
         {
-            var page = document.Pages.Add();
-            double x = 50;
-            double y = page.Size.Height;
-
-            using (var formattedText = new PdfFormattedText())
-            {
-                formattedText.Append("The following chart is imported from a PDF that was created with GemBox.Spreadsheet.");
-                page.Content.DrawText(formattedText, new PdfPoint(x, y - 50));
-            }
-
-            // Create chart and save it as PDF stream.
-            var chart = CreateChart(400, 200);
-            var chartAsPdf = new MemoryStream();
-            chart.Format().Save(chartAsPdf, GemBox.Spreadsheet.SaveOptions.PdfDefault);
-
-            // Add chart to PDF page.
-            using (var chartDocument = PdfDocument.Load(chartAsPdf))
-                document.AppendPage(chartDocument, 0, 0, new PdfPoint(x, y - chart.Position.Height - 60));
-
-            document.Save("Chart.pdf");
+            formattedText.Append("The following chart is imported from a PDF that was created with GemBox.Spreadsheet.");
+            page.Content.DrawText(formattedText, new PdfPoint(x, y - 50));
         }
+
+        // Create chart and save it as PDF stream.
+        ExcelChart chart = CreateChart(400, 200);
+        var chartAsPdf = new MemoryStream();
+        chart.Format().Save(chartAsPdf, GemBox.Spreadsheet.SaveOptions.PdfDefault);
+
+        // Add chart to PDF page.
+        using (var chartDocument = PdfDocument.Load(chartAsPdf))
+        {
+            document.AppendPage(chartDocument, 0, 0, new PdfPoint(x, y - chart.Position.Height - 60));
+        }
+
+        document.Save("Chart.pdf");
     }
 
     static ExcelChart CreateChart(double width, double height)
     {
         var workbook = new ExcelFile();
-        var worksheet = workbook.Worksheets.Add("Chart");
+        ExcelWorksheet worksheet = workbook.Worksheets.Add("Chart");
 
         worksheet.Cells["A1"].Value = "Name";
         worksheet.Cells["A2"].Value = "John Doe";
@@ -67,7 +69,7 @@ class Program
 
         worksheet.Columns[1].Style.NumberFormat = "\"$\"#,##0";
 
-        var chart = worksheet.Charts.Add(GemBox.Spreadsheet.Charts.ChartType.Bar,
+        ExcelChart chart = worksheet.Charts.Add(GemBox.Spreadsheet.Charts.ChartType.Bar,
             new AnchorCell(worksheet.Cells["A1"], true), width, height, GemBox.Spreadsheet.LengthUnit.Point);
 
         chart.SelectData(worksheet.Cells.GetSubrangeAbsolute(0, 0, 4, 1), true);
@@ -82,29 +84,29 @@ class Program
         // If using the Professional version, put your GemBox.Document serial key below.
         GemBox.Document.ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        using (var document = new PdfDocument())
+        using var document = new PdfDocument();
+        PdfPage page = document.Pages.Add();
+        const double x = 50;
+        var y = page.Size.Height;
+
+        using (var formattedText = new PdfFormattedText())
         {
-            var page = document.Pages.Add();
-            double x = 50;
-            double y = page.Size.Height;
-
-            using (var formattedText = new PdfFormattedText())
-            {
-                formattedText.Append("The following QR code is imported from a PDF that was created with GemBox.Document.");
-                page.Content.DrawText(formattedText, new PdfPoint(x, y - 50));
-            }
-
-            // Create barcode and save it as PDF stream.
-            var barcode = CreateBarcode("1234567890");
-            var barcodeAsPdf = new MemoryStream();
-            barcode.FormatDrawing().Save(barcodeAsPdf, GemBox.Document.SaveOptions.PdfDefault);
-
-            // Add barcode to PDF page.
-            using (var barcodeDocument = PdfDocument.Load(barcodeAsPdf))
-                document.AppendPage(barcodeDocument, 0, 0, new PdfPoint(x, y - barcode.Layout.Size.Height - 60));
-
-            document.Save("Barcode.pdf");
+            formattedText.Append("The following QR code is imported from a PDF that was created with GemBox.Document.");
+            page.Content.DrawText(formattedText, new PdfPoint(x, y - 50));
         }
+
+        // Create barcode and save it as PDF stream.
+        GemBox.Document.TextBox barcode = CreateBarcode("1234567890");
+        var barcodeAsPdf = new MemoryStream();
+        barcode.FormatDrawing().Save(barcodeAsPdf, GemBox.Document.SaveOptions.PdfDefault);
+
+        // Add barcode to PDF page.
+        using (var barcodeDocument = PdfDocument.Load(barcodeAsPdf))
+        {
+            document.AppendPage(barcodeDocument, 0, 0, new PdfPoint(x, y - barcode.Layout.Size.Height - 60));
+        }
+
+        document.Save("Barcode.pdf");
     }
 
     static GemBox.Document.TextBox CreateBarcode(string qrCode)
@@ -125,7 +127,7 @@ class Program
         textBox.TextBoxFormat.AutoFit = GemBox.Document.TextAutoFit.ResizeShapeToFitText;
         document.GetPaginator(new GemBox.Document.PaginatorOptions() { UpdateTextBoxHeights = true });
 
-        double size = textBox.Layout.Size.Height;
+        var size = textBox.Layout.Size.Height;
         textBox.Layout.Size = new Size(size, size);
 
         return textBox;
@@ -139,35 +141,35 @@ class Program
         // If using the Professional version, put your GemBox.Presentation serial key below.
         GemBox.Presentation.ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        using (var document = new PdfDocument())
+        using var document = new PdfDocument();
+        PdfPage page = document.Pages.Add();
+        const double x = 50;
+        var y = page.Size.Height;
+
+        using (var formattedText = new PdfFormattedText())
         {
-            var page = document.Pages.Add();
-            double x = 50;
-            double y = page.Size.Height;
-
-            using (var formattedText = new PdfFormattedText())
-            {
-                formattedText.Append("The following shapes are imported from a PDF that was created with GemBox.Presentation.");
-                page.Content.DrawText(formattedText, new PdfPoint(x, y - 50));
-            }
-
-            // Create shapes and save them as PDF stream.
-            var shapes = CreateShapes();
-            var shapesAsPdf = new MemoryStream();
-            shapes.Save(shapesAsPdf, GemBox.Presentation.SaveOptions.Pdf);
-
-            // Add shapes to PDF page.
-            using (var shapesDocument = PdfDocument.Load(shapesAsPdf))
-                document.AppendPage(shapesDocument, 0, 0, new PdfPoint(0, y - shapes.SlideSize.Height - 60));
-
-            document.Save("Shapes.pdf");
+            formattedText.Append("The following shapes are imported from a PDF that was created with GemBox.Presentation.");
+            page.Content.DrawText(formattedText, new PdfPoint(x, y - 50));
         }
+
+        // Create shapes and save them as PDF stream.
+        PresentationDocument shapes = CreateShapes();
+        var shapesAsPdf = new MemoryStream();
+        shapes.Save(shapesAsPdf, GemBox.Presentation.SaveOptions.Pdf);
+
+        // Add shapes to PDF page.
+        using (var shapesDocument = PdfDocument.Load(shapesAsPdf))
+        {
+            document.AppendPage(shapesDocument, 0, 0, new PdfPoint(0, y - shapes.SlideSize.Height - 60));
+        }
+
+        document.Save("Shapes.pdf");
     }
 
     static PresentationDocument CreateShapes()
     {
         var presentation = new PresentationDocument();
-        var slide = presentation.Slides.AddNew(SlideLayoutType.Custom);
+        Slide slide = presentation.Slides.AddNew(SlideLayoutType.Custom);
 
         slide.Content.AddShape(ShapeGeometryType.RectangularCallout, 30, 30, 130, 100, GemBox.Presentation.LengthUnit.Point).Format.Fill.SetSolid(GemBox.Presentation.Color.FromName(GemBox.Presentation.ColorName.AliceBlue));
         slide.Content.AddShape(ShapeGeometryType.RoundedRectangularCallout, 170, 30, 130, 100, GemBox.Presentation.LengthUnit.Point).Format.Fill.SetSolid(GemBox.Presentation.Color.FromName(GemBox.Presentation.ColorName.BlueViolet));
@@ -193,10 +195,10 @@ public static class PdfDocumentExtension
     public static PdfFormContent AppendPage(this PdfDocument destination, PdfDocument source,
         int sourcePageIndex, int destinationPageIndex, PdfPoint destinationBottomLeft)
     {
-        var form = source.Pages[sourcePageIndex].ConvertToForm(destination);
-        var group = destination.Pages[destinationPageIndex].Content.Elements.AddGroup();
+        PdfForm form = source.Pages[sourcePageIndex].ConvertToForm(destination);
+        PdfContentGroup group = destination.Pages[destinationPageIndex].Content.Elements.AddGroup();
 
-        var formContent = group.Elements.AddForm(form);
+        PdfFormContent formContent = group.Elements.AddForm(form);
         formContent.Transform = PdfMatrix.CreateTranslation(destinationBottomLeft.X, destinationBottomLeft.Y);
         return formContent;
     }

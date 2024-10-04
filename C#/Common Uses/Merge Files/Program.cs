@@ -1,7 +1,9 @@
-using GemBox.Pdf;
 using System.IO;
+using GemBox.Pdf;
 
-class Program
+namespace MergeFiles;
+
+static class Program
 {
     static void Main()
     {
@@ -22,16 +24,16 @@ class Program
             "MergeFile03.pdf"
         };
 
-        using (var document = new PdfDocument())
+        using var document = new PdfDocument();
+        // Merge multiple PDF files into single PDF by loading source documents
+        // and cloning all their pages to destination document.
+        foreach (var fileName in fileNames)
         {
-            // Merge multiple PDF files into single PDF by loading source documents
-            // and cloning all their pages to destination document.
-            foreach (var fileName in fileNames)
-                using (var source = PdfDocument.Load(fileName))
-                    document.Pages.Kids.AddClone(source.Pages);
-
-            document.Save("Merge Files.pdf");
+            using var source = PdfDocument.Load(fileName);
+            document.Pages.Kids.AddClone(source.Pages);
         }
+
+        document.Save("Merge Files.pdf");
     }
 
     static void Example2()
@@ -39,34 +41,34 @@ class Program
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        var files = Directory.EnumerateFiles("Merge Many Pdfs");
+        System.Collections.Generic.IEnumerable<string> files = Directory.EnumerateFiles("Merge Many Pdfs");
 
-        int fileCounter = 0;
-        int chunkSize = 50;
+        var fileCounter = 0;
+        const int chunkSize = 50;
 
-        using (var document = new PdfDocument())
+        using var document = new PdfDocument();
+        // Create output PDF file that will have large number of PDF files merged into it.
+        document.Save("Merged Files.pdf");
+
+        foreach (var file in files)
         {
-            // Create output PDF file that will have large number of PDF files merged into it.
-            document.Save("Merged Files.pdf");
-
-            foreach (var file in files)
+            using (var source = PdfDocument.Load(file))
             {
-                using (var source = PdfDocument.Load(file))
-                    document.Pages.Kids.AddClone(source.Pages);
-
-                ++fileCounter;
-                if (fileCounter % chunkSize == 0)
-                {
-                    // Save the new pages that were added after the document was last saved.
-                    document.Save();
-
-                    // Clear previously parsed pages and thus free memory necessary for merging additional pages.
-                    document.Unload();
-                }
+                document.Pages.Kids.AddClone(source.Pages);
             }
 
-            // Save the last chunk of merged files.
-            document.Save();
+            ++fileCounter;
+            if (fileCounter % chunkSize == 0)
+            {
+                // Save the new pages that were added after the document was last saved.
+                document.Save();
+
+                // Clear previously parsed pages and thus free memory necessary for merging additional pages.
+                document.Unload();
+            }
         }
+
+        // Save the last chunk of merged files.
+        document.Save();
     }
 }

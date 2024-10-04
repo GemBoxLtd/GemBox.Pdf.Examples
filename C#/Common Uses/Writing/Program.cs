@@ -1,8 +1,10 @@
+using System.IO;
 using GemBox.Pdf;
 using GemBox.Pdf.Content;
-using System.IO;
 
-class Program
+namespace Writing;
+
+static class Program
 {
     static void Main()
     {
@@ -18,51 +20,49 @@ class Program
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        using (var document = new PdfDocument())
+        using var document = new PdfDocument();
+        // Add a page.
+        PdfPage page = document.Pages.Add();
+
+        using (var formattedText = new PdfFormattedText())
         {
-            // Add a page.
-            var page = document.Pages.Add();
+            // Set font family and size.
+            // All text appended next uses the specified font family and size.
+            formattedText.FontFamily = new PdfFontFamily("Times New Roman");
+            formattedText.FontSize = 24;
 
-            using (var formattedText = new PdfFormattedText())
-            {
-                // Set font family and size.
-                // All text appended next uses the specified font family and size.
-                formattedText.FontFamily = new PdfFontFamily("Times New Roman");
-                formattedText.FontSize = 24;
+            formattedText.AppendLine("Hello World");
 
-                formattedText.AppendLine("Hello World");
+            // Reset font family and size for all text appended next.
+            formattedText.FontFamily = new PdfFontFamily("Calibri");
+            formattedText.FontSize = 12;
 
-                // Reset font family and size for all text appended next.
-                formattedText.FontFamily = new PdfFontFamily("Calibri");
-                formattedText.FontSize = 12;
+            formattedText.AppendLine(" with ");
 
-                formattedText.AppendLine(" with ");
+            // Set font style and color for all text appended next.
+            formattedText.FontStyle = PdfFontStyle.Italic;
+            formattedText.Color = PdfColor.FromRgb(1, 0, 0);
 
-                // Set font style and color for all text appended next.
-                formattedText.FontStyle = PdfFontStyle.Italic;
-                formattedText.Color = PdfColor.FromRgb(1, 0, 0);
+            formattedText.Append("GemBox.Pdf");
 
-                formattedText.Append("GemBox.Pdf");
+            // Reset font style and color for all text appended next.
+            formattedText.FontStyle = PdfFontStyle.Normal;
+            formattedText.Color = PdfColor.FromRgb(0, 0, 0);
 
-                // Reset font style and color for all text appended next.
-                formattedText.FontStyle = PdfFontStyle.Normal;
-                formattedText.Color = PdfColor.FromRgb(0, 0, 0);
+            formattedText.Append(" component!");
 
-                formattedText.Append(" component!");
+            // Set the location of the bottom-left corner of the text.
+            // We want top-left corner of the text to be at location (100, 100)
+            // from the top-left corner of the page.
+            // NOTE: In PDF, location (0, 0) is at the bottom-left corner of the page
+            // and the positive y axis extends vertically upward.
+            double x = 100, y = page.CropBox.Top - 100 - formattedText.Height;
 
-                // Set the location of the bottom-left corner of the text.
-                // We want top-left corner of the text to be at location (100, 100)
-                // from the top-left corner of the page.
-                // NOTE: In PDF, location (0, 0) is at the bottom-left corner of the page
-                // and the positive y axis extends vertically upward.
-                double x = 100, y = page.CropBox.Top - 100 - formattedText.Height;
-
-                // Draw text to the page.
-                page.Content.DrawText(formattedText, new PdfPoint(x, y));
-            }
-
-            document.Save("Writing.pdf");
+            // Draw text to the page.
+            page.Content.DrawText(formattedText, new PdfPoint(x, y));
         }
+
+        document.Save("Writing.pdf");
     }
 
     static void Example2()
@@ -70,95 +70,93 @@ class Program
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        using (var document = new PdfDocument())
+        using var document = new PdfDocument();
+        PdfPage page = document.Pages.Add();
+
+        const double margin = 10;
+
+        using (var formattedText = new PdfFormattedText())
         {
-            var page = document.Pages.Add();
+            formattedText.TextAlignment = PdfTextAlignment.Left;
+            formattedText.MaxTextWidth = 100;
+            formattedText.Append("This text is left aligned, ").
+                Append("placed in the top-left corner of the page and ").
+                Append("its width should not exceed 100 points.");
+            page.Content.DrawText(formattedText,
+                new PdfPoint(margin,
+                    page.CropBox.Top - margin - formattedText.Height));
 
-            double margin = 10;
+            formattedText.Clear();
 
-            using (var formattedText = new PdfFormattedText())
-            {
-                formattedText.TextAlignment = PdfTextAlignment.Left;
-                formattedText.MaxTextWidth = 100;
-                formattedText.Append("This text is left aligned, ").
-                    Append("placed in the top-left corner of the page and ").
-                    Append("its width should not exceed 100 points.");
-                page.Content.DrawText(formattedText,
-                    new PdfPoint(margin,
-                        page.CropBox.Top - margin - formattedText.Height));
+            formattedText.TextAlignment = PdfTextAlignment.Center;
+            formattedText.MaxTextWidth = 200;
+            formattedText.Append("This text is center aligned, ").
+                Append("placed in the top-center part of the page ").
+                Append("and its width should not exceed 200 points.");
+            page.Content.DrawText(formattedText,
+                new PdfPoint((page.CropBox.Width - formattedText.MaxTextWidth) / 2,
+                    page.CropBox.Top - margin - formattedText.Height));
 
-                formattedText.Clear();
+            formattedText.Clear();
 
-                formattedText.TextAlignment = PdfTextAlignment.Center;
-                formattedText.MaxTextWidth = 200;
-                formattedText.Append("This text is center aligned, ").
-                    Append("placed in the top-center part of the page ").
-                    Append("and its width should not exceed 200 points.");
-                page.Content.DrawText(formattedText,
-                    new PdfPoint((page.CropBox.Width - formattedText.MaxTextWidth) / 2,
-                        page.CropBox.Top - margin - formattedText.Height));
+            formattedText.TextAlignment = PdfTextAlignment.Right;
+            formattedText.MaxTextWidth = 100;
+            formattedText.Append("This text is right aligned, ").
+                Append("placed in the top-right corner of the page ").
+                Append("and its width should not exceed 100 points.");
+            page.Content.DrawText(formattedText,
+                new PdfPoint(page.CropBox.Width - margin - formattedText.MaxTextWidth,
+                    page.CropBox.Top - margin - formattedText.Height));
 
-                formattedText.Clear();
+            formattedText.Clear();
 
-                formattedText.TextAlignment = PdfTextAlignment.Right;
-                formattedText.MaxTextWidth = 100;
-                formattedText.Append("This text is right aligned, ").
-                    Append("placed in the top-right corner of the page ").
-                    Append("and its width should not exceed 100 points.");
-                page.Content.DrawText(formattedText,
-                    new PdfPoint(page.CropBox.Width - margin - formattedText.MaxTextWidth,
-                        page.CropBox.Top - margin - formattedText.Height));
+            formattedText.TextAlignment = PdfTextAlignment.Left;
+            formattedText.MaxTextWidth = 100;
+            formattedText.Append("This text is left aligned, ").
+                Append("placed in the bottom-left corner of the page and ").
+                Append("its width should not exceed 100 points.");
+            page.Content.DrawText(formattedText,
+                new PdfPoint(margin,
+                    margin));
 
-                formattedText.Clear();
+            formattedText.Clear();
 
-                formattedText.TextAlignment = PdfTextAlignment.Left;
-                formattedText.MaxTextWidth = 100;
-                formattedText.Append("This text is left aligned, ").
-                    Append("placed in the bottom-left corner of the page and ").
-                    Append("its width should not exceed 100 points.");
-                page.Content.DrawText(formattedText,
-                    new PdfPoint(margin,
-                        margin));
+            formattedText.TextAlignment = PdfTextAlignment.Center;
+            formattedText.MaxTextWidth = 200;
+            formattedText.Append("This text is center aligned, ").
+                Append("placed in the bottom-center part of the page and ").
+                Append("its width should not exceed 200 points.");
+            page.Content.DrawText(formattedText,
+                new PdfPoint((page.CropBox.Width - formattedText.MaxTextWidth) / 2,
+                    margin));
 
-                formattedText.Clear();
+            formattedText.Clear();
 
-                formattedText.TextAlignment = PdfTextAlignment.Center;
-                formattedText.MaxTextWidth = 200;
-                formattedText.Append("This text is center aligned, ").
-                    Append("placed in the bottom-center part of the page and ").
-                    Append("its width should not exceed 200 points.");
-                page.Content.DrawText(formattedText,
-                    new PdfPoint((page.CropBox.Width - formattedText.MaxTextWidth) / 2,
-                        margin));
+            formattedText.TextAlignment = PdfTextAlignment.Right;
+            formattedText.MaxTextWidth = 100;
+            formattedText.Append("This text is right aligned, ").
+                Append("placed in the bottom-right corner of the page and ").
+                Append("its width should not exceed 100 points.");
+            page.Content.DrawText(formattedText,
+                new PdfPoint(page.CropBox.Width - margin - formattedText.MaxTextWidth,
+                    margin));
 
-                formattedText.Clear();
+            formattedText.Clear();
 
-                formattedText.TextAlignment = PdfTextAlignment.Right;
-                formattedText.MaxTextWidth = 100;
-                formattedText.Append("This text is right aligned, ").
-                    Append("placed in the bottom-right corner of the page and ").
-                    Append("its width should not exceed 100 points.");
-                page.Content.DrawText(formattedText,
-                    new PdfPoint(page.CropBox.Width - margin - formattedText.MaxTextWidth,
-                        margin));
-
-                formattedText.Clear();
-
-                formattedText.TextAlignment = PdfTextAlignment.Justify;
-                formattedText.MaxTextWidths = new double[] { 200, 150, 100 };
-                formattedText.Append("This text has justified alignment, ").
-                    Append("is placed in the center of the page and ").
-                    Append("its first line should not exceed 200 points, ").
-                    Append("its second line should not exceed 150 points and ").
-                    Append("its third and all other lines should not exceed 100 points.");
-                // Center the text based on the width of the most lines, which is formattedText.MaxTextWidths[2].
-                page.Content.DrawText(formattedText,
-                    new PdfPoint((page.CropBox.Width - formattedText.MaxTextWidths[2]) / 2,
-                        (page.CropBox.Height - formattedText.Height) / 2));
-            }
-
-            document.Save("Alignment and Positioning.pdf");
+            formattedText.TextAlignment = PdfTextAlignment.Justify;
+            formattedText.MaxTextWidths = [200, 150, 100];
+            formattedText.Append("This text has justified alignment, ").
+                Append("is placed in the center of the page and ").
+                Append("its first line should not exceed 200 points, ").
+                Append("its second line should not exceed 150 points and ").
+                Append("its third and all other lines should not exceed 100 points.");
+            // Center the text based on the width of the most lines, which is formattedText.MaxTextWidths[2].
+            page.Content.DrawText(formattedText,
+                new PdfPoint((page.CropBox.Width - formattedText.MaxTextWidths[2]) / 2,
+                    (page.CropBox.Height - formattedText.Height) / 2));
         }
+
+        document.Save("Alignment and Positioning.pdf");
     }
 
     static void Example3()
@@ -166,139 +164,137 @@ class Program
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        using (var document = new PdfDocument())
+        using var document = new PdfDocument();
+        PdfPage page = document.Pages.Add();
+
+        using (var formattedText = new PdfFormattedText())
         {
-            var page = document.Pages.Add();
+            var text = "Rotated by 30 degrees around origin.";
+            formattedText.Opacity = 0.2;
+            formattedText.Append(text);
+            var origin = new PdfPoint(50, 650);
+            page.Content.DrawText(formattedText, origin);
+            formattedText.Clear();
+            formattedText.Opacity = 1;
+            formattedText.Append(text);
+            PdfMatrix transform = PdfMatrix.Identity;
+            transform.Translate(origin.X, origin.Y);
+            transform.Rotate(30);
+            page.Content.DrawText(formattedText, transform);
 
-            using (var formattedText = new PdfFormattedText())
-            {
-                var text = "Rotated by 30 degrees around origin.";
-                formattedText.Opacity = 0.2;
-                formattedText.Append(text);
-                var origin = new PdfPoint(50, 650);
-                page.Content.DrawText(formattedText, origin);
-                formattedText.Clear();
-                formattedText.Opacity = 1;
-                formattedText.Append(text);
-                var transform = PdfMatrix.Identity;
-                transform.Translate(origin.X, origin.Y);
-                transform.Rotate(30);
-                page.Content.DrawText(formattedText, transform);
+            formattedText.Clear();
 
-                formattedText.Clear();
+            text = "Rotated by 30 degrees around center.";
+            formattedText.Opacity = 0.2;
+            formattedText.Append(text);
+            origin = new PdfPoint(300, 650);
+            page.Content.DrawText(formattedText, origin);
+            formattedText.Clear();
+            formattedText.Opacity = 1;
+            formattedText.Append(text);
+            transform = PdfMatrix.Identity;
+            transform.Translate(origin.X, origin.Y);
+            transform.Rotate(30, formattedText.Width / 2, formattedText.Height / 2);
+            page.Content.DrawText(formattedText, transform);
 
-                text = "Rotated by 30 degrees around center.";
-                formattedText.Opacity = 0.2;
-                formattedText.Append(text);
-                origin = new PdfPoint(300, 650);
-                page.Content.DrawText(formattedText, origin);
-                formattedText.Clear();
-                formattedText.Opacity = 1;
-                formattedText.Append(text);
-                transform = PdfMatrix.Identity;
-                transform.Translate(origin.X, origin.Y);
-                transform.Rotate(30, formattedText.Width / 2, formattedText.Height / 2);
-                page.Content.DrawText(formattedText, transform);
+            formattedText.Clear();
 
-                formattedText.Clear();
+            text = "Scaled horizontally by 0.5 around origin.";
+            formattedText.Opacity = 0.2;
+            formattedText.Append(text);
+            origin = new PdfPoint(50, 500);
+            page.Content.DrawText(formattedText, origin);
+            formattedText.Clear();
+            formattedText.Opacity = 1;
+            formattedText.Append(text);
+            transform = PdfMatrix.Identity;
+            transform.Translate(origin.X, origin.Y);
+            transform.Scale(0.5, 1);
+            page.Content.DrawText(formattedText, transform);
 
-                text = "Scaled horizontally by 0.5 around origin.";
-                formattedText.Opacity = 0.2;
-                formattedText.Append(text);
-                origin = new PdfPoint(50, 500);
-                page.Content.DrawText(formattedText, origin);
-                formattedText.Clear();
-                formattedText.Opacity = 1;
-                formattedText.Append(text);
-                transform = PdfMatrix.Identity;
-                transform.Translate(origin.X, origin.Y);
-                transform.Scale(0.5, 1);
-                page.Content.DrawText(formattedText, transform);
+            formattedText.Clear();
 
-                formattedText.Clear();
+            text = "Scaled horizontally by 0.5 around center.";
+            formattedText.Opacity = 0.2;
+            formattedText.Append(text);
+            origin = new PdfPoint(300, 500);
+            page.Content.DrawText(formattedText, origin);
+            formattedText.Clear();
+            formattedText.Opacity = 1;
+            formattedText.Append(text);
+            transform = PdfMatrix.Identity;
+            transform.Translate(origin.X, origin.Y);
+            transform.Scale(0.5, 1, formattedText.Width / 2, formattedText.Height / 2);
+            page.Content.DrawText(formattedText, transform);
 
-                text = "Scaled horizontally by 0.5 around center.";
-                formattedText.Opacity = 0.2;
-                formattedText.Append(text);
-                origin = new PdfPoint(300, 500);
-                page.Content.DrawText(formattedText, origin);
-                formattedText.Clear();
-                formattedText.Opacity = 1;
-                formattedText.Append(text);
-                transform = PdfMatrix.Identity;
-                transform.Translate(origin.X, origin.Y);
-                transform.Scale(0.5, 1, formattedText.Width / 2, formattedText.Height / 2);
-                page.Content.DrawText(formattedText, transform);
+            formattedText.Clear();
 
-                formattedText.Clear();
+            text = "Scaled vertically by 2 around origin.";
+            formattedText.Opacity = 0.2;
+            formattedText.Append(text);
+            origin = new PdfPoint(50, 400);
+            page.Content.DrawText(formattedText, origin);
+            formattedText.Clear();
+            formattedText.Opacity = 1;
+            formattedText.Append(text);
+            transform = PdfMatrix.Identity;
+            transform.Translate(origin.X, origin.Y);
+            transform.Scale(1, 2);
+            page.Content.DrawText(formattedText, transform);
 
-                text = "Scaled vertically by 2 around origin.";
-                formattedText.Opacity = 0.2;
-                formattedText.Append(text);
-                origin = new PdfPoint(50, 400);
-                page.Content.DrawText(formattedText, origin);
-                formattedText.Clear();
-                formattedText.Opacity = 1;
-                formattedText.Append(text);
-                transform = PdfMatrix.Identity;
-                transform.Translate(origin.X, origin.Y);
-                transform.Scale(1, 2);
-                page.Content.DrawText(formattedText, transform);
+            formattedText.Clear();
 
-                formattedText.Clear();
+            text = "Scaled vertically by 2 around center.";
+            formattedText.Opacity = 0.2;
+            formattedText.Append(text);
+            origin = new PdfPoint(300, 400);
+            page.Content.DrawText(formattedText, origin);
+            formattedText.Clear();
+            formattedText.Opacity = 1;
+            formattedText.Append(text);
+            transform = PdfMatrix.Identity;
+            transform.Translate(origin.X, origin.Y);
+            transform.Scale(1, 2, formattedText.Width / 2, formattedText.Height / 2);
+            page.Content.DrawText(formattedText, transform);
 
-                text = "Scaled vertically by 2 around center.";
-                formattedText.Opacity = 0.2;
-                formattedText.Append(text);
-                origin = new PdfPoint(300, 400);
-                page.Content.DrawText(formattedText, origin);
-                formattedText.Clear();
-                formattedText.Opacity = 1;
-                formattedText.Append(text);
-                transform = PdfMatrix.Identity;
-                transform.Translate(origin.X, origin.Y);
-                transform.Scale(1, 2, formattedText.Width / 2, formattedText.Height / 2);
-                page.Content.DrawText(formattedText, transform);
+            formattedText.Clear();
 
-                formattedText.Clear();
+            text = "Rotated by 30 degrees around origin and ";
+            var text2 = "scaled horizontally by 0.5 and ";
+            var text3 = "vertically by 2 around origin.";
+            formattedText.Opacity = 0.2;
+            formattedText.AppendLine(text).AppendLine(text2).Append(text3);
+            origin = new PdfPoint(50, 200);
+            page.Content.DrawText(formattedText, origin);
+            formattedText.Clear();
+            formattedText.Opacity = 1;
+            formattedText.AppendLine(text).AppendLine(text2).Append(text3);
+            transform = PdfMatrix.Identity;
+            transform.Translate(origin.X, origin.Y);
+            transform.Rotate(30);
+            transform.Scale(0.5, 2);
+            page.Content.DrawText(formattedText, transform);
 
-                text = "Rotated by 30 degrees around origin and ";
-                var text2 = "scaled horizontally by 0.5 and ";
-                var text3 = "vertically by 2 around origin.";
-                formattedText.Opacity = 0.2;
-                formattedText.AppendLine(text).AppendLine(text2).Append(text3);
-                origin = new PdfPoint(50, 200);
-                page.Content.DrawText(formattedText, origin);
-                formattedText.Clear();
-                formattedText.Opacity = 1;
-                formattedText.AppendLine(text).AppendLine(text2).Append(text3);
-                transform = PdfMatrix.Identity;
-                transform.Translate(origin.X, origin.Y);
-                transform.Rotate(30);
-                transform.Scale(0.5, 2);
-                page.Content.DrawText(formattedText, transform);
+            formattedText.Clear();
 
-                formattedText.Clear();
-
-                text = "Rotated by 30 degrees around center and ";
-                text2 = "scaled horizontally by 0.5 and ";
-                text3 = "vertically by 2 around center.";
-                formattedText.Opacity = 0.2;
-                formattedText.AppendLine(text).AppendLine(text2).Append(text3);
-                origin = new PdfPoint(300, 200);
-                page.Content.DrawText(formattedText, origin);
-                formattedText.Clear();
-                formattedText.Opacity = 1;
-                formattedText.AppendLine(text).AppendLine(text2).Append(text3);
-                transform = PdfMatrix.Identity;
-                transform.Translate(origin.X, origin.Y);
-                transform.Rotate(30, formattedText.Width / 2, formattedText.Height / 2);
-                transform.Scale(0.5, 2, formattedText.Width / 2, formattedText.Height / 2);
-                page.Content.DrawText(formattedText, transform);
-            }
-
-            document.Save("Transformations.pdf");
+            text = "Rotated by 30 degrees around center and ";
+            text2 = "scaled horizontally by 0.5 and ";
+            text3 = "vertically by 2 around center.";
+            formattedText.Opacity = 0.2;
+            formattedText.AppendLine(text).AppendLine(text2).Append(text3);
+            origin = new PdfPoint(300, 200);
+            page.Content.DrawText(formattedText, origin);
+            formattedText.Clear();
+            formattedText.Opacity = 1;
+            formattedText.AppendLine(text).AppendLine(text2).Append(text3);
+            transform = PdfMatrix.Identity;
+            transform.Translate(origin.X, origin.Y);
+            transform.Rotate(30, formattedText.Width / 2, formattedText.Height / 2);
+            transform.Scale(0.5, 2, formattedText.Width / 2, formattedText.Height / 2);
+            page.Content.DrawText(formattedText, transform);
         }
+
+        document.Save("Transformations.pdf");
     }
 
     static void Example4()
@@ -306,94 +302,92 @@ class Program
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        using (var document = new PdfDocument())
+        using var document = new PdfDocument();
+        PdfPage page = document.Pages.Add();
+
+        using (var formattedText = new PdfFormattedText())
         {
-            var page = document.Pages.Add();
+            formattedText.Language = new PdfLanguage("en-US");
+            formattedText.Font = new PdfFont("Calibri", 12);
 
-            using (var formattedText = new PdfFormattedText())
-            {
-                formattedText.Language = new PdfLanguage("en-US");
-                formattedText.Font = new PdfFont("Calibri", 12);
+            formattedText.AppendLine("An example of a fully vocalised (vowelised or vowelled) Arabic ").
+                Append("from the Basmala: ");
 
-                formattedText.AppendLine("An example of a fully vocalised (vowelised or vowelled) Arabic ").
-                    Append("from the Basmala: ");
+            formattedText.Language = new PdfLanguage("ar-SA");
+            formattedText.Font = new PdfFont("Arial", 24);
+            formattedText.Append("بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ");
 
-                formattedText.Language = new PdfLanguage("ar-SA");
-                formattedText.Font = new PdfFont("Arial", 24);
-                formattedText.Append("بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ");
+            formattedText.Language = new PdfLanguage("en-US");
+            formattedText.Font = new PdfFont("Calibri", 12);
+            formattedText.AppendLine(", which means: ").
+                Append("In the name of God, the All-Merciful, the Especially-Merciful.");
 
-                formattedText.Language = new PdfLanguage("en-US");
-                formattedText.Font = new PdfFont("Calibri", 12);
-                formattedText.AppendLine(", which means: ").
-                    Append("In the name of God, the All-Merciful, the Especially-Merciful.");
+            page.Content.DrawText(formattedText, new PdfPoint(50, 750));
 
-                page.Content.DrawText(formattedText, new PdfPoint(50, 750));
+            formattedText.Clear();
 
-                formattedText.Clear();
+            formattedText.Append("An example of Hebrew: ");
 
-                formattedText.Append("An example of Hebrew: ");
+            formattedText.Language = new PdfLanguage("he-IL");
+            formattedText.Font = new PdfFont("Arial", 24);
+            formattedText.Append("מה קורה");
 
-                formattedText.Language = new PdfLanguage("he-IL");
-                formattedText.Font = new PdfFont("Arial", 24);
-                formattedText.Append("מה קורה");
+            formattedText.Language = new PdfLanguage("en-US");
+            formattedText.Font = new PdfFont("Calibri", 12);
+            formattedText.AppendLine(", which means: What's going on, ").
+                Append("and ");
 
-                formattedText.Language = new PdfLanguage("en-US");
-                formattedText.Font = new PdfFont("Calibri", 12);
-                formattedText.AppendLine(", which means: What's going on, ").
-                    Append("and ");
+            formattedText.Language = new PdfLanguage("he-IL");
+            formattedText.Font = new PdfFont("Arial", 24);
+            formattedText.Append("תודה לכולם");
 
-                formattedText.Language = new PdfLanguage("he-IL");
-                formattedText.Font = new PdfFont("Arial", 24);
-                formattedText.Append("תודה לכולם");
+            formattedText.Language = new PdfLanguage("en-US");
+            formattedText.Font = new PdfFont("Calibri", 12);
+            formattedText.Append(", which means: Thank you all.");
 
-                formattedText.Language = new PdfLanguage("en-US");
-                formattedText.Font = new PdfFont("Calibri", 12);
-                formattedText.Append(", which means: Thank you all.");
+            page.Content.DrawText(formattedText, new PdfPoint(50, 650));
 
-                page.Content.DrawText(formattedText, new PdfPoint(50, 650));
+            formattedText.Clear();
 
-                formattedText.Clear();
+            formattedText.LineHeight = 50;
 
-                formattedText.LineHeight = 50;
+            formattedText.Append("An example of Thai: ");
+            formattedText.Language = new PdfLanguage("th-TH");
+            formattedText.Font = new PdfFont("Leelawadee UI", 16);
+            formattedText.AppendLine("ภัำ");
 
-                formattedText.Append("An example of Thai: ");
-                formattedText.Language = new PdfLanguage("th-TH");
-                formattedText.Font = new PdfFont("Leelawadee UI", 16);
-                formattedText.AppendLine("ภัำ");
+            formattedText.Language = new PdfLanguage("en-US");
+            formattedText.Font = new PdfFont("Calibri", 12);
+            formattedText.Append("An example of Tamil: ");
+            formattedText.Language = new PdfLanguage("ta-IN");
+            formattedText.Font = new PdfFont("Nirmala UI", 16);
+            formattedText.AppendLine("போது");
 
-                formattedText.Language = new PdfLanguage("en-US");
-                formattedText.Font = new PdfFont("Calibri", 12);
-                formattedText.Append("An example of Tamil: ");
-                formattedText.Language = new PdfLanguage("ta-IN");
-                formattedText.Font = new PdfFont("Nirmala UI", 16);
-                formattedText.AppendLine("போது");
+            formattedText.Language = new PdfLanguage("en-US");
+            formattedText.Font = new PdfFont("Calibri", 12);
+            formattedText.Append("An example of Bengali: ");
+            formattedText.Language = new PdfLanguage("be-IN");
+            formattedText.Font = new PdfFont("Nirmala UI", 16);
+            formattedText.AppendLine("আবেদনকারীর মাতার পিতার বর্তমান স্থায়ী ঠিকানা নমিনি নাম");
 
-                formattedText.Language = new PdfLanguage("en-US");
-                formattedText.Font = new PdfFont("Calibri", 12);
-                formattedText.Append("An example of Bengali: ");
-                formattedText.Language = new PdfLanguage("be-IN");
-                formattedText.Font = new PdfFont("Nirmala UI", 16);
-                formattedText.AppendLine("আবেদনকারীর মাতার পিতার বর্তমান স্থায়ী ঠিকানা নমিনি নাম");
+            formattedText.Language = new PdfLanguage("en-US");
+            formattedText.Font = new PdfFont("Calibri", 12);
+            formattedText.Append("An example of Gujarati: ");
+            formattedText.Language = new PdfLanguage("gu-IN");
+            formattedText.Font = new PdfFont("Nirmala UI", 16);
+            formattedText.AppendLine("કાર્બન કેમેસ્ટ્રી");
 
-                formattedText.Language = new PdfLanguage("en-US");
-                formattedText.Font = new PdfFont("Calibri", 12);
-                formattedText.Append("An example of Gujarati: ");
-                formattedText.Language = new PdfLanguage("gu-IN");
-                formattedText.Font = new PdfFont("Nirmala UI", 16);
-                formattedText.AppendLine("કાર્બન કેમેસ્ટ્રી");
+            formattedText.Language = new PdfLanguage("en-US");
+            formattedText.Font = new PdfFont("Calibri", 12);
+            formattedText.Append("An example of Osage: ");
+            formattedText.Language = new PdfLanguage("osa");
+            formattedText.Font = new PdfFont("Gadugi", 16);
+            formattedText.Append("𐓏𐓘𐓻𐓘𐓻𐓟 𐒻𐓟");
 
-                formattedText.Language = new PdfLanguage("en-US");
-                formattedText.Font = new PdfFont("Calibri", 12);
-                formattedText.Append("An example of Osage: ");
-                formattedText.Language = new PdfLanguage("osa");
-                formattedText.Font = new PdfFont("Gadugi", 16);
-                formattedText.Append("𐓏𐓘𐓻𐓘𐓻𐓟 𐒻𐓟");
-
-                page.Content.DrawText(formattedText, new PdfPoint(50, 350));
-            }
-
-            document.Save("Complex scripts.pdf");
+            page.Content.DrawText(formattedText, new PdfPoint(50, 350));
         }
+
+        document.Save("Complex scripts.pdf");
     }
 
     static void Example5()
@@ -401,51 +395,53 @@ class Program
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        using (var document = new PdfDocument())
+        using var document = new PdfDocument();
+        PdfPage page = document.Pages.Add();
+
+        const double margins = 50;
+        var maxWidth = page.CropBox.Width - margins * 2;
+        var halfWidth = maxWidth / 2;
+
+        var maxHeight = page.CropBox.Height - margins * 2;
+        var heightOffset = maxHeight + margins;
+
+        using (var formattedText = new PdfFormattedText())
         {
-            var page = document.Pages.Add();
-
-            double margins = 50;
-            double maxWidth = page.CropBox.Width - margins * 2;
-            double halfWidth = maxWidth / 2;
-
-            double maxHeight = page.CropBox.Height - margins * 2;
-            double heightOffset = maxHeight + margins;
-
-            using (var formattedText = new PdfFormattedText())
+            foreach (var line in File.ReadAllLines("LoremIpsum.txt"))
             {
-                foreach (string line in File.ReadAllLines("LoremIpsum.txt"))
-                    formattedText.AppendLine(line);
-
-                double y = 0;
-                int lineIndex = 0, charIndex = 0;
-                bool useHalfWidth = false;
-
-                while (charIndex < formattedText.Length)
-                {
-                    // Switch every 10 lines between full and half width.
-                    if (lineIndex % 10 == 0)
-                        useHalfWidth = !useHalfWidth;
-
-                    var line = formattedText.FormatLine(charIndex, useHalfWidth ? halfWidth : maxWidth);
-                    y += line.Height;
-
-                    // If line cannot fit on the current page, write it on a new page.
-                    bool lineCannotFit = y > maxHeight;
-                    if (lineCannotFit)
-                    {
-                        page = document.Pages.Add();
-                        y = line.Height;
-                    }
-
-                    page.Content.DrawText(line, new PdfPoint(margins, heightOffset - y));
-
-                    ++lineIndex;
-                    charIndex += line.Length;
-                }
+                formattedText.AppendLine(line);
             }
 
-            document.Save("Lines.pdf");
+            double y = 0;
+            int lineIndex = 0, charIndex = 0;
+            var useHalfWidth = false;
+
+            while (charIndex < formattedText.Length)
+            {
+                // Switch every 10 lines between full and half width.
+                if (lineIndex % 10 == 0)
+                {
+                    useHalfWidth = !useHalfWidth;
+                }
+
+                PdfFormattedTextLine line = formattedText.FormatLine(charIndex, useHalfWidth ? halfWidth : maxWidth);
+                y += line.Height;
+
+                // If line cannot fit on the current page, write it on a new page.
+                var lineCannotFit = y > maxHeight;
+                if (lineCannotFit)
+                {
+                    page = document.Pages.Add();
+                    y = line.Height;
+                }
+
+                page.Content.DrawText(line, new PdfPoint(margins, heightOffset - y));
+
+                ++lineIndex;
+                charIndex += line.Length;
+            }
         }
+
+        document.Save("Lines.pdf");
     }
 }

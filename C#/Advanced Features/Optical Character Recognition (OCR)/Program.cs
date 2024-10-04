@@ -1,9 +1,11 @@
+using System;
 using GemBox.Pdf;
 using GemBox.Pdf.Content;
 using GemBox.Pdf.Ocr;
-using System;
 
-class Program
+namespace OpticalCharacterRecognition;
+
+static class Program
 {
     static void Main()
     {
@@ -16,18 +18,16 @@ class Program
         // If using the Professional version, put your serial key below.
         ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
-        using (PdfDocument document = OcrReader.Read("BookPage.jpg"))
-        {
-            var page = document.Pages[0];
-            var contentEnumerator = page.Content.Elements.All(page.Transform).GetEnumerator();
+        using PdfDocument document = OcrReader.Read("BookPage.jpg");
+        PdfPage page = document.Pages[0];
+        PdfContentElementCollection.AllEnumerator contentEnumerator = page.Content.Elements.All(page.Transform).GetEnumerator();
 
-            while (contentEnumerator.MoveNext())
+        while (contentEnumerator.MoveNext())
+        {
+            if (contentEnumerator.Current.ElementType == PdfContentElementType.Text)
             {
-                if (contentEnumerator.Current.ElementType == PdfContentElementType.Text)
-                {
-                    var textElement = (PdfTextContent)contentEnumerator.Current;
-                    Console.WriteLine(textElement.ToString());
-                }
+                var textElement = (PdfTextContent)contentEnumerator.Current;
+                Console.WriteLine(textElement.ToString());
             }
         }
     }
@@ -44,9 +44,7 @@ class Program
         // The language of the text.
         readOptions.Languages.Add(OcrLanguages.German);
 
-        using (PdfDocument document = OcrReader.Read("GermanDocument.pdf", readOptions))
-        {
-            document.Save("GermanDocumentEditable.pdf");
-        }
+        using PdfDocument document = OcrReader.Read("GermanDocument.pdf", readOptions);
+        document.Save("GermanDocumentEditable.pdf");
     }
 }

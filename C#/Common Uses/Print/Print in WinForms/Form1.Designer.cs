@@ -3,7 +3,7 @@
     /// <summary>
     /// Required designer variable.
     /// </summary>
-    private System.ComponentModel.IContainer components = null;
+    System.ComponentModel.IContainer components = null;
 
     /// <summary>
     /// Clean up any resources being used.
@@ -24,7 +24,7 @@
     /// Required method for Designer support - do not modify
     /// the contents of this method with the code editor.
     /// </summary>
-    private void InitializeComponent()
+    void InitializeComponent()
     {
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.LoadFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -127,10 +127,10 @@
 
     #endregion
 
-    private System.Windows.Forms.MenuStrip MenuStrip;
-    private System.Windows.Forms.ToolStripMenuItem LoadFileMenuItem;
-    private System.Windows.Forms.ToolStripMenuItem PrintFileMenuItem;
-    private System.Windows.Forms.PrintPreviewControl PrintPreviewControl;
-    private System.Windows.Forms.Label PageLb;
-    private System.Windows.Forms.NumericUpDown PageUpDown;
+    System.Windows.Forms.MenuStrip MenuStrip;
+    System.Windows.Forms.ToolStripMenuItem LoadFileMenuItem;
+    System.Windows.Forms.ToolStripMenuItem PrintFileMenuItem;
+    System.Windows.Forms.PrintPreviewControl PrintPreviewControl;
+    System.Windows.Forms.Label PageLb;
+    System.Windows.Forms.NumericUpDown PageUpDown;
 }
