@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net8.0;net48</TargetFrameworks>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="GemBox.Pdf" Version="17.0.1611" />
+    <PackageReference Include="GemBox.Spreadsheet" Version="49.0.1839" />
+    <PackageReference Include="GemBox.Document" Version="35.0.1886" />
+    <PackageReference Include="GemBox.Presentation" Version="27.0.1101" />
+  </ItemGroup>
+
+</Project>
