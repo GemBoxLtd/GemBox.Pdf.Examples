@@ -40,10 +40,10 @@ class Program
             // Set password-based encryption to an output PDF file.
             var encryption = document.SaveOptions.SetPasswordEncryption();
 
-            // Specify password required to edit a PDF document.
+            // Specify the password required to edit a PDF document.
             encryption.PermissionsPassword = "owner";
 
-            // User will be able to print PDF and fill-in PDF form 
+            // User will be able to print PDF and fill in the PDF form
             // without requiring a password.
             encryption.Permissions =
                 PdfUserAccessPermissions.Print |
@@ -51,7 +51,7 @@ class Program
                 PdfUserAccessPermissions.CopyContentForAccessibility |
                 PdfUserAccessPermissions.PrintHighResolution;
 
-            // Save PDF document to an encrypted PDF file.
+            // Save the PDF document to an encrypted PDF file.
             document.Save("Restrict Editing.pdf");
         }
     }
