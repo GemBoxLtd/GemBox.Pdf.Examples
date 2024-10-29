@@ -10,14 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Resources\Almonte Snow.ttf">
+    <None Update="MyFonts\Almonte Snow.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Condition=" '$(TargetFramework)' == 'net48' " Include="Resources\almonte woodgrain.ttf" />
-    <EmbeddedResource Condition=" '$(TargetFramework)' != 'net48' " Include="Resources\almonte woodgrain.ttf" LogicalName="PrivateFonts.Resources.almonte woodgrain.ttf" />
   </ItemGroup>
 
 </Project>
