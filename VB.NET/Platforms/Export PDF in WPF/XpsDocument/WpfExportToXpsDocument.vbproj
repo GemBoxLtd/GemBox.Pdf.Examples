@@ -51,7 +51,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="GemBox.Pdf" Version="17.0.1611" />
+    <PackageReference Include="GemBox.Pdf" Version="2025.4.103" />
     <Reference Include="ReachFramework" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />

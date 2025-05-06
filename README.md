@@ -4,7 +4,7 @@
 
 GemBox.Pdf is a .NET component that enables you to read, write, edit, and print PDF files from .NET applications.
 
-With GemBox.Pdf you get a fast and reliable component that’s easy to use and doesn't depend on Adobe Acrobat. It requires only .NET so you can deploy your applications without having to think about other licenses.
+With GemBox.Pdf you get a fast and reliable component that's easy to use and doesn't depend on Adobe Acrobat. It requires only .NET so you can deploy your applications without having to think about other licenses.
 
 ## GemBox.Pdf Features
 
@@ -15,10 +15,10 @@ With GemBox.Pdf you get a fast and reliable component that’s easy to use and d
 - [Extract text](https://www.gemboxsoftware.com/pdf/examples/extract-content-pdf/6005) from PDF files.
 - [Extract images](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-export-import-images-to-pdf/206#export) from PDF files.
 - [Redact content](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-redact-content-pdf/410) from PDF files.
-- [Print](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-print-pdf/207) PDF files.
+- [Print](https://www.gemboxsoftware.com/pdf/examples/print-pdf-c-sharp/6002) PDF files.
 - [Merge](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-merge-pdf/201) PDF files.
 - [Split](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-split-pdf/202) PDF files.
-- [Create](https://www.gemboxsoftware.com/pdf/examples/c-sharp-create-pdf-interactive-form-fields/505), [fill in](https://www.gemboxsoftware.com/pdf/examples/c-sharp-fill-in-pdf-interactive-form/502), [flatten](https://www.gemboxsoftware.com/pdf/examples/c-sharp-flatten-pdf-interactive-form-fields/506), [read](https://www.gemboxsoftware.com/pdf/examples/c-sharp-read-pdf-interactive-form-fields/501), and [export](https://www.gemboxsoftware.com/pdf/examples/c-sharp-export-pdf-interactive-form-data/503) PDF interactive forms.
+- [Create](https://www.gemboxsoftware.com/pdf/examples/create-pdf-interactive-form-fields/505), [fill in](https://www.gemboxsoftware.com/pdf/examples/fill-in-pdf-interactive-form/502), [flatten](https://www.gemboxsoftware.com/pdf/examples/flatten-pdf-interactive-form-fields/506), [read](https://www.gemboxsoftware.com/pdf/examples/read-pdf-interactive-form-fields/501), and [export](https://www.gemboxsoftware.com/pdf/examples/c-sharp-export-pdf-interactive-form-data/503) PDF interactive forms.
 - Extract text from images or scanned PDF files with [optical character recognition (OCR)](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-ocr-pdf/408).
 - [Encrypt](https://www.gemboxsoftware.com/pdf/examples/decrypt-encrypt-pdf-file/1101) and [digitally sign](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-digital-signature/1102) PDF files.
 - [Clone or import](https://www.gemboxsoftware.com/pdf/examples/cloning-pdf-pages/203) pages between PDF documents.
@@ -30,8 +30,7 @@ With GemBox.Pdf you get a fast and reliable component that’s easy to use and d
 - Add [text](https://www.gemboxsoftware.com/pdf/examples/pdf-content-groups/409) and [marked content](https://www.gemboxsoftware.com/pdf/examples/pdf-marked-content/407) to pages and [format](https://www.gemboxsoftware.com/pdf/examples/pdf-content-formatting/307) (fill, stroke, and clip) the content.
 - Annotate PDF pages with [hyperlinks](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-pdf-hyperlinks/308).
 - [Use basic PDF objects](https://www.gemboxsoftware.com/pdf/examples/basic-pdf-objects/402) for currently unsupported PDF features.
-- [Specify fonts location](https://www.gemboxsoftware.com/pdf/examples/use-embed-private-fonts-pdf/404).
-- [Medium trust](https://www.gemboxsoftware.com/pdf/examples/getting-started/101) support.
+- [Specify fonts location](https://www.gemboxsoftware.com/pdf/examples/fonts/404).
 
 ## Get Started
 
@@ -61,7 +60,7 @@ using (var document = new PdfDocument())
 }
 ```
 
-For more GemBox.Pdf code examples and demos, please visit our [examples page](https://www.gemboxsoftware.com/pdf/examples/c-sharp-vb-net-pdf-library/101).
+For more GemBox.Pdf code examples and demos, please visit our [examples page](https://www.gemboxsoftware.com/pdf/examples/getting-started/101).
 
 ## Installation
 

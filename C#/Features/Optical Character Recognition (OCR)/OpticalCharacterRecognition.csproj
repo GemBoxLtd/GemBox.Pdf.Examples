@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GemBox.Pdf" Version="17.0.1611" />
-    <PackageReference Include="GemBox.Pdf.Ocr" Version="17.0.1611" />
+    <PackageReference Include="GemBox.Pdf" Version="2025.4.103" />
+    <PackageReference Include="GemBox.Pdf.Ocr" Version="2025.4.103" />
   </ItemGroup>
 
   <ItemGroup>
