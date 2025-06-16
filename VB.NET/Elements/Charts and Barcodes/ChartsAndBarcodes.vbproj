@@ -6,10 +6,10 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="GemBox.Pdf" Version="2025.4.103" />
-    <PackageReference Include="GemBox.Spreadsheet" Version="2025.4.107" />
-    <PackageReference Include="GemBox.Document" Version="2025.4.107" />
-    <PackageReference Include="GemBox.Presentation" Version="2025.4.104" />
+    <PackageReference Include="GemBox.Pdf" Version="*" />
+    <PackageReference Include="GemBox.Spreadsheet" Version="*" />
+    <PackageReference Include="GemBox.Document" Version="*" />
+    <PackageReference Include="GemBox.Presentation" Version="*" />
   </ItemGroup>
 
 </Project>
