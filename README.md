@@ -66,6 +66,10 @@ For more GemBox.Pdf code examples and demos, please visit our [examples page](ht
 
 You can download GemBox.Pdf from [NuGet 📦](https://www.nuget.org/packages/GemBox.Pdf/) or from [Downloads 🛠️](https://www.gemboxsoftware.com/pdf/downloads/).
 
+## AI Coding
+
+CLI coding agents such as GitHub Copilot, Claude Code, and OpenAI Codex can write valid GemBox code [when enabled with our gembox-skill](https://www.gemboxsoftware.com/support/ai-coding).
+
 ## Resources
 
 - [Product Page](https://www.gemboxsoftware.com/pdf)
