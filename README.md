@@ -2,9 +2,9 @@
 
 ## What is GemBox.Pdf?
 
-GemBox.Pdf is a .NET component that enables you to read, write, edit, and print PDF files from .NET applications.
+GemBox.Pdf is a .NET library that enables you to read, write, edit, and print PDF files from .NET applications.
 
-With GemBox.Pdf you get a fast and reliable component that's easy to use and doesn't depend on Adobe Acrobat. It requires only .NET so you can deploy your applications without having to think about other licenses.
+With GemBox.Pdf you get a fast and reliable library that's easy to use and doesn't depend on Adobe Acrobat. It requires only .NET so you can deploy your applications without having to think about other licenses.
 
 ## GemBox.Pdf Features
 
