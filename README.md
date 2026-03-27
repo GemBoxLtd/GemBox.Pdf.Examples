@@ -1,5 +1,7 @@
 [![NuGet version](https://img.shields.io/nuget/v/GemBox.Pdf?style=for-the-badge)](https://www.nuget.org/packages/GemBox.Pdf/) [![NuGet downloads](https://img.shields.io/nuget/dt/GemBox.Pdf?style=for-the-badge)](https://www.nuget.org/packages/GemBox.Pdf/) [![Visual Studio Marketplace rating](https://img.shields.io/visual-studio-marketplace/stars/GemBoxSoftware.GemBoxPdf?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=GemBoxSoftware.GemBoxPdf)
 
+[![GemBox.Pdf .NET PDF library](https://www.gemboxsoftware.com/img/banners/gembox-gba-banner.png)](https://www.gemboxsoftware.com/pdf/examples/getting-started/101)
+
 ## What is GemBox.Pdf?
 
 GemBox.Pdf is a .NET library that enables you to read, write, edit, and print PDF files from .NET applications.
@@ -64,7 +66,7 @@ For more GemBox.Pdf code examples and demos, please visit our [examples page](ht
 
 ## Installation
 
-You can download GemBox.Pdf from [NuGet 📦](https://www.nuget.org/packages/GemBox.Pdf/) or from [Downloads 🛠️](https://www.gemboxsoftware.com/pdf/downloads/).
+You can download GemBox.Pdf from [NuGet 📦](https://www.nuget.org/packages/GemBox.Pdf/) or from [Downloads 🛠️](https://www.gemboxsoftware.com/pdf/free-version).
 
 ## AI Coding
 
