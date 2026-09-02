@@ -44,7 +44,7 @@ Partial Public Class MainWindow
 
             Dim printOptions As New PrintOptions(printDialog.PrintTicket.GetXmlStream())
 
-            printOptions.FromPage = printDialog.PageRange.PageFrom - 1
+            printOptions.FromPage = If(printDialog.PageRange.PageFrom = 0, 0, printDialog.PageRange.PageFrom - 1)
             printOptions.ToPage = If(printDialog.PageRange.PageTo = 0, Integer.MaxValue, printDialog.PageRange.PageTo - 1)
 
             Me.document.Print(printDialog.PrintQueue.FullName, printOptions)
