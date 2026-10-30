@@ -26,7 +26,7 @@ class Program
             page.Content.DrawImage(image, new PdfPoint(0, 0));
 
             // Set page size.
-            page.SetMediaBox(image.Width, image.Height);
+            page.SetMediaBox(image.Size.Width, image.Size.Height);
 
             // Save as PDF file.
             document.Save("converted-png-image.pdf");
@@ -53,7 +53,7 @@ class Program
                 var image = PdfImage.Load(jpg);
 
                 // Set page size.
-                page.SetMediaBox(image.Width + 2 * margins, image.Height + 2 * margins);
+                page.SetMediaBox(image.Size.Width + 2 * margins, image.Size.Height + 2 * margins);
 
                 // Draw backgroud color.
                 var backgroud = page.Content.Elements.AddPath();
@@ -81,8 +81,8 @@ class Program
             // Load image from PNG file.
             var image = PdfImage.Load("parrot.png");
 
-            double width = image.Width;
-            double height = image.Height;
+            double width = image.Size.Width;
+            double height = image.Size.Height;
             double ratio = width / height;
 
             // Add image four times, each time with 20% smaller size.

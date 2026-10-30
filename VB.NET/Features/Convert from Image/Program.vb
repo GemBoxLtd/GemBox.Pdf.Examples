@@ -24,7 +24,7 @@ Module Program
             page.Content.DrawImage(image, New PdfPoint(0, 0))
 
             ' Set page size.
-            page.SetMediaBox(image.Width, image.Height)
+            page.SetMediaBox(image.Size.Width, image.Size.Height)
 
             ' Save as PDF file.
             document.Save("converted-png-image.pdf")
@@ -50,7 +50,7 @@ Module Program
                 Dim image = PdfImage.Load(jpg)
 
                 ' Set page size.
-                page.SetMediaBox(image.Width + 2 * margins, image.Height + 2 * margins)
+                page.SetMediaBox(image.Size.Width + 2 * margins, image.Size.Height + 2 * margins)
 
                 ' Draw backgroud color.
                 Dim backgroud = page.Content.Elements.AddPath()
@@ -77,8 +77,8 @@ Module Program
             ' Load image from PNG file.
             Dim image = PdfImage.Load("parrot.png")
 
-            Dim width As Double = image.Width
-            Dim height As Double = image.Height
+            Dim width As Double = image.Size.Width
+            Dim height As Double = image.Size.Height
             Dim ratio As Double = width / height
 
             ' Add image four times, each time with 20% smaller size.
